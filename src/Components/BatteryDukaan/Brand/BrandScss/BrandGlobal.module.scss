@@ -1,0 +1,91 @@
+.main{
+    padding: 10px 20px;
+    width: 100%;
+    text-transform: capitalize;
+    background-color: rgb(255, 255, 255);
+    input::-webkit-inner-spin-button{
+        display: none;
+    }
+}
+
+.form{
+    margin-left: 80px;
+    padding: 0px 20px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #fff;
+
+    label{
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+    input , textarea , select{
+        border: 1px solid rgba(93, 93, 93, 0.363);
+        width: 30vw;
+        padding: 5px 20px;
+    }    
+}
+
+
+.main .superClass{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    margin-left: 80px;
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 33%;
+        background-color: rgb(255, 255, 255);
+    }
+
+    label{
+        margin-right: 10px;
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+    input{
+        border: 1px solid rgba(93, 93, 93, 0.363);
+        width: 60%;
+        padding: 5px 20px;
+    }
+
+    
+}
+
+.main .submit{
+    display: flex;
+    justify-content: center;
+
+    input[type="submit"]{
+        vertical-align: middle;
+        width: fit-content;
+        text-transform: capitalize;
+        padding: 5px 20px;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #6de76d;
+        border:none;
+        outline: none;
+        cursor: pointer;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+    }
+
+    input[type="submit"]:hover{
+        background-color: #6de76dad;
+    }
+}
+
+
+
