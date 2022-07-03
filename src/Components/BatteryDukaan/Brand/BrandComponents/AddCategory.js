@@ -6,7 +6,7 @@ import axios from '../../../../Axios/AxiosConfig'
 import { CreateCategory, EditCategory, GetCategory } from '../../../../Store/Actions'
 
 function AddCategory(props) {
-  console.log(props)
+  // console.log(props)
       const [state, setstate] = useState({
         "categoryName": "",
         "categoryDesc": "",

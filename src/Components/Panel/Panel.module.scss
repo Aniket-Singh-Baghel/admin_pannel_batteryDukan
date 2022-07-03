@@ -1,95 +1,133 @@
 $opacity: 0.7;
-$fsize:14px;
-$color:#fff;
+$fsize: 14px;
+$color: #fff;
 
-.aside{
-    width: 17vw;
-    min-height: 92vh;
-    background-color: rgb(49, 49, 49);
-    color: $color;
+.aside {
+  width: 17vw;
+  min-height: 157vh;
+  background-color: rgb(49, 49, 49);
+  color: $color;
 
+  span {
+    display: inline-block;
+    padding: 10px 10px;
+    opacity: $opacity;
+    font-size: $fsize;
+  }
 
-    span{
-        display: inline-block;
-        padding: 10px 10px;
-        opacity: $opacity;
-        font-size: $fsize;
+  .parentDiv > h5 {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .parentDiv > h5 i {
+    margin-right: 10px;
+  }
+
+  label {
+    position: relative;
+    width: 100%;
+
+    input {
+      position: absolute;
+      transform: scale(0);
     }
 
+    section {
+      font-size: $fsize;
+      display: flex;
+      align-items: center;
+      opacity: $opacity;
+      padding: 10px;
+      background-color: rgb(36, 36, 35);
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+      border-left: 4px solid black;
 
-    .parentDiv > h5{
-        background-color: rgb(0, 0, 0);
-        display: flex;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .parentDiv > h5 i {
+      i {
         margin-right: 10px;
+      }
     }
 
-    label{
-        position: relative;
-        width: 90%;
-        input{
-            position: absolute;
-            transform: scale(0);
-        }
+    section:hover,
+    input:checked ~ section {
+      opacity: 1;
+      background: #000;
+      border-left: 4px solid rgb(70, 163, 200);
+    }
 
-        section{
-            font-size: $fsize;
-            display: flex;
-            align-items: center;
-            opacity: $opacity;
-            padding: 10px;
-            background-color: rgb(36, 36, 35);
-            transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
-            border-left: 4px solid black;
+    .opener {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border-radius: 100%;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+      background-color: rgb(27, 27, 27);
+      color: $color;
+      opacity: 0;
+    }
 
-            i{
-                margin-right: 10px;
-            }
-        }
+    input:checked ~ .opener {
+      width: 100%;
+      height: fit-content;
+      border-radius: 0%;
+      opacity: $opacity;
+      font-size: $fsize;
+    }
 
-        section:hover , input:checked ~ section{
-            opacity: 1;
-            background: #000;
-            border-left: 4px solid rgb(70, 163, 200);
-        }
+    .opener2 {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border-radius: 100%;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+      background-color: rgb(27, 27, 27);
+      color: $color;
+    }
 
-      
+    .click:checked ~ .opener2 {
+      width: 100%;
+      height: fit-content;
+      border-radius: 0%;
+      opacity: $opacity;
+      font-size: $fsize;
+    }
 
-        .opener{
-            width: 0;
-            height: 0;
-            overflow: hidden;
-            border-radius: 100%;
-            transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
-            background-color:rgb(27, 27, 27);
+    .opener h4 {
+      width: 100%;
+      padding: 5px 5px;
+      font-weight: 300;
+      font-size: $fsize;
+    }
 
-            color: $color;
-        }
+    .opener h4:hover {
+      opacity: 1;
+      background-color: #000;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .aside {
+    width: 28vw;
+    min-height: 215vh;
+    background-color: #313131;
+    color: #fff;
 
-        input:checked ~ .opener{
-            width: 100%;
-            height: fit-content;
-            border-radius: 0%;
-            opacity: $opacity;
-            font-size: $fsize;
+    span {
+      display: inline-block;
+      padding: 16px 10px;
+      opacity: 0.7;
+      font-size: 13px;
+    }
 
-        }
+    .parentDiv > h5 {
+   font-size: 1rem;
+  }
+  label>section{
+    width: 100%;
+    font-size: 1.7vmax;
+  }
 
-        .opener h4{
-            width: 100%;
-            padding: 5px 5px;
-            font-weight: 300;
-            font-size: $fsize;
-        }
-
-        .opener h4:hover{
-            opacity: 1;
-            background-color: #000;
-        }
-
-    }   
+  }
 }

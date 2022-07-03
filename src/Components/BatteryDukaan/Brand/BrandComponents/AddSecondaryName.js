@@ -95,10 +95,10 @@ function AddSecondaryName(props) {
     
     return (
         <div className={styles.main}>
-            <span>Add SecondaryName</span>
+            <span>Add Secondary Name</span>
 
             <div className={styles.form}>
-                <label htmlFor="secondaryName">SecondaryName</label>
+                <label htmlFor="secondaryName">Secondary Name</label>
                 <input onChange={OnCHangeHandler} value={state["secondaryName"]} name="secondaryName" type="text" />
             </div> 
            
@@ -114,7 +114,7 @@ function AddSecondaryName(props) {
             <div>
             {/* bulk */}
           <input type="file"  name='files' onChange={(e)=>handleChange(e)}/>
-          <input  onClick={submitHandler} type="submit" />
+          <input  onClick={submitHandler} type="submit" className={styles.fileSubmit}/>
         </div>
 
         </div>

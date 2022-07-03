@@ -4,13 +4,15 @@ import cx from "classnames";
 import axios from "../../../../Axios/AxiosConfig";
 import { CreateBatteryBrand, EditBatteryBrand, GetBatteryBrand } from '../../../../Store/Actions'
 import { connect } from 'react-redux'
+import { useHistory } from "react-router-dom";
 
 
 
 function AddBrand(props) {
+	const history = useHistory()
 	const [state, setstate] = useState({
 		brandName: "",
-		"brand logo": "",
+		brandLogo: "",
 		brandPosition: "",
 		brandIcon: "",
 		brandDesc: "",
@@ -21,7 +23,7 @@ function AddBrand(props) {
 		setstate({ ...state, [e.target.name]: e.target.value });
 	};
 
-	useEffect(() => { 
+	useEffect(() => { 	
         const _id = props.match.params.id
         if(props.match.path === "/EditBatteryBrand/:id"){
           props.GetBatteryBrand()
@@ -36,19 +38,20 @@ function AddBrand(props) {
       }, [])
 
 	const callToAction =()=>{
+		console.log("jai shree ram");
 		const _id = props.match.params.id
 		if(props.match.url === "/brand") {
 	    props.CreateBatteryBrand(state)
 		setstate({
 			brandName: "",
-		    "brand logo": "",
+		    "brandLogo": "",
 		    brandPosition: "",
 		    brandIcon: "",
 		    brandDesc: "",
 		})
 	} else {
 		props.EditBatteryBrand(_id, state)
-        props.history.push("/ViewBatteryBrand")
+		history.push("/ViewBatteryBrand");
 	}
 	}
 
@@ -68,7 +71,7 @@ function AddBrand(props) {
 			JSON.parse(e.target.result).map(body => {
 				arr.push({
 					brandName: body["brandName"],
-					"brand logo": body["brand logo"],
+					"brandLogo": body["brandLogo"],
 					brandDesc: body["brandDesc"],
 					brandIcon: body["brandIcon"],
 					brandPosition: body["brandPosition"],
@@ -119,10 +122,10 @@ function AddBrand(props) {
 				/>
 			</div>
 			<div className={styles.form}>
-				<label htmlFor="brand logo">brand logo</label>
+				<label htmlFor="brandLogo">brandLogo</label>
 				<input
-					name="brand logo"
-					value={state["brand logo"]}
+					name="brandLogo"
+					value={state["brandLogo"]}
 					onChange={OnCHangeHandler}
 					type="text"
 				/>

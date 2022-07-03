@@ -17,18 +17,19 @@ function ViewBatteryBrand(props) {
 		props.DeleteBatteryBrand(id)
 	}
 
+
 	let brandsTable;
 	if (props.BatteryBrand.data){
 		console.log(state);
-		brandsTable = props.BatteryBrand.data.map((details, index) => {
+		brandsTable = props.brandName.data.map((details, index) => {
 			return (
 				<tr key={index}>
 					<th scope="row">{index + 1}</th>
 					<td>{details.brandName}</td>
 					<td>
 						{" "}
-						<a href={details["brand logo"]} target="_blank">
-							{details["brand logo"] ? details["brand logo"].substring(0, 100) : details["brand logo"] }
+						<a href={details["brandLogo"]} target="_blank">
+							{details["brandLogo"] ? details["brandLogo"].substring(0, 100) : details["brandLogo"] }
 						</a>
 					</td>
 					<td>{details.brandDesc}</td>

@@ -2,15 +2,18 @@ import { CREATE_SUBCATEGORY, SHOW_SUBCATEGORY, DELETE_SUBCATEGORY } from '../Act
 import axios from '../../Axios/AxiosConfig'
 
 export const CreateSubCategory = (data) => dispatch => {
-    axios.post("/createSubCategory", data)
-    .then(success => {
-        console.log(success)
+    axios
+      .post("/createSubCategory", data)
+      .then((success) => {
+        alert(success.data.message + " " + success.status);
         return dispatch({
-            type: CREATE_SUBCATEGORY,
-            payload: success.data,
-          }); 
-    })
-    .catch(err => console.error(err))
+          type: CREATE_SUBCATEGORY,
+          payload: success.data,
+        });
+      })
+      .catch((err) =>
+        alert(err.response.data.message + " " + err.response.status)
+      );
 }
 
 export const GetSubcategory = (data) => dispatch => {

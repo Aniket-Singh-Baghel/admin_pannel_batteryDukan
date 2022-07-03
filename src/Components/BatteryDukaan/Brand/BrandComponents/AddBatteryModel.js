@@ -59,7 +59,7 @@ function AddModel(props) {
         if(props.match.path === "/EditBatteryModel/:id"){
           props.GetBatteryModel()
           const BatteryModel = props.BatteryModel.data.map(data => {
-           if(data.id == _id){
+           if(data.id === _id){
              return data;
            }  
           })
@@ -213,175 +213,280 @@ function AddModel(props) {
 	};
 
     return (
-        
-        <div className={styles.main}>
-            <span>Add Battery Model</span>
+      <div className={styles.main}>
+        <span>Add Battery Model</span>
 
-            <div className={styles.form}>
-                <label htmlFor="modelName">model Name</label>
-                <input onChange={OnCHangeHandler} value={state.modelName} name="modelName" type="text" />
-            </div>    
+        <div className={styles.form}>
+          <label htmlFor="modelName">model Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelName}
+            name="modelName"
+            type="text"
+          />
+        </div>
 
-            <div className={styles.form}>
-                <label htmlFor="modelPosition">model Position</label>
-                <input onChange={OnCHangeHandler} value={state.modelPosition} name="modelPosition" type="text" />
-            </div> 
-            <div className={styles.form}>
-                <label htmlFor="modelIcon">model Icon</label>
-                <input onChange={OnCHangeHandler} value={state.modelIcon} name="modelIcon" type="text" />
-            </div>
+        <div className={styles.form}>
+          <label htmlFor="modelPosition">model Position</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelPosition}
+            name="modelPosition"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="modelIcon">model Icon</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelIcon}
+            name="modelIcon"
+            type="text"
+          />
+        </div>
 
-            <div className={styles.form}>
-                <label htmlFor="modelBrand">model Brand</label>
-                <select onChange={OnCHangeHandler} name="modelBrand" id="">
-                     {BatteryBrand}
-                </select>
-            </div> 
+        <div className={styles.form}>
+          <label htmlFor="modelBrand">model Brand</label>
+          <select onChange={OnCHangeHandler} name="modelBrand" id="">
+            {BatteryBrand}
+          </select>
+        </div>
 
-            {/* <div className={styles.form}>
+        {/* <div className={styles.form}>
                 <label htmlFor="OEM-Brand">OEM Brand</label>
                 <select name="OEM-Brand" id="">
                     <option value="Exide"> audi</option>
                     <option value="Amaron"> Amaron</option>
                 </select>       
             </div>  */}
-           
-            <div className={styles.form}>
-                <label htmlFor="OEM-Model Name">OEM Model</label>
-                <select onChange={OnCHangeHandler} name="OEM-Model Name" id="">
-                    {OemModel}
-                </select>
-            </div> 
 
-            <div className={styles.form}>
-                <label htmlFor="subcategoryName">subcategoryName</label>
-                <select onChange={OnCHangeHandler} name="subcategoryName" id="">
-                    {SubCategory}
-                </select>
-            </div> 
+        <div className={styles.form}>
+          <label htmlFor="OEM-Model Name">OEM Model</label>
+          <select onChange={OnCHangeHandler} name="OEM-Model Name" id="">
+            {OemModel}
+          </select>
+        </div>
 
-            <div className={styles.form}>
-                <label htmlFor="segmentName">segmentName</label>
-                <select onChange={OnCHangeHandler} name="segmentName" id="">
-                    {segment}
-                </select>
-            </div> 
+        <div className={styles.form}>
+          <label htmlFor="subcategoryName">subcategory Name</label>
+          <select onChange={OnCHangeHandler} name="subcategoryName" id="">
+            {SubCategory}
+          </select>
+        </div>
 
-            <div className={styles.form}>
-                <label htmlFor="secondaryName">Secondary Name</label>
-                <select onChange={OnCHangeHandler} name="secondaryName" id="">
-                    {SecondaryName}
-                </select>
-            </div>
-            
-            <div className={styles.form}>
-                <label htmlFor="schemeName">schemeName</label>
-                <input onChange={OnCHangeHandler} value={state["schemeName"]} name="schemeName" type="text" />
-                {/* <select onChange={OnCHangeHandler} name="schemeName"  id="">
+        <div className={styles.form}>
+          <label htmlFor="segmentName">segment Name</label>
+          <select onChange={OnCHangeHandler} name="segmentName" id="">
+            {segment}
+          </select>
+        </div>
+
+        <div className={styles.form}>
+          <label htmlFor="secondaryName">Secondary Name</label>
+          <select onChange={OnCHangeHandler} name="secondaryName" id="">
+            {SecondaryName}
+          </select>
+        </div>
+
+        <div className={styles.form}>
+          <label htmlFor="schemeName">schemeName</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["schemeName"]}
+            name="schemeName"
+            type="text"
+          />
+          {/* <select onChange={OnCHangeHandler} name="schemeName"  id="">
                     {Scheme}
                 </select> */}
-            </div> 
+        </div>
 
-          
-            <div className={styles.form}>
-                <label htmlFor="modelGroupIds (comma separated)">modelGroupIds (comma separated)</label>
-                <input onChange={OnCHangeHandler} value={state["modelGroupIds (comma separated)"]} name="modelGroupIds (comma separated)" type="text" />
-                {/* <select onChange={OnCHangeHandler} name="modelGroupIds (comma separated)"  id="">
+        <div className={styles.form}>
+          <label htmlFor="modelGroupIds (comma separated)">
+            modelGroupIds (comma separated)
+          </label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["modelGroupIds (comma separated)"]}
+            name="modelGroupIds (comma separated)"
+            type="text"
+          />
+          {/* <select onChange={OnCHangeHandler} name="modelGroupIds (comma separated)"  id="">
                     <option  value="">he</option>
                     <option value="">Bihar</option>
                     <option value="">Telangana</option>
                 </select> */}
-            </div>  
-
-            <div className={styles.superClass}>
-                <div>
-                    <label htmlFor="mrp (value)">mrp</label>
-                    <input onChange={OnCHangeHandler} value={state["mrp (value)"]} name="mrp (value)" placeholder="₹" type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="mop (value)">mop</label>
-                    <input onChange={OnCHangeHandler} value={state["mop (value)"]} name="mop (value)"  placeholder="₹" type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="dp (value)">dp</label>
-                    <input onChange={OnCHangeHandler} value={state["dp (value)"]} name="dp (value)"  placeholder="₹" type="number" />
-                </div> 
-            </div>
-
-            {/* superClass */}
-
-            <div className={styles.superClass}>
-                <div>
-                    <label htmlFor="acidIndicator (value)">acidIndicator</label>
-                    <input onChange={OnCHangeHandler} value={state["acidIndicator (value)"]} name="acidIndicator (value)" type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="currentCapaCity (value)">currentCapaCity</label>
-                    <input onChange={OnCHangeHandler} value={state["currentCapaCity (value)"]} name="currentCapaCity (value)" type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="layout (value)">layout</label>
-                    <input onChange={OnCHangeHandler} value={state["layout (value)"]}name="layout (value)" type="number" />
-                </div> 
-            </div>
-
-            <div className={styles.superClass}>
-                <div>
-                    <label htmlFor="length (value)">length (value)</label>
-                    <input onChange={OnCHangeHandler} value={state["length (value)"]} name="length (value)" type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="width (value)">width (value)</label>
-                    <input onChange={OnCHangeHandler} value={state["width (value)"]} name="width (value)" type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="height (value)">height (value)</label>
-                    <input onChange={OnCHangeHandler} value={state["height (value)"]} name="height (value)" type="number" />
-                </div> 
-            </div>
-
-            <div className={styles.superClass}>
-                <div >
-                    <label htmlFor="nlc (value)">nlc</label>
-                    <input onChange={OnCHangeHandler} value={state["nlc (value)"]}name="nlc (value)"  placeholder="₹" type="number" />
-                </div> 
-                <div>
-                    <label htmlFor="warranty (value)">warranty</label>
-                    <input onChange={OnCHangeHandler} value={state["warranty (value)"]}name="warranty (value)"  type="number" />
-                </div> 
-
-                <div >
-                    <label htmlFor="Weight (value)">Weight</label>
-                    <input onChange={OnCHangeHandler} value={state["Weight (value)"]}name="Weight (value)"  placeholder="kg" type="number" />
-                </div> 
-
-            </div>
-
-            <div className={styles.form}>
-                <label htmlFor="warranty (description)">warranty (description)</label>
-                <textarea onChange={OnCHangeHandler} value={state["warranty (description)"]} name="warranty (description)" ></textarea>
-            </div> 
-           
-            <div className={styles.form}>
-                <label htmlFor="modelDesc">model Desc</label>
-                <textarea onChange={OnCHangeHandler} value={state["modelDesc"]} name="modelDesc" ></textarea>
-            </div> 
-
-            <div className={cx(styles.form , styles.submit)}>
-                <input onClick={callToAction} type="submit" value="create"/>
-            </div>
-
-            {/* bulk upload */}
-			<input type="file"  name='files' onChange={(e)=>handleChange(e)}/>
-          	<input  onClick={submitHandler} type="submit" />
         </div>
-    )
+
+        <div className={styles.superClass}>
+          <div className={styles.one}>
+            <label htmlFor="mrp (value)">mrp</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["mrp (value)"]}
+              name="mrp (value)"
+              placeholder="₹"
+              type="number"
+            />
+          </div>
+
+          <div className={styles.two}>
+            <label htmlFor="mop (value)">mop</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["mop (value)"]}
+              name="mop (value)"
+              placeholder="₹"
+              type="number"
+            />
+          </div>
+
+          <div className={styles.three}>
+            <label htmlFor="dp (value)">dp</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["dp (value)"]}
+              name="dp (value)"
+              placeholder="₹"
+              type="number"
+            />
+          </div>
+        </div>
+
+        {/* superClass */}
+
+        <div className={styles.superClass}>
+          <div className={styles.indicatorOne}>
+            <label htmlFor="acidIndicator (value)">Acid Indicator</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["acidIndicator (value)"]}
+              name="acidIndicator (value)"
+              type="number"
+            />
+          </div>
+
+          <div className={styles.indicatorTwo}>
+            <label htmlFor="currentCapaCity (value)">Current Capacity</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["currentCapaCity (value)"]}
+              name="currentCapaCity (value)"
+              type="number"
+            />
+          </div>
+
+          <div className={styles.indicatorThree}>
+            <label htmlFor="layout (value)">Layout</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["layout (value)"]}
+              name="layout (value)"
+              type="number"
+            />
+          </div>
+        </div>
+
+        <div className={styles.superClass}>
+          <div className={styles.size}>
+            <label htmlFor="length (value)">length (value)</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["length (value)"]}
+              name="length (value)"
+              type="number"
+            />
+          </div>
+
+          <div className={styles.size}>
+            <label htmlFor="width (value)">width (value)</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["width (value)"]}
+              name="width (value)"
+              type="number"
+            />
+          </div>
+
+          <div className={styles.size}>
+            <label htmlFor="height (value)">height (value)</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["height (value)"]}
+              name="height (value)"
+              type="number"
+            />
+          </div>
+        </div>
+
+        <div className={styles.superClass}>
+          <div className={styles.values}>
+            <label htmlFor="nlc (value)">nlc</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["nlc (value)"]}
+              name="nlc (value)"
+              placeholder="₹"
+              type="number"
+              className={styles.one}
+            />
+          </div>
+          <div className={styles.values}>
+            <label htmlFor="warranty (value)">warranty</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["warranty (value)"]}
+              name="warranty (value)"
+              type="number"
+              className={styles.two}
+            />
+          </div>
+
+          <div className={styles.values}>
+            <label htmlFor="Weight (value)">Weight</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["Weight (value)"]}
+              name="Weight (value)"
+              placeholder="kg"
+              type="number"
+              className={styles.three}
+            />
+          </div>
+        </div>
+
+        <div className={styles.form}>
+          <label htmlFor="warranty (description)">warranty (description)</label>
+          <textarea
+            onChange={OnCHangeHandler}
+            value={state["warranty (description)"]}
+            name="warranty (description)"
+            className={styles.warrantyDesc}
+          ></textarea>
+        </div>
+
+        <div className={styles.form}>
+          <label htmlFor="modelDesc">model Desc</label>
+          <textarea
+            onChange={OnCHangeHandler}
+            value={state["modelDesc"]}
+            name="modelDesc"
+          ></textarea>
+        </div>
+
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
+
+        {/* bulk upload */}
+        <input type="file" name="files" onChange={(e) => handleChange(e)} />
+        <input
+          onClick={submitHandler}
+          type="submit"
+          className={styles.fileSubmit}
+        />
+      </div>
+    );
 }
 
 const mapStateToProps = (state) => ({

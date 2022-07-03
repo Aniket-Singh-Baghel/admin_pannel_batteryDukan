@@ -2,15 +2,18 @@ import { CREATE_BATTERY_MODEL, DELETE_BATTERY_MODEL, SHOW_BATTERY_MODEL } from '
 import axios from '../../Axios/AxiosConfig'
 
 export const CreateBatteryModel = (data) => dispatch => {
-    axios.post("/createBatteryModel", data)
-    .then(success => {
-        console.log(success)
+    axios
+      .post("/createBatteryModel", data)
+      .then((success) => {
+        alert(success.data.message + " " + success.status);
         return dispatch({
-            type: CREATE_BATTERY_MODEL,
-            payload: success.data,
-          }); 
-    })
-    .catch(err => console.error(err))
+          type: CREATE_BATTERY_MODEL,
+          payload: success.data,
+        });
+      })
+      .catch((err) =>
+        alert(err.response.data.message + " " + err.response.status)
+      );
 }
 
 export const GetBatteryModel = () => dispatch => {

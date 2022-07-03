@@ -25,6 +25,7 @@ function ViewCategory(props) {
 	
 console.log(state)
 	let CategoryTable;
+	console.log(props.Category)
 	if (props.Category.data){
 	    CategoryTable = props.Category.data.map((details, index) =>{
 	        return (

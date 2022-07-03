@@ -87,5 +87,95 @@
     }
 }
 
+@media(max-width:450px){
+    .main{
+        overflow: hidden;
+        width: 100%;
+        text-transform: capitalize;
+        background-color: rgb(255, 255, 255);
+    
+        input::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+
+    .form {
+    margin-left: -1.5vmax;
+    padding: 0px 1.5vmax;
+    width: 63vw;
+    margin-top: 1.5vmax;
+
+        .warrantyDesc{
+            margin-left: -5vmax;
+        }
+        input{
+            margin-left: 3vmax;
+        }
+    }
+
+    .main .superClass {
+    margin-top: .8vmax;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5vmax 1vmax;
+    margin-left: 4.5vmax;
+    flex-direction: column;
+    width: 20vw;
+
+        div {
+            width: 35vw;
+        }
+
+        label {
+            font-size: .8rem;
+        }
+
+        input {
+            border: .1vmax solid rgba(93, 93, 93, 0.363);
+            width: 30vw;
+            padding: .5vmax 1vmax;
+            margin: .7vmax 9.7vmax;
+        }
+        .two>input{
+            margin-left: 9.4vmax;
+        }
+        .three>input{
+            margin-left: 10.8vmax;
+        }
+        .indicatorOne>input{
+            margin-left: 5vmax;
+        }
+        .indicatorTwo>input{
+            margin-left: 5.3vmax;
+        }
+        .indicatorThree>input{
+            margin-left: 6.8vmax;
+        }
+        .size>input{
+            margin-left: 6.5vmax;
+        }
+        .values>.two{
+            margin-left: 4vmax;
+        }
+        .values>.three{
+            margin-left: 6vmax;
+        }
+    }
+.main .submitHandle {
+    input[type="submit"] {
+        padding: .8vmax 2vmax;
+        border-radius: .5vmax;
+    }
+}
+.main input[type="file"]{
+    // width: 12vmax;
+    height: 5vmax;
+    font-size: 2vmax;
+    margin-top: 2vmax;
+}
+.main .fileSubmit{
+   padding: .5vmax .9vmax;
+   font-size: 2vmax;
+}
+}
 
 

@@ -54,7 +54,7 @@ function AddGroup(props) {
 
             <div className={styles.form}>
                 <label htmlFor="GroupName">Group Name</label>
-                <input onChange={OnCHangeHandler} onChange={OnCHangeHandler} value={state.GroupName} name="GroupName" type="text" />
+                <input onChange={OnCHangeHandler} value={state.GroupName} name="GroupName" type="text" />
             </div>    
 
             <div className={styles.form}>
@@ -62,11 +62,11 @@ function AddGroup(props) {
                 <input onChange={OnCHangeHandler} value={state["GroupDesc"]} name="GroupDesc" type="text" />
             </div> 
             <div className={styles.form}>
-                <label htmlFor="GroupIcon">Group Icon(Url)</label>
+                <label htmlFor="GroupIcon">Group Icon (Url)</label>
                 <input onChange={OnCHangeHandler} value={state.GroupIcon} name="GroupIcon" type="text" />
             </div> 
             <div className={styles.form}>
-                <label htmlFor="GroupBasedOn">Group Based On</label>
+                <label htmlFor="GroupBasedOn">Group Based <br /> On</label>
                 <select onChange={OnCHangeHandler} name="GroupBasedOn" id="">
                     <option value="Country">Country</option>
                     <option value="State">State</option>

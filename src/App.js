@@ -31,6 +31,9 @@ import ViewBatteryModel from "./Components/BatteryDukaan/ViewBrands/ViewComponen
 import ViewSecondaryName from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewSecondaryName";
 
 
+import ViewAllDetails from './Components/BatteryDukaan/ViewAllDetails/ViewAllDetails';
+import ShowAll from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDetails"
+
 
 import "./App.scss"
 
@@ -39,28 +42,21 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navigation/>
+        <Navigation />
         <main className="main">
-          <Panel/>
+          <Panel />
           <Switch>
-          {/* Edit files here */}
-          <Route path="/EditBatteryBrand/:id" component={AddBatteryBrand} />
-          <Route path="/EditBatteryModel/:id" component={AddBatteryModel} />
-          <Route path="/EditCategory/:id" component={AddCategory} />
-          <Route path="/EditGroup/:id" component={AddGroup} />
-          <Route path="/EditOEMBrand/:id" component={AddOEMBrand} />
-          <Route path="/EditOemModel/:id" component={AddOemModel} />
-          <Route path="/EditScheme/:id" component={AddScheme} />
-          <Route path="/EditSegment/:id" component={AddSegment} />
-          <Route path="/EditSubCategory/:id" component={AddSubCategory} />
-          <Route path="/EditSecondaryName/:id" component={AddSecondaryName} />
-
-
-
-
-
-
-
+            {/* Edit files here */}
+            <Route path="/EditBatteryBrand/:id" component={AddBatteryBrand} />
+            <Route path="/EditBatteryModel/:id" component={AddBatteryModel} />
+            <Route path="/EditCategory/:id" component={AddCategory} />
+            <Route path="/EditGroup/:id" component={AddGroup} />
+            <Route path="/EditOEMBrand/:id" component={AddOEMBrand} />
+            <Route path="/EditOemModel/:id" component={AddOemModel} />
+            <Route path="/EditScheme/:id" component={AddScheme} />
+            <Route path="/EditSegment/:id" component={AddSegment} />
+            <Route path="/EditSubCategory/:id" component={AddSubCategory} />
+            <Route path="/EditSecondaryName/:id" component={AddSecondaryName} />
 
             <Route path="/ViewBatteryBrand" component={ViewBatteryBrand} />
             <Route path="/ViewOemModel" component={ViewOemModel} />
@@ -73,9 +69,8 @@ class App extends Component {
             <Route path="/ViewBatteryModel" component={ViewBatteryModel} />
             <Route path="/ViewSecondaryName" component={ViewSecondaryName} />
 
-
-
-            
+            <Route path="/AllDetails" component={ViewAllDetails} />
+            <Route path="/showAll" component={ShowAll} />
 
             {/* Add files here */}
             <Route path="/category" component={AddCategory} />
@@ -88,13 +83,10 @@ class App extends Component {
             <Route path="/secondaryName" component={AddSecondaryName} />
             <Route path="/brand" component={AddBatteryBrand} />
             <Route path="/" component={AddBatteryModel} />
-
-
-
           </Switch>
         </main>
       </div>
-    )
+    );
   }
 }
 

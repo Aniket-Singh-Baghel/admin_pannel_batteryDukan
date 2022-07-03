@@ -2,15 +2,18 @@ import { CREATE_BATTERY_BRAND, DELETE_BATTERY_BRAND, SHOW_BATTERY_BRAND } from '
 import axios from '../../Axios/AxiosConfig'
 
 export const CreateBatteryBrand = (data) => dispatch => {
-    axios.post("/batteryBrandCreate", data)
-    .then(success => {
-        console.log(success)
+    axios
+      .post("/batteryBrandCreate", data)
+      .then((success) => {
+        alert(success.data.message + " " + success.status);
         return dispatch({
-            type: CREATE_BATTERY_BRAND,
-            payload: success.data,
-          }); 
-    })
-    .catch(err => console.error(err))
+          type: CREATE_BATTERY_BRAND,
+          payload: success.data,
+        });
+      })
+      .catch((err) =>
+        alert(err.response.data.message + " " + err.response.status)
+      );
 }
 
 export const GetBatteryBrand = () => dispatch => {
