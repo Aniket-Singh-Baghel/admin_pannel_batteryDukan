@@ -13,7 +13,7 @@ export const CreateBatteryBrand = (data) => dispatch => {
       })
       .catch((err) =>
         alert(err.response.data.message + " " + err.response.status)
-      );
+      );  
 }
 
 export const GetBatteryBrand = () => dispatch => {

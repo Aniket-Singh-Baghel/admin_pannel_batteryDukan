@@ -16,6 +16,7 @@ export const CreateSegment = (data) => dispatch => {
 export const GetSegment = () => dispatch => {
     axios.get("/getSegment")
     .then(success => {
+        console.log("segment",success );
         return dispatch({
             type: SHOW_SEGMENT,
             payload: success.data,

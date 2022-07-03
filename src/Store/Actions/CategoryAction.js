@@ -1,6 +1,6 @@
 import { SHOW_CATEGORY, CREATE_CATEGORY, DELETE_CATEGORY } from '../ActionType'
 import axios from '../../Axios/AxiosConfig'
-import AlertBox from '../../Components/AlertBox';
+// import AlertBox from '../../Components/AlertBox';
 
 export const CreateCategory = (data) => dispatch => {
     axios
