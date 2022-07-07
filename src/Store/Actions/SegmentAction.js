@@ -4,18 +4,20 @@ import axios from '../../Axios/AxiosConfig'
 export const CreateSegment = (data) => dispatch => {
     axios.post("/createSegment", data)
     .then(success => {
-        console.log(success)
+        // alert(" bdidfbdnicbivdbi");
+        console.log("hdbsicb")
         return dispatch({
             type: CREATE_SEGMENT,
             payload: success.data,
           }); 
     })
-    .catch(err => console.error(err))
+    .catch(err => alert(err))
 }
 
 export const GetSegment = () => dispatch => {
     axios.get("/getSegment")
     .then(success => {
+        console.log("segment",success );
         return dispatch({
             type: SHOW_SEGMENT,
             payload: success.data,

@@ -143,4 +143,4 @@ const mapDispatchToProps = {
     GetSegment
   };
 
-export default connect(null, mapDispatchToProps)(AddSegment);
+export default connect(mapStateToProps, mapDispatchToProps)(AddSegment);

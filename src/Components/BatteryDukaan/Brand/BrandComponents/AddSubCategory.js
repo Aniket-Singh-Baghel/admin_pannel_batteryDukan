@@ -56,8 +56,8 @@ function AddSubCategory(props) {
 	  };
 
       let category;
-      if(props.Category.data){
-          category = props.Category.data.map((data, i) => {
+      if(props.SubCategory.data){
+          category = props.SubCategory.data.map((data, i) => {
             return <option  key={i} value={data["categoryName"]}>{data["categoryName"]}</option>
           })
       }

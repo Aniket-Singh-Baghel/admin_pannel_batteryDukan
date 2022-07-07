@@ -25,21 +25,21 @@ function ViewCategory(props) {
 	
 console.log(state)
 	let CategoryTable;
-	console.log(props.Category)
+	console.log(props.Category.data)
 	if (props.Category.data){
 	    CategoryTable = props.Category.data.map((details, index) =>{
 	        return (
 	            <tr key={index}>
 	                <th scope="row">{index + 1}</th>
-	                <td>{details["categoryName"]}</td>
-	                <td>{details["categoryDesc"]}</td>
+	                <td>{details.categoryName}</td>
+	                <td>{details.categoryDesc}</td>
 	                <td>
 	                    {" "}
-	                    <a href={details["categoryIcon"]} target="_blank">
-	                        {details["categoryIcon"]}
+	                    <a href={details.categoryIcon} target="_blank">
+	                        {details.categoryIcon}
 	                    </a>
 	                </td>
-	                <td>{details["categoryPosition"]}</td>
+	                <td>{details.categoryPosition}</td>
 	                <td>
 	                    <svg
 						onClick={() => props.history.push(`/EditCategory/${details.id}`)}
@@ -67,23 +67,149 @@ console.log(state)
 	    });
 	}
     return (
-        <div className={styles.main}>
-        <table className="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">S.No</th>
-                    <th scope="col">category Name</th>
-                    <th scope="col">category Desc</th>
-                    <th scope="col">category Icon (url)</th>
-                    <th scope="col">category Position</th>
-					<th scope="col">Action</th>
-				    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>{CategoryTable}</tbody>
-        </table>
-    </div>
-    )
+      <div className={styles.main}>
+        {/* <table className="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">category Name</th>
+              <th scope="col">category Desc</th>
+              <th scope="col">category Icon (url)</th>
+              <th scope="col">category Position</th>
+              <th scope="col">Action</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>{CategoryTable}</tbody>
+        </table> */}
+        <div className="row">
+          <div className="col-12">
+            <div className="card">
+              <div className="card-header">
+                <h3 className="card-title">View Brand Category</h3>
+            
+              </div>
+              <div
+                className="card-body table-responsive p-0"
+              >
+                <table className="table table-head-fixed text-nowrap">
+                  <thead>
+                    <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col">category Name</th>
+                      <th scope="col">category Desc</th>
+                      <th scope="col">category Icon (url)</th>
+                      <th scope="col">category Position</th>
+                      <th scope="col">Action</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+					{CategoryTable}
+                    {/* <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-success">Approved</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-warning">Pending</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-primary">Approved</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-danger">Denied</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>134</td>
+                      <td>Jim Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-success">Approved</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>494</td>
+                      <td>Victoria Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-warning">Pending</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>832</td>
+                      <td>Michael Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-primary">Approved</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>982</td>
+                      <td>Rocky Doe</td>
+                      <td>11-7-2014</td>
+                      <td>
+                        <span className="tag tag-danger">Denied</span>
+                      </td>
+                      <td>
+                        Bacon ipsum dolor sit amet salami venison chicken flank
+                        fatback doner.
+                      </td>
+                    </tr> */}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 }
 
 const MapStateToProps = (state) => ({

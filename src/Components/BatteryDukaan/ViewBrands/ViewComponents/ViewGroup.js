@@ -24,44 +24,45 @@ function ViewGroup(props) {
 
 	
 	let GroupTable;
+	console.log(props.Group);
 	if (props.Group.data){
 	    GroupTable = props.Group.data.map((details, index) =>{
 	        return (
-	            <tr key={index}>
-	                <th scope="row">{index + 1}</th>
-	                <td>{details.GroupName}</td>
-	                <td>{details["GroupDesc"]}</td>
-	                <td>
-	                    {" "}
-	                    <a href={details.GroupIcon} target="_blank">
-	                        {details.GroupIcon}
-	                    </a>
-	                </td>
-	                <td>{details.GroupBasedOn}</td>
-	                <td>
-	                    <svg
-						onClick={() => props.history.push(`/EditGroup/${details.id}`)}
-	                        viewBox="0 0 24 24"
-	                        width="24"
-	                        height="24"
-	                    >
-	                        <path fill="none" d="M0 0h24v24H0z" />
-	                        <path d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
-	                    </svg>
-	                </td>
-	                <td>
-	                    <svg
-	                        onClick={() => onDeleteAction(details.id)}
-	                        viewBox="0 0 24 24"
-	                        width="24"
-	                        height="24"
-	                    >
-	                        <path fill="none" d="M0 0h24v24H0z" />
-	                        <path d="M7 4V2h10v2h5v2h-2v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6H2V4h5zM6 6v14h12V6H6zm3 3h2v8H9V9zm4 0h2v8h-2V9z" />
-	                    </svg>
-	                </td>
-	            </tr>
-	        );
+            <tr key={index}>
+              <th scope="row">{index + 1}</th>
+              <td>{details.groupName}</td>
+              <td>{details.groupDesc}</td>
+              <td>
+                {" "}
+                <a href={details.groupIcon} target="_blank">
+                  {details.groupIcon}
+                </a>
+              </td>
+              <td>{details.groupBasedOn}</td>
+              <td>
+                <svg
+                  onClick={() => props.history.push(`/EditGroup/${details.id}`)}
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
+                </svg>
+              </td>
+              <td>
+                <svg
+                  onClick={() => onDeleteAction(details.id)}
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M7 4V2h10v2h5v2h-2v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6H2V4h5zM6 6v14h12V6H6zm3 3h2v8H9V9zm4 0h2v8h-2V9z" />
+                </svg>
+              </td>
+            </tr>
+          );
 	    });
 	}
     return (

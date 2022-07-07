@@ -16,7 +16,7 @@ export const SecondryNameReducer = (state = initalState, { type, payload }) => {
       return {
         ...state,
         ...payload,
-        data: payload.Data,
+        data: payload.data,
       };
 
     case DELETE_SECONDARY_NAME:

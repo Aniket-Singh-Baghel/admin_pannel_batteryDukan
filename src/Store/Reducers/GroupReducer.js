@@ -17,7 +17,7 @@ export const GroupReducer = (state = initalState, { type, payload }) => {
       return {
         ...state,
         ...payload,
-        data: payload.Data,
+        data: payload.data,
       };
 
     case DELETE_GROUP:

@@ -20,7 +20,7 @@ export const OemModelReducer = (state = initalState, { type, payload }) => {
       return {
         ...state,
         ...payload,
-        data: payload.Data,
+        data: payload.data,
       };
 
     case DELETE_OEM_MODEL:

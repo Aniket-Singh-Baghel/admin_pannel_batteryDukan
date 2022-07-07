@@ -5,6 +5,7 @@ import axios from "../../../../Axios/AxiosConfig";
 import { CreateBatteryBrand, EditBatteryBrand, GetBatteryBrand } from '../../../../Store/Actions'
 import { connect } from 'react-redux'
 import { useHistory } from "react-router-dom";
+// import AlertBox from "../../AlertBox/AlertBox";
 
 
 
@@ -18,6 +19,10 @@ function AddBrand(props) {
 		brandDesc: "",
 		// secondaryName:""
 	});
+	// const [alertbox, setalertbox] = useState({
+	// 	message:" ",
+	// 	isLoading: false,
+	// })
 
 	const OnCHangeHandler = e => {
 		setstate({ ...state, [e.target.name]: e.target.value });
@@ -38,7 +43,6 @@ function AddBrand(props) {
       }, [])
 
 	const callToAction =()=>{
-		console.log("jai shree ram");
 		const _id = props.match.params.id
 		if(props.match.url === "/brand") {
 	    props.CreateBatteryBrand(state)
@@ -49,6 +53,10 @@ function AddBrand(props) {
 		    brandIcon: "",
 		    brandDesc: "",
 		})
+		// setalertbox({
+		// 	message:"",
+		// 	isLoading:true
+		// })
 	} else {
 		props.EditBatteryBrand(_id, state)
 		history.push("/ViewBatteryBrand");
@@ -80,6 +88,16 @@ function AddBrand(props) {
 		};
 	};
 
+// 	function alert() {
+//     const alert = document.createElement("ion-alert");
+//     alert.header = "Something Went Wrong";
+//     alert.message = "Please Enter Right Contact Number";
+//     alert.buttons = ["OK"];
+
+//     document.body.appendChild(alert);
+//     return alert.present();
+//   }
+
 	function removeDuplicates(originalArray, prop) {
 		var newArray = [];
 		var lookupObject = {};
@@ -105,7 +123,7 @@ function AddBrand(props) {
 			.catch(err => console.log(err));
 	};
 
-	console.log(state);
+	// console.log(state);
 
 	return (
 		<div className={styles.main}>
@@ -168,6 +186,7 @@ function AddBrand(props) {
 			{/* bulk upload */}
 			<input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" />
+			{/* {alertbox.isLoading &&(<AlertBox/>)} */}
 		</div>
 	);
 }

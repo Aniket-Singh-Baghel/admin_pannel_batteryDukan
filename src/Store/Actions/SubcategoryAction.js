@@ -11,8 +11,8 @@ export const CreateSubCategory = (data) => dispatch => {
           payload: success.data,
         });
       })
-      .catch((err) =>
-        alert(err.response.data.message + " " + err.response.status)
+      .catch((err) => console.log(err)
+        // alert(err.response.data.message + " " + err.response.status)
       );
 }
 

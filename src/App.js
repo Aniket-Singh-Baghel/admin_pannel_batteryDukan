@@ -41,7 +41,7 @@ import "./App.scss"
 class App extends Component {
   render() {
     return (
-      <div>
+      <div class="wrapper">
         <Navigation />
         <main className="main">
           <Panel />

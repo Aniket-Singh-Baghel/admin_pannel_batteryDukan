@@ -20,7 +20,7 @@ export const OemBrandReducer = (state = initalState, { type, payload }) => {
       return {
         ...state,
         ...payload,
-        data: payload.Data,
+        data: payload.data,
       };
 
     case DELETE_OEM_BRAND:
