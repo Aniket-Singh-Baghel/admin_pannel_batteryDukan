@@ -1,27 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../ViewScss/ViewGlobal.module.scss";
-import { GetSubcategory, DeleteSubCategory } from '../../../../Store/Actions'
-import { connect } from 'react-redux'
-import axios from '../../../../Axios/AxiosConfig'
+import { GetSubcategory, DeleteSubCategory } from "../../../../Store/Actions";
+import { connect } from "react-redux";
+import axios from "../../../../Axios/AxiosConfig";
 
 function ViewSubCategory(props) {
-	console.log(props.SubCategory.data)
-    const [state, setstate] = useState(null);
+  console.log(props.SubCategory.data);
+  const [state, setstate] = useState(null);
 
-	
+  useEffect(() => {
+    props.GetSubcategory();
+  }, []);
 
-	useEffect(() => {
-		props.GetSubcategory()
-	}, [])
+  const onDeleteAction = (id) => {
+    props.DeleteSubCategory(id);
+  };
 
-	const onDeleteAction = (id) => {
-		props.DeleteSubCategory(id)
-	}
-
-	let SubCategoryTable;
-	console.log(props.SubCategory.data);
-	if (props.SubCategory.data) {
+  let SubCategoryTable;
+  console.log(props.SubCategory.data);
+  if (props.SubCategory.data) {
     SubCategoryTable = props.SubCategory.data.map((details, index) => {
       return (
         <tr key={index}>
@@ -82,12 +80,12 @@ function ViewSubCategory(props) {
 }
 
 const MapStateToProps = (state) => ({
-	SubCategory: state.CreateSubCategory
-})
+  SubCategory: state.CreateSubCategory,
+});
 
 const mapDispatchToProps = {
-	GetSubcategory: GetSubcategory,
-	DeleteSubCategory: DeleteSubCategory
-  };
+  GetSubcategory: GetSubcategory,
+  DeleteSubCategory: DeleteSubCategory,
+};
 
 export default connect(MapStateToProps, mapDispatchToProps)(ViewSubCategory);

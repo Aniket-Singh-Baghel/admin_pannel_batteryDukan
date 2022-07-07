@@ -2,26 +2,25 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../ViewScss/ViewGlobal.module.scss";
 import axios from "../../../../Axios/AxiosConfig";
-import { GetOemModel, DeleteOemModel } from '../../../../Store/Actions'
-import { connect } from 'react-redux'
+import { GetOemModel, DeleteOemModel } from "../../../../Store/Actions";
+import { connect } from "react-redux";
 
 function ViewOemModel(props) {
-	const [state, setstate] = useState(null);
+  const [state, setstate] = useState(null);
 
-	
-	useEffect(() => {
-		props.GetOemModel()
-	}, [])
+  useEffect(() => {
+    props.GetOemModel();
+  }, []);
 
-	const onDeleteAction = (id) => {
-		props.DeleteOemModel(id)
-	}
+  const onDeleteAction = (id) => {
+    props.DeleteOemModel(id);
+  };
 
-	let oemModelTable;
-	console.log(props);
-	if (props.OemModel.data){
-		oemModelTable = props.OemModel.data.map((details, index) =>{
-			return (
+  let oemModelTable;
+  console.log(props);
+  if (props.OemModel.data) {
+    oemModelTable = props.OemModel.data.map((details, index) => {
+      return (
         <tr key={index}>
           <th scope="row">{index + 1}</th>
           <td>{details.OEMModelName}</td>
@@ -58,37 +57,37 @@ function ViewOemModel(props) {
           </td>
         </tr>
       );
-		});
-	}
+    });
+  }
 
-	return (
-		<div className={styles.main}>
-			<table className="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th scope="col">S.No</th>
-						<th scope="col">OEM-Model Name</th>
-						<th scope="col">FUEL TYPE</th>
-						<th scope="col">Oem-Model-Images</th>
-						<th scope="col">Oem-Model-position</th>
-						<th scope="col">OEM-Brand Name</th>
-						<th scope="col">Action</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>{oemModelTable}</tbody>
-			</table>
-		</div>
-	);
+  return (
+    <div className={styles.main}>
+      <table className="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">OEM-Model Name</th>
+            <th scope="col">FUEL TYPE</th>
+            <th scope="col">Oem-Model-Images</th>
+            <th scope="col">Oem-Model-position</th>
+            <th scope="col">OEM-Brand Name</th>
+            <th scope="col">Action</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>{oemModelTable}</tbody>
+      </table>
+    </div>
+  );
 }
 
 const MapStateToProps = (state) => ({
-	OemModel: state.CreateOemModel
-})
+  OemModel: state.CreateOemModel,
+});
 
 const mapDispatchToProps = {
-	GetOemModel: GetOemModel,
-	DeleteOemModel: DeleteOemModel 
-  };
+  GetOemModel: GetOemModel,
+  DeleteOemModel: DeleteOemModel,
+};
 
 export default connect(MapStateToProps, mapDispatchToProps)(ViewOemModel);
