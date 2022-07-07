@@ -61,8 +61,9 @@ function ViewCategory(props) {
     });
   }
   return (
-    <div className={styles.main}>
-      {/* <table className="table table-bordered table-striped">
+    <div class="content-wrapper" style={{backgroundColor:"white"}}>
+      <div className={styles.main}>
+        {/* <table className="table table-bordered table-striped">
           <thead>
             <tr>
               <th scope="col">S.No</th>
@@ -76,28 +77,28 @@ function ViewCategory(props) {
           </thead>
           <tbody>{CategoryTable}</tbody>
         </table> */}
-      <div className="row">
-        <div className="col-12">
-          <div className="card">
-            <div className="card-header">
-              <h3 className="card-title">View Brand Category</h3>
-            </div>
-            <div className="card-body table-responsive p-0">
-              <table className="table table-head-fixed text-nowrap">
-                <thead>
-                  <tr>
-                    <th scope="col">S.No</th>
-                    <th scope="col">category Name</th>
-                    <th scope="col">category Desc</th>
-                    <th scope="col">category Icon (url)</th>
-                    <th scope="col">category Position</th>
-                    <th scope="col">Action</th>
-                    <th scope="col">Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {CategoryTable}
-                  {/* <tr>
+        <div className="row">
+          <div className="col-12">
+            <div className="card">
+              <div className="card-header">
+                <h3 className="card-title">View Brand Category</h3>
+              </div>
+              <div className="card-body table-responsive p-0">
+                <table className="table table-head-fixed text-nowrap">
+                  <thead>
+                    <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col">category Name</th>
+                      <th scope="col">category Desc</th>
+                      <th scope="col">category Icon (url)</th>
+                      <th scope="col">category Position</th>
+                      <th scope="col">Action</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {CategoryTable}
+                    {/* <tr>
                       <td>183</td>
                       <td>John Doe</td>
                       <td>11-7-2014</td>
@@ -193,8 +194,9 @@ function ViewCategory(props) {
                         fatback doner.
                       </td>
                     </tr> */}
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
