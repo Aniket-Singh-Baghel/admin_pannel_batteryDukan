@@ -53,9 +53,10 @@ function AddOemModel(props) {
 	  };
 	  
 	  let oemBrand
+	  console.log("props",props);
 	  if(props.OemBrand.data){
 		oemBrand = props.OemBrand.data.map((data, i) => {
-			return <option key={i} value={data["OEM-Brand"]}>{data["OEM-Brand"]}</option>
+			return <option key={i} value={data.OEMBrand}>{data.OEMBrand}</option>
 	   })
 	  }
 

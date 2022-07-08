@@ -16,7 +16,7 @@ export const CreateSubCategory = (data) => dispatch => {
       );
 }
 
-export const GetSubcategory = (data) => dispatch => {
+export const GetSubcategory = () => dispatch => {
     axios.get("/getSubCategory")
     .then(success => {
         return dispatch({

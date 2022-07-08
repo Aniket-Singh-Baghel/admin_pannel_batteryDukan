@@ -23,21 +23,22 @@ function ViewBatteryModel(props) {
 	
 console.log(state)
 	let BatteryModelTable;
+	console.log(props);
 	if (props.BatteryModel.data){
 	    BatteryModelTable = props.BatteryModel.data.map((details, index) =>{
 	        return (
 	            <tr key={index}>
 	                <th scope="row">{index + 1}</th>
-	                <td>{details.modelName}</td>
-	                <td>{details["modelBrand"]}</td>
-	                <td>{details["OEM-Model Name"]}</td>
-	                <td>{details["secondaryName"]}</td>
-	                <td>{details["subcategoryName"]}</td>
-	                <td>{details["segmentName"]}</td>
-	                <td>{details["schemeName"]}</td>
-	                <td>{details["modelGroupIds (comma separated)"]}</td>
-	                <td>{details["mrp (value)"]}</td>    
-	                <td>{details["warranty (value)"]}</td>
+	                <td>{details.brandId}</td>
+	                <td>{details.modelBrand}</td>
+	                <td>{details.OEMModelName}</td>
+	                <td>{details.secondaryName}</td>
+	                <td>{details.subcategoryName}</td>
+	                <td>{details.segmentName}</td>
+	                <td>{details.schemeName}</td>
+	                <td>{details.modelGroupId}</td>
+	                <td>{details.mrp}</td>    
+	                <td>{details.warranty}</td>
 	                <td>
 	                    <svg
 						onClick={() => props.history.push(`/EditBatteryModel/${details.id}`)}

@@ -48,8 +48,8 @@ function AddSecondaryName(props) {
 	  let BatteryBrand;
      if(props.BatteryBrand.data) {
         //  console.log(props.BatteryBrand.data)
-         BatteryBrand = props.BatteryBrand.data.map((data ,i) => {
-             return <option key={i} value={data["brandName"]}>{data["brandName"]}</option>
+         BatteryBrand =  props.BatteryBrand.data.map((data ,i) =>{
+             return <option key={i} value={data["brandName"]}> {data["brandName"]}</option>
          })
      }
 
