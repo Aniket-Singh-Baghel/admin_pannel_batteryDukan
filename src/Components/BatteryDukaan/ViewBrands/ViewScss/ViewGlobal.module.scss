@@ -1,7 +1,9 @@
 .main{
-    padding: 10px 20px;
+    padding: 10px 10vmax;
     width: 100%;
     text-transform: capitalize;
     background-color: rgb(255, 255, 255);
 }
-
+::-webkit-scrollbar {
+  display: none;
+}   

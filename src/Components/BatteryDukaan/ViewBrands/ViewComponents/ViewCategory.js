@@ -61,23 +61,9 @@ function ViewCategory(props) {
     });
   }
   return (
-    <div class="content-wrapper" style={{backgroundColor:"white"}}>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
       <div className={styles.main}>
-        {/* <table className="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th scope="col">S.No</th>
-              <th scope="col">category Name</th>
-              <th scope="col">category Desc</th>
-              <th scope="col">category Icon (url)</th>
-              <th scope="col">category Position</th>
-              <th scope="col">Action</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>{CategoryTable}</tbody>
-        </table> */}
-        <div className="row">
+        {/*<div className="row">
           <div className="col-12">
             <div className="card">
               <div className="card-header">
@@ -98,105 +84,150 @@ function ViewCategory(props) {
                   </thead>
                   <tbody>
                     {CategoryTable}
-                    {/* <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-success">Approved</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-warning">Pending</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-primary">Approved</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-danger">Denied</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>134</td>
-                      <td>Jim Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-success">Approved</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>494</td>
-                      <td>Victoria Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-warning">Pending</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>832</td>
-                      <td>Michael Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-primary">Approved</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>982</td>
-                      <td>Rocky Doe</td>
-                      <td>11-7-2014</td>
-                      <td>
-                        <span className="tag tag-danger">Denied</span>
-                      </td>
-                      <td>
-                        Bacon ipsum dolor sit amet salami venison chicken flank
-                        fatback doner.
-                      </td>
-                    </tr> */}
                   </tbody>
                 </table>
               </div>
+            </div>
+          </div>
+        </div>*/}
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">View Category Data</h3>
+              </div>
+
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>S.No.</th>
+                      <th>Category Name</th>
+                      <th>Category Desc</th>
+                      <th>category Icon (url)</th>
+                      <th>Category Position</th>
+                      <th>Action</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>{CategoryTable}</tbody>
+                </table>
+              </div>
+            </div>
+            <div className="row">
+							<div className="col-sm-12 col-md-5">
+								<div
+									className="dataTables_info"
+									id="example2_info"
+									role="status"
+									aria-live="polite"
+								>
+									Showing 1 to 10 of 57 entries
+								</div>
+							</div>
+            <div className="col-sm-12 col-md-7">
+              <div
+                className="dataTables_paginate paging_simple_numbers"
+                id="example2_paginate"
+              >
+                <ul className="pagination">
+                  <li
+                    className="paginate_button page-item previous disabled"
+                    id="example2_previous"
+                  >
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="0"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      Previous
+                    </a>
+                  </li>
+                  <li className="paginate_button page-item active">
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="1"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li className="paginate_button page-item ">
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="2"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      2
+                    </a>
+                  </li>
+                  <li className="paginate_button page-item ">
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="3"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      3
+                    </a>
+                  </li>
+                  <li className="paginate_button page-item ">
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="4"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      4
+                    </a>
+                  </li>
+                  <li className="paginate_button page-item ">
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="5"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      5
+                    </a>
+                  </li>
+                  <li className="paginate_button page-item ">
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="6"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      6
+                    </a>
+                  </li>
+                  <li
+                    className="paginate_button page-item next"
+                    id="example2_next"
+                  >
+                    <a
+                      href="#"
+                      aria-controls="example2"
+                      data-dt-idx="7"
+                      tabI="0"
+                      className="page-link"
+                    >
+                      Next
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             </div>
           </div>
         </div>

@@ -61,8 +61,9 @@ function ViewOemModel(props) {
   }
 
   return (
-    <div className={styles.main}>
-      <table className="table table-bordered table-striped">
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+      <div className={styles.main}>
+        {/* <table className="table table-bordered table-striped">
         <thead>
           <tr>
             <th scope="col">S.No</th>
@@ -76,7 +77,150 @@ function ViewOemModel(props) {
           </tr>
         </thead>
         <tbody>{oemModelTable}</tbody>
-      </table>
+      </table> */}
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">View OEM Model Data</h3>
+              </div>
+
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>S.No.</th>
+                      <th>OEM-Model Name</th>
+                      <th>FUEL TYPE</th>
+                      <th>Oem-Model-Images</th>
+                      <th>Oem-Model-position</th>
+                      <th>OEM-Brand Name</th>
+                      <th>Action</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>{oemModelTable}</tbody>
+                </table>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12 col-md-5">
+                <div
+                  className="dataTables_info"
+                  id="example2_info"
+                  role="status"
+                  aria-live="polite"
+                >
+                  Showing 1 to 10 of 57 entries
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-7">
+                <div
+                  className="dataTables_paginate paging_simple_numbers"
+                  id="example2_paginate"
+                >
+                  <ul className="pagination">
+                    <li
+                      className="paginate_button page-item previous disabled"
+                      id="example2_previous"
+                    >
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="0"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        Previous
+                      </a>
+                    </li>
+                    <li className="paginate_button page-item active">
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="1"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        1
+                      </a>
+                    </li>
+                    <li className="paginate_button page-item ">
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="2"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        2
+                      </a>
+                    </li>
+                    <li className="paginate_button page-item ">
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="3"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        3
+                      </a>
+                    </li>
+                    <li className="paginate_button page-item ">
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="4"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        4
+                      </a>
+                    </li>
+                    <li className="paginate_button page-item ">
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="5"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        5
+                      </a>
+                    </li>
+                    <li className="paginate_button page-item ">
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="6"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        6
+                      </a>
+                    </li>
+                    <li
+                      className="paginate_button page-item next"
+                      id="example2_next"
+                    >
+                      <a
+                        href="#"
+                        aria-controls="example2"
+                        data-dt-idx="7"
+                        tabI="0"
+                        className="page-link"
+                      >
+                        Next
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -58,6 +58,7 @@ function ViewSegment(props) {
 		});
 	}
 	return (
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
 		<div className={styles.main}>
 			<div className="card">
 				<div className="card-header">
@@ -97,7 +98,7 @@ function ViewSegment(props) {
 									<tbody>
 										{SegmentTable}
 									</tbody>
-									<tfoot>
+									{/* <tfoot>
 										<tr>
 											<th rowSpan="1" colSpan="1">
 												Rendering engine
@@ -115,7 +116,7 @@ function ViewSegment(props) {
 												CSS grade
 											</th>
 										</tr>
-									</tfoot>
+									</tfoot> */}
 								</table>
 							</div>
 						</div>
@@ -237,6 +238,7 @@ function ViewSegment(props) {
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	);
 }
