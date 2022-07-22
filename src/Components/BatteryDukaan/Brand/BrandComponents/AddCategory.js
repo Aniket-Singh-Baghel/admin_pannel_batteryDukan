@@ -37,7 +37,7 @@ function AddCategory(props) {
 		    if(props.match.url === "/category") {
         props.CreateCategory(state);
         setstate({
-          "categoryName": "",
+        "categoryName": "",
         "categoryDesc": "",
         "categoryIcon": "",
         "categoryPosition": ""
@@ -49,8 +49,6 @@ function AddCategory(props) {
       };
       
 
-      //bulk upload ---
-	//for bulk upload  --------------
 	const [files, setFiles] = useState(null);
 	let arr = [];
 	const handleChange = e => {
@@ -96,6 +94,7 @@ function AddCategory(props) {
 	};
 
     return (
+      <>
         <div className={styles.main}>
             <span>Add Category</span>
 
@@ -124,6 +123,7 @@ function AddCategory(props) {
             <input type="file" name="files" onChange={e => handleChange(e)} />
 		      	<input onClick={submitHandler} type="submit" />
         </div>
+        </>
     )
 }
 

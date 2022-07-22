@@ -26,20 +26,20 @@ function ViewOemBrand(props) {
 	    oemBrandTable = props.OemBrand.data.map((details, index) =>{
 	        return (
             <tr key={index}>
-              <th scope="row">{index + 1}</th>
-              <td>{details.OEMBrand}</td>
-              <td>
+              <td scope="row">{index + 1}</td>
+              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+                {details.OEMBrand}
+              </td>
+              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
                 {" "}
-                <a
-                  href={details.OEMBrandImage}
-                  target="_blank"
-
-                >
-                  {details.OEMBrandImage}
+                <a href={details.OEMBrandImage} target="_blank">
+                  {details.OEMBrandImage.substring(0,80)}
                 </a>
               </td>
-              <td>{details.OEMB}</td>
-              <td>
+              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+                {details.OEMB}
+              </td>
+              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
                 <svg
                   onClick={() =>
                     props.history.push(`/EditOEMBrand/${details.id}`)
@@ -52,7 +52,7 @@ function ViewOemBrand(props) {
                   <path d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
                 </svg>
               </td>
-              <td>
+              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
                 <svg
                   onClick={() => onDeleteAction(details.id)}
                   viewBox="0 0 24 24"
@@ -70,40 +70,32 @@ function ViewOemBrand(props) {
 
 	return (
     <div className="content-wrapper" style={{ backgroundColor: "white" }}>
-      <div className={styles.main} style={{ marginLeft: "-9vmax" }}>
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">View OEM Brand Data</h3>
-            </div>
-
-            <div class="card-body table-responsive p-0">
-              <table class="table table-hover text-nowrap">
-                <thead>
-                  <tr>
-                    <th>S.No.</th>
-                    <th>OEM Brand</th>
-                    <th>OEM Brand Images (url)</th>
-                    <th>oemb</th>
-                    <th>Action</th>
-                    <th>Delete</th>
-                  </tr>
-                </thead>
-                <tbody>{oemBrandTable}</tbody>
-              </table>
+      <div className={styles.main}>
+        <div style={{ overflowX: "auto" }}>
+          <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>OEM Brand</th>
+                <th>OEM Brand Images (url)</th>
+                <th>oemb</th>
+                <th>Action</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>{oemBrandTable}</tbody>
+          </table>
+        <div className="row mt-3">
+          <div className="col-sm-12 col-md-5">
+            <div
+              className="dataTables_info"
+              id="example2_info"
+              role="status"
+              aria-live="polite"
+            >
+              Showing 1 to 10 of 57 entries
             </div>
           </div>
-          <div className="row">
-							<div className="col-sm-12 col-md-5">
-								<div
-									className="dataTables_info"
-									id="example2_info"
-									role="status"
-									aria-live="polite"
-								>
-									Showing 1 to 10 of 57 entries
-								</div>
-							</div>
           <div className="col-sm-12 col-md-7">
             <div
               className="dataTables_paginate paging_simple_numbers"
@@ -207,7 +199,7 @@ function ViewOemBrand(props) {
               </ul>
             </div>
           </div>
-          </div>
+        </div>
         </div>
       </div>
     </div>

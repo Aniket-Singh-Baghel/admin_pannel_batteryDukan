@@ -36,12 +36,13 @@ import ShowAll from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDetails"
 
 
 import "./App.scss"
+import check from './Components/BatteryDukaan/justCheck/check';
 
 
 class App extends Component {
   render() {
     return (
-      <div class="wrapper">
+      <div className='wrapper'>
         <Navigation />
         <main className="main">
           <Panel />
@@ -83,6 +84,7 @@ class App extends Component {
             <Route path="/secondaryName" component={AddSecondaryName} />
             <Route path="/brand" component={AddBatteryBrand} />
             <Route path="/" component={AddBatteryModel} />
+            <Route path='/check' component={check} />
           </Switch>
         </main>
       </div>

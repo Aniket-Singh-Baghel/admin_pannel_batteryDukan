@@ -2,15 +2,16 @@ import { CREATE_SECONDARY_NAME, SHOW_SECONDARY_NAME } from '../ActionType'
 import axios from '../../Axios/AxiosConfig'
 
 export const CreateSecondaryName = (data) => dispatch => {
-    axios.post("/createSecondaryName", data)
-    .then(success => {
-        console.log(success)
+    axios
+      .post("/createSecondaryName", data)
+      .then((success) => {
+        console.log("data from :: ", success);
         return dispatch({
-            type: CREATE_SECONDARY_NAME,
-            payload: success.data,
-          }); 
-    })
-    .catch(err => console.error(err))
+          type: CREATE_SECONDARY_NAME,
+          payload: success.data,
+        });
+      })
+      .catch((err) => console.error(err));
 }
 
 export const GetSecondaryName = () => dispatch => {

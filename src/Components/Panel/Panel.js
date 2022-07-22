@@ -11,51 +11,37 @@ function Panel(props, history) {
     <>
       <aside
         className="main-sidebar sidebar-dark-primary elevation-4"
-        style={{ minHeight: "165vh" }}
+        style={{ minHeight: "100vh" }}
       >
         <a
-          href="javascript:"
+          href="javascript:void(0)"
           className="brand-link"
           style={{ textDecoration: "none" }}
         >
           <img
-            src="dist/img/AdminLTELogo.png"
+            src="../../dist/img/AdminLTELogo.png"
             alt="AdminLTE Logo"
             className="brand-image img-circle elevation-3"
             style={{ opacity: ".8" }}
           />
-          <span
-            className="brand-text font-weight-light"
-            style={{
-              fontSize: "20px",
-              pointerEvents: "none",
-              color: "white",
-            }}
-          >
-            Admin Panel
-          </span>
+          <span className="brand-text font-weight-light">AdminLTE 3</span>
         </a>
         <div className="sidebar">
           <div className="user-panel mt-3 pb-3 mb-3 d-flex">
             <div className="image">
               <img
-                src="dist/img/user2-160x160.jpg"
+                src="../../dist/img/user2-160x160.jpg"
                 className="img-circle elevation-2"
                 alt="User Image"
               />
             </div>
             <div className="info">
               <a
-                href="javascript:"
+                href="javascript:void(0)"
                 className="d-block"
-                style={{
-                  fontSize: "20px",
-                  textDecoration: "none",
-                  pointerEvents: "none",
-                  color: "white",
-                }}
+                style={{ textDecoration: "none" }}
               >
-                Battery
+                My Battery
               </a>
             </div>
           </div>
@@ -68,7 +54,7 @@ function Panel(props, history) {
             >
               <li className="nav-item">
                 <a href="javascript:void(0)" className="nav-link">
-                  <i className="nav-icon fas fa-chart-pie" />
+                  <i className="nav-icon fas fa-tachometer-alt" />
                   <p>
                     Masters
                     <i className="right fas fa-angle-left" />
@@ -77,15 +63,20 @@ function Panel(props, history) {
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-                      <p>Battery Brand</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Battery Brand
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/brand")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>Create Brand</p>
+                          <p>Create Battery Brand</p>
                         </a>
                       </li>
                       <li
@@ -94,23 +85,27 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Brand</p>
+                          <p>View Battery Brand</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>Battery Model</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Battery Model
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/model")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>Create Model</p>
+                          <p>Create Battery Model</p>
                         </a>
                       </li>
                       <li
@@ -119,16 +114,20 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Model</p>
+                          <p>View Battery Model Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>Secondary Name</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Secondary Name
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/secondaryName")}
@@ -144,23 +143,27 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Secondary</p>
+                          <p>View Secondary Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>OEM Brand</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        OEM Brand
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/oem")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>Create OEM</p>
+                          <p>Create OEM Brand</p>
                         </a>
                       </li>
                       <li
@@ -169,16 +172,20 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View OEM</p>
+                          <p>View OEM Brand Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>OEM Model</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        OEM Model
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/Oem_model")}
@@ -194,16 +201,20 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View OEM Model</p>
+                          <p>View OEM Model Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>Category</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Category
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/category")}
@@ -215,23 +226,27 @@ function Panel(props, history) {
                       </li>
                       <li
                         className="nav-item"
-                        onClick={(e) => stopShow(e, "/ViewCategory")}
+                        onClick={(e) => stopShow(e, "/viewCategory")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Category</p>
+                          <p>View Category Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>SubCategory</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        SubCategory
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
-                        onClick={(e) => stopShow(e, "/subcategory")}
+                        onClick={(e) => stopShow(e, "/SubCategory")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
@@ -240,20 +255,24 @@ function Panel(props, history) {
                       </li>
                       <li
                         className="nav-item"
-                        onClick={(e) => stopShow(e, "/ViewSubcategory")}
+                        onClick={(e) => stopShow(e, "/ViewSubCategory")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View SubCategory</p>
+                          <p>View SubCategory Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>Scheme</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Scheme
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/scheme")}
@@ -269,16 +288,20 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Scheme</p>
+                          <p>View Scheme Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>Group</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Group
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/group")}
@@ -294,23 +317,27 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Group</p>
+                          <p>View Group Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
-                      <i className="right fas fa-angle-left" />
-
-                      <p>Segment</p>
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Segment
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
                       <li
                         className="nav-item"
                         onClick={(e) => stopShow(e, "/segment")}
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>Create Segment </p>
+                          <p>Create Segment</p>
                         </a>
                       </li>
                       <li
@@ -319,19 +346,16 @@ function Panel(props, history) {
                       >
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
-                          <p>View Segment</p>
+                          <p>View Segment Details</p>
                         </a>
                       </li>
-                    </a>
+                    </ul>
                   </li>
                 </ul>
               </li>
-              <li
-                className="nav-item"
-                onClick={(e) => stopShow(e, "/AllDetails")}
-              >
+              <li className="nav-item">
                 <a href="javascript:void(0)" className="nav-link">
-                  <i className="nav-icon fas fa-chart-pie" />
+                  <i className="nav-icon fas fa-table" />
                   <p>View All Details</p>
                 </a>
               </li>

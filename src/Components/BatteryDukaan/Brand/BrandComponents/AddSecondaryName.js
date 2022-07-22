@@ -8,7 +8,7 @@ import axios from "../../../../Axios/AxiosConfig";
 function AddSecondaryName(props) {
     const [state, setstate] = useState({
 		"secondaryName": "",
-		"brandName": "",
+		"brandId": "",
 	});
 
     useEffect(() => {
@@ -33,10 +33,11 @@ function AddSecondaryName(props) {
 	  const callToAction = () => {
         const _id = props.match.params.id
 		if(props.match.url === "/secondaryName") {
-		props.CreateSecondaryName(state);
+      props.CreateSecondaryName(state);
+      console.log(" payload :: state ", state);
         setstate({
             "secondaryName": "",
-            "brandName": "",
+            "brandId": "",
 		})
        } else {
 		props.EditSecondaryName(_id, state)
@@ -49,7 +50,7 @@ function AddSecondaryName(props) {
      if(props.BatteryBrand.data) {
         //  console.log(props.BatteryBrand.data)
          BatteryBrand =  props.BatteryBrand.data.map((data ,i) =>{
-             return <option key={i} value={data["brandName"]}> {data["brandName"]}</option>
+             return <option key={i} value={data.id}> {data["brandName"]}</option>
          })
      }
 
@@ -94,31 +95,44 @@ function AddSecondaryName(props) {
     }
     
     return (
-        <div className={styles.main}>
-            <span>Add Secondary Name</span>
+      <div className={styles.main}>
+        <span>Add Secondary Name</span>
 
-            <div className={styles.form}>
-                <label htmlFor="secondaryName">Secondary Name</label>
-                <input onChange={OnCHangeHandler} value={state["secondaryName"]} name="secondaryName" type="text" />
-            </div> 
-           
-            <div className={styles.form}>
-                <label htmlFor="modelBrand">modelBrand</label>
-                <select onChange={OnCHangeHandler} value={state["brandName"]} name="brandName" id="">
-                  {BatteryBrand}
-                </select>
-            </div> 
-            <div className={cx(styles.form , styles.submit)}>
-                <input onClick={callToAction} type="submit" value="create"/>
-            </div>
-            <div>
-            {/* bulk */}
-          <input type="file"  name='files' onChange={(e)=>handleChange(e)}/>
-          <input  onClick={submitHandler} type="submit" className={styles.fileSubmit}/>
+        <div className={styles.form}>
+          <label htmlFor="secondaryName">Secondary Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["secondaryName"]}
+            name="secondaryName"
+            type="text"
+          />
         </div>
 
+        <div className={styles.form}>
+          <label htmlFor="modelBrand">modelBrand</label>
+          <select
+            onChange={OnCHangeHandler}
+            value={state["brandId"]}
+            name="brandId"
+            id=""
+          >
+            {BatteryBrand}
+          </select>
         </div>
-    )
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
+        <div>
+          {/* bulk */}
+          <input type="file" name="files" onChange={(e) => handleChange(e)} />
+          <input
+            onClick={submitHandler}
+            type="submit"
+            className={styles.fileSubmit}
+          />
+        </div>
+      </div>
+    );
 }
 
 const mapStateToProps = (state) => ({
