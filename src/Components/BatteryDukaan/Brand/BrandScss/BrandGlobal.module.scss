@@ -70,13 +70,15 @@
     justify-content: center;
 
     input[type="submit"]{
+        margin-top: 2vmax;
+        margin-left: 10vmax;
         vertical-align: middle;
         width: fit-content;
         text-transform: capitalize;
-        padding: 5px 20px;
+        padding: 10px 20px;
         border-radius: 5px;
         color: #fff;
-        background-color: #6de76d;
+        background-color: #3b9e3b;
         border:none;
         outline: none;
         cursor: pointer;
@@ -84,7 +86,7 @@
     }
 
     input[type="submit"]:hover{
-        background-color: #6de76dad;
+        background-color: #12ad12ad;
     }
 }
 
@@ -175,8 +177,8 @@
     margin-top: 2vmax;
 }
 .main .fileSubmit{
-   padding: .5vmax .9vmax;
-   font-size: 2vmax;
+   padding: .5vmax 5vmax;
+   font-size: 6vmax;
 }
 }
 

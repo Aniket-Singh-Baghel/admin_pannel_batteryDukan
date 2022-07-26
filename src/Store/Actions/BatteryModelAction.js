@@ -9,14 +9,14 @@ export const CreateBatteryModel = (data) => (dispatch) => {
   axios
     .post("/createbatteryDetails", data)
     .then((success) => {
-      alert(success.data.message + " " + success.status);
+      console.log(success.data.message + " " + success.status);
       return dispatch({
         type: CREATE_BATTERY_MODEL,
         payload: success.data,
       });
     })
     .catch((err) =>
-      alert(err.response.data.message + " " + err.response.status)
+      console.log(err.response.data.message + " " + err.response.status)
     );
 };
 
@@ -24,7 +24,7 @@ export const GetBatteryModel = () => (dispatch) => {
   axios
     .get("/getBatteryDetails")
     .then((success) => {
-      console.log('show', success);
+      console.log("show", success);
       return dispatch({
         type: SHOW_BATTERY_MODEL,
         payload: success.data,

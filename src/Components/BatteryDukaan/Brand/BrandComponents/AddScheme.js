@@ -133,8 +133,8 @@ function AddScheme(props) {
             </div>
 
             {/* bulk upload */}
-            <input type="file" name="files" onChange={e => handleChange(e)} />
-			<input onClick={submitHandler} type="submit" />
+            {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+			<input onClick={submitHandler} type="submit" /> */}
         </div>
     )
 }

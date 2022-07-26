@@ -20,27 +20,27 @@ function AddModel(props) {
   const [state, setstate] = useState({
     modelName: "",
     modelBrand: "",
-    modelDesc: "",
+    // modelDesc: "",
     modelIcon: "",
     modelPosition: "",
-    "OEM-Model Name": "",
-    subcategoryName: "",
-    segmentName: "",
-    schemeName: "",
-    "modelGroupIds (comma separated)": "",
-    "length (value)": "",
-    "width (value)": "",
-    "height (value)": "",
-    "layout (value)": "",
-    "acidIndicator (value)": "",
-    "currentCapaCity (value)": "",
-    "mrp (value)": "",
-    "mop (value)": "",
-    "dp (value)": "",
-    "nlc (value)": "",
-    "warranty (value)": "",
-    "warranty (description)": "",
-    "Weight (value)": "",
+    // "OEM-Model Name": "",
+    // subcategoryName: "",
+    // segmentName: "",
+    // schemeName: "",
+    // "modelGroupIds (comma separated)": "",
+    // "length (value)": "",
+    // "width (value)": "",
+    // "height (value)": "",
+    // "layout (value)": "",
+    // "acidIndicator (value)": "",
+    // "currentCapaCity (value)": "",
+    // "mrp (value)": "",
+    // "mop (value)": "",
+    // "dp (value)": "",
+    // "nlc (value)": "",
+    // "warranty (value)": "",
+    // "warranty (description)": "",
+    // "Weight (value)": "",
   });
 
   useEffect(() => {
@@ -80,25 +80,25 @@ function AddModel(props) {
         modelDesc: "",
         modelIcon: "",
         modelPosition: "",
-        secondaryName: "",
-        "OEM-Model-Name": "",
-        subcategoryName: "",
-        segmentName: "",
-        schemeName: "",
-        "modelGroupIds (comma separated)": "",
-        "length (value)": "",
-        "width (value)": "",
-        "height (value)": "",
-        "layout (value)": "",
-        "acidIndicator (value)": "",
-        "currentCapaCity (value)": "",
-        "mrp (value)": "",
-        "mop (value)": "",
-        "dp (value)": "",
-        "nlc (value)": "",
-        "warranty (value)": "",
-        "warranty (description)": "",
-        "Weight (value)": "",
+        // secondaryName: "",
+        // "OEM-Model-Name": "",
+        // subcategoryName: "",
+        // segmentName: "",
+        // schemeName: "",
+        // "modelGroupIds (comma separated)": "",
+        // "length (value)": "",
+        // "width (value)": "",
+        // "height (value)": "",
+        // "layout (value)": "",
+        // "acidIndicator (value)": "",
+        // "currentCapaCity (value)": "",
+        // "mrp (value)": "",
+        // "mop (value)": "",
+        // "dp (value)": "",
+        // "nlc (value)": "",
+        // "warranty (value)": "",
+        // "warranty (description)": "",
+        // "Weight (value)": "",
       });
     } else {
       props.EditBatteryModel(_id, state);
@@ -107,6 +107,7 @@ function AddModel(props) {
   };
 
   let BatteryBrand;
+  console.log("objectprops", props);
   if (props.BatteryBrand.data) {
     BatteryBrand = props.BatteryBrand.data.map((data) => {
       return (
@@ -183,29 +184,29 @@ function AddModel(props) {
         arr.push({
           modelName: body["modelName"],
           modelBrand: body["modelBrand"],
-          modelDesc: body["modelDesc"],
+          // modelDesc: body["modelDesc"],
           modelIcon: body["ProductImg"],
           modelPosition: body["modelPosition"],
-          secondaryName: body["secondaryName"],
-          "OEM-Model Name": body["OEM-Model Name"],
-          subcategoryName: body["subcategoryName"],
-          segmentName: body["segmentName"],
-          schemeName: body["schemeName"],
-          "modelGroupIds (comma separated)":
-            body["modelGroupIds (comma separated)"],
-          "length (value)": body["length (value)"],
-          "width (value)": body["width (value)"],
-          "height (value)": body["height (value)"],
-          "layout (value)": body["layout (value)"],
-          "acidIndicator (value)": body["acidIndicator (value)"],
-          "currentCapaCity (value)": body["currentCapaCity (value)"],
-          "mrp (value)": body["mrp (value)"],
-          "mop (value)": body["mop (value)"],
-          "dp (value)": body["dp (value)"],
-          "nlc (value)": body["nlc (value)"],
-          "warranty (value)": body["warranty (value)"],
-          "warranty (description)": body["warranty (description)"],
-          "Weight (value)": body["Weight (value)"],
+          // secondaryName: body["secondaryName"],
+          // "OEM-Model Name": body["OEM-Model Name"],
+          // subcategoryName: body["subcategoryName"],
+          // segmentName: body["segmentName"],
+          // schemeName: body["schemeName"],
+          // "modelGroupIds (comma separated)":
+          //   body["modelGroupIds (comma separated)"],
+          // "length (value)": body["length (value)"],
+          // "width (value)": body["width (value)"],
+          // "height (value)": body["height (value)"],
+          // "layout (value)": body["layout (value)"],
+          // "acidIndicator (value)": body["acidIndicator (value)"],
+          // "currentCapaCity (value)": body["currentCapaCity (value)"],
+          // "mrp (value)": body["mrp (value)"],
+          // "mop (value)": body["mop (value)"],
+          // "dp (value)": body["dp (value)"],
+          // "nlc (value)": body["nlc (value)"],
+          // "warranty (value)": body["warranty (value)"],
+          // "warranty (description)": body["warranty (description)"],
+          // "Weight (value)": body["Weight (value)"],
         });
       });
     };
@@ -276,241 +277,18 @@ function AddModel(props) {
         </select>
       </div>
 
-      {/* <div className={styles.form}>
-                <label htmlFor="OEM-Brand">OEM Brand</label>
-                <select name="OEM-Brand" id="">
-                    <option value="Exide"> audi</option>
-                    <option value="Amaron"> Amaron</option>
-                </select>       
-            </div>  */}
-
-      <div className={styles.form}>
-        <label htmlFor="OEM-Model Name">OEM Model</label>
-        <select onChange={OnCHangeHandler} name="OEM-Model Name" id="">
-          {OemModel}
-        </select>
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="subcategoryName">subcategory Name</label>
-        <select onChange={OnCHangeHandler} name="subcategoryName" id="">
-          {SubCategory}
-        </select>
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="segmentName">segment Name</label>
-        <select onChange={OnCHangeHandler} name="segmentName" id="">
-          {segment}
-        </select>
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="secondaryName">Secondary Name</label>
-        <select onChange={OnCHangeHandler} name="secondaryName" id="">
-          {SecondaryName}
-        </select>
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="schemeName">schemeName</label>
-        <select onChange={OnCHangeHandler} name="secondaryName" id="">
-          {Scheme}
-        </select>
-        {/* <input
-            value={state["schemeName"]}
-            name="schemeName"
-            type="text"
-          /> */}
-        {/* <select onChange={OnCHangeHandler} name="schemeName"  id="">
-                    {Scheme}
-                </select> */}
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="modelGroupIds (comma separated)">
-          modelGroupIds (comma separated)
-        </label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["modelGroupIds (comma separated)"]}
-          name="modelGroupIds (comma separated)"
-          type="text"
-        />
-        {/* <select onChange={OnCHangeHandler} name="modelGroupIds (comma separated)"  id="">
-                    <option  value="">he</option>
-                    <option value="">Bihar</option>
-                    <option value="">Telangana</option>
-                </select> */}
-      </div>
-
-      <div className={styles.superClass}>
-        <div className={styles.one}>
-          <label htmlFor="mrp (value)">mrp</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["mrp (value)"]}
-            name="mrp (value)"
-            placeholder="₹"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.two}>
-          <label htmlFor="mop (value)">mop</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["mop (value)"]}
-            name="mop (value)"
-            placeholder="₹"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.three}>
-          <label htmlFor="dp (value)">dp</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["dp (value)"]}
-            name="dp (value)"
-            placeholder="₹"
-            type="number"
-          />
-        </div>
-      </div>
-
-      {/* superClass */}
-
-      <div className={styles.superClass}>
-        <div className={styles.indicatorOne}>
-          <label htmlFor="acidIndicator (value)">Acid Indicator</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["acidIndicator (value)"]}
-            name="acidIndicator (value)"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.indicatorTwo}>
-          <label htmlFor="currentCapaCity (value)">Current Capacity</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["currentCapaCity (value)"]}
-            name="currentCapaCity (value)"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.indicatorThree}>
-          <label htmlFor="layout (value)">Layout</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["layout (value)"]}
-            name="layout (value)"
-            type="number"
-          />
-        </div>
-      </div>
-
-      <div className={styles.superClass}>
-        <div className={styles.size}>
-          <label htmlFor="length (value)">length (value)</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["length (value)"]}
-            name="length (value)"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.size}>
-          <label htmlFor="width (value)">width (value)</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["width (value)"]}
-            name="width (value)"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.size}>
-          <label htmlFor="height (value)">height (value)</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["height (value)"]}
-            name="height (value)"
-            type="number"
-          />
-        </div>
-      </div>
-
-      <div className={styles.superClass}>
-        <div className={styles.values}>
-          <label htmlFor="nlc (value)">nlc</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["nlc (value)"]}
-            name="nlc (value)"
-            placeholder="₹"
-            type="number"
-            className={styles.one}
-          />
-        </div>
-        <div className={styles.values}>
-          <label htmlFor="warranty (value)">warranty</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["warranty (value)"]}
-            name="warranty (value)"
-            type="number"
-            className={styles.two}
-          />
-        </div>
-
-        <div className={styles.values}>
-          <label htmlFor="Weight (value)">Weight</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["Weight (value)"]}
-            name="Weight (value)"
-            placeholder="kg"
-            type="number"
-            className={styles.three}
-          />
-        </div>
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="warranty (description)">warranty (description)</label>
-        <textarea
-          onChange={OnCHangeHandler}
-          value={state["warranty (description)"]}
-          name="warranty (description)"
-          className={styles.warrantyDesc}
-        ></textarea>
-      </div>
-
-      <div className={styles.form}>
-        <label htmlFor="modelDesc">model Desc</label>
-        <textarea
-          onChange={OnCHangeHandler}
-          value={state["modelDesc"]}
-          name="modelDesc"
-        ></textarea>
-      </div>
-
       <div className={cx(styles.form, styles.submit)}>
         <input onClick={callToAction} type="submit" value="create" />
       </div>
 
       {/* bulk upload */}
-      <input type="file" name="files" onChange={(e) => handleChange(e)} />
+      {/* <input type="file" name="files" onChange={(e) => handleChange(e)} />
       <input
         onClick={submitHandler}
         type="submit"
         className={styles.fileSubmit}
-      />
+        style={{padding:".2vmax .7vmax",marginLeft:"-4vmax"}}
+      /> */}
     </div>
   );
 }

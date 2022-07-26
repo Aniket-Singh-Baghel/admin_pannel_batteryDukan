@@ -2,54 +2,106 @@ import React, { useEffect, useState } from "react";
 import styles from "../ViewScss/ViewGlobal.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "../../../../Axios/AxiosConfig";
-import { DeleteBatteryBrand, GetBatteryBrand } from "../../../../Store/Actions";
+import {
+  DeleteProductPricing,
+  GetProductPricing,
+} from "../../../../Store/Actions";
 import { connect } from "react-redux";
 
-function ViewBatteryBrand(props) {
+function ViewProductPricing(props) {
   console.log(props);
   const [state, setstate] = useState("");
 
   useEffect(() => {
-    props.GetBatteryBrand();
+    props.GetProductPricing();
   }, []);
 
   const onDeleteAction = (id) => {
-    props.DeleteBatteryBrand(id);
+    props.DeleteProductPricing(id);
   };
 
-  let brandsTable;
-  if (props.BatteryBrand.data) {
+  let ProductPricingTable;
+  console.log(props.ProductPricing);
+  if (props.ProductPricing) {
     console.log(state);
-    brandsTable = props.BatteryBrand.data.map((details, index) => {
+    ProductPricingTable = props.ProductPricing.data.map((details, index) => {
       return (
         <tr key={index}>
           <td scope="row" style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {index + 1}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandName}
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {" "}
+              <a href={details.mrpIcon} target="_blank">
+                {details.mrpIcon
+                  ? details.mrpIcon.substring(0, 80)
+                  : details.mrpIcon}
+              </a>
+            </td>
+            {/* {details.PricingName} */}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {" "}
-            <a href={details.brandLogo} target="_blank">
-              {details.brandLogo
-                ? details.brandLogo.substring(0, 80)
-                : details.brandLogo}
-            </a>
+            {details.mrpUnit}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandDesc}
+            {details.mrpValue}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandIcon}
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {" "}
+              <a href={details.mopIcon} target="_blank">
+                {details.mopIcon
+                  ? details.mopIcon.substring(0, 80)
+                  : details.mopIcon}
+              </a>
+            </td>
+            {/* {details.PricingName} */}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandPosition}
+            {details.mopUnit}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.mopValue}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {" "}
+              <a href={details.dpIcon} target="_blank">
+                {details.dpIcon
+                  ? details.dpIcon.substring(0, 80)
+                  : details.dpIcon}
+              </a>
+            </td>
+            {/* {details.PricingName} */}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.dpUnit}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.dpValue}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {" "}
+              <a href={details.nlcIcon} target="_blank">
+                {details.nlcIcon
+                  ? details.nlcIcon.substring(0, 80)
+                  : details.nlcIcon}
+              </a>
+            </td>
+            {/* {details.PricingName} */}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.nlcUnit}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.nlcValue}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
               onClick={() =>
-                props.history.push(`/EditBatteryBrand/${details.id}`)
+                props.history.push(`/EditProductPricing/${details.id}`)
               }
               viewBox="0 0 24 24"
               width="24"
@@ -83,16 +135,23 @@ function ViewBatteryBrand(props) {
             <thead>
               <tr>
                 <th>S.No.</th>
-                <th>Brand Name</th>
-                <th>Brand Logo</th>
-                <th>Brand Desc</th>
-                <th>Brand Icon</th>
-                <th>Brand Position</th>
+                <th>Mrp Icon</th>
+                <th>Mrp Unit</th>
+                <th>Mrp Value</th>
+                <th>Mop Icon</th>
+                <th>Mop Unit</th>
+                <th>Mop Value</th>
+                <th>dp Icon</th>
+                <th>dp Unit</th>
+                <th>dp Value</th>
+                <th>nlc Icon</th>
+                <th>nlc Unit</th>
+                <th>nlc Value</th>
                 <th>Action</th>
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody>{brandsTable}</tbody>
+            <tbody>{ProductPricingTable}</tbody>
           </table>
           <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
@@ -216,13 +275,16 @@ function ViewBatteryBrand(props) {
 }
 
 const MapStateToProps = (state) => ({
-  hello: console.log("state.createBatteryBrand ::", state.CreateBatteryBrand),
-  BatteryBrand: state.CreateBatteryBrand,
+  hello: console.log(
+    "state.CreateProductPricing:: ",
+    state.CreateProductPricing
+  ),
+  ProductPricing: state.CreateProductPricing,
 });
 
 const mapDispatchToProps = {
-  GetBatteryBrand: GetBatteryBrand,
-  DeleteBatteryBrand: DeleteBatteryBrand,
+  GetProductPricing: GetProductPricing,
+  DeleteProductPricing: DeleteProductPricing,
 };
 
-export default connect(MapStateToProps, mapDispatchToProps)(ViewBatteryBrand);
+export default connect(MapStateToProps, mapDispatchToProps)(ViewProductPricing);

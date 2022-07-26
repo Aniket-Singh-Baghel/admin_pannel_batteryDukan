@@ -119,7 +119,7 @@ function Panel(props, history) {
                       </li>
                     </ul>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
                       <i className="nav-icon fas fa-circle" />
                       <p>
@@ -147,7 +147,7 @@ function Panel(props, history) {
                         </a>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a href="javascript:void(0)" className="nav-link">
                       <i className="nav-icon fas fa-circle" />

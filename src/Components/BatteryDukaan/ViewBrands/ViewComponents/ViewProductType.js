@@ -2,54 +2,55 @@ import React, { useEffect, useState } from "react";
 import styles from "../ViewScss/ViewGlobal.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "../../../../Axios/AxiosConfig";
-import { DeleteBatteryBrand, GetBatteryBrand } from "../../../../Store/Actions";
+import { DeleteProductType, GetProductType } from "../../../../Store/Actions";
 import { connect } from "react-redux";
 
-function ViewBatteryBrand(props) {
+function ViewProductType(props) {
   console.log(props);
   const [state, setstate] = useState("");
 
   useEffect(() => {
-    props.GetBatteryBrand();
+    props.GetProductType();
   }, []);
 
   const onDeleteAction = (id) => {
-    props.DeleteBatteryBrand(id);
+    props.DeleteProductType(id);
   };
 
-  let brandsTable;
-  if (props.BatteryBrand.data) {
+  let ProductTypeTable;
+  console.log(props);
+  if (props.ProductType) {
     console.log(state);
-    brandsTable = props.BatteryBrand.data.map((details, index) => {
+    ProductTypeTable = props.ProductType.data.map((details, index) => {
       return (
         <tr key={index}>
           <td scope="row" style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {index + 1}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandName}
+            {details.typeName}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {" "}
-            <a href={details.brandLogo} target="_blank">
-              {details.brandLogo
-                ? details.brandLogo.substring(0, 80)
-                : details.brandLogo}
+            <a href={details.typeIcon} target="_blank">
+              {details.typeIcon
+                ? details.typeIcon.substring(0, 80)
+                : details.typeIcon}
             </a>
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandDesc}
+            {details.typeDesc}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {details.brandIcon}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandPosition}
+            {details.typePosition}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
               onClick={() =>
-                props.history.push(`/EditBatteryBrand/${details.id}`)
+                props.history.push(`/EditProductType/${details.id}`)
               }
               viewBox="0 0 24 24"
               width="24"
@@ -83,16 +84,15 @@ function ViewBatteryBrand(props) {
             <thead>
               <tr>
                 <th>S.No.</th>
-                <th>Brand Name</th>
-                <th>Brand Logo</th>
-                <th>Brand Desc</th>
-                <th>Brand Icon</th>
-                <th>Brand Position</th>
+                <th>Type Name</th>
+                <th>Type Desc</th>
+                <th>Type Icon</th>
+                <th>Type Position</th>
                 <th>Action</th>
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody>{brandsTable}</tbody>
+            <tbody>{ProductTypeTable}</tbody>
           </table>
           <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
@@ -216,13 +216,12 @@ function ViewBatteryBrand(props) {
 }
 
 const MapStateToProps = (state) => ({
-  hello: console.log("state.createBatteryBrand ::", state.CreateBatteryBrand),
-  BatteryBrand: state.CreateBatteryBrand,
+  ProductType: state.CreateProductType,
 });
 
 const mapDispatchToProps = {
-  GetBatteryBrand: GetBatteryBrand,
-  DeleteBatteryBrand: DeleteBatteryBrand,
+  GetProductType: GetProductType,
+  DeleteProductType: DeleteProductType,
 };
 
-export default connect(MapStateToProps, mapDispatchToProps)(ViewBatteryBrand);
+export default connect(MapStateToProps, mapDispatchToProps)(ViewProductType);

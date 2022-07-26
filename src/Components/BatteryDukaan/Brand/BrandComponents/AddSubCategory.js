@@ -133,19 +133,19 @@ function AddSubCategory(props) {
                 <input onChange={OnCHangeHandler} value={state["subcategory Position"]} name="subcategory Position" type="number" />
             </div> 
 
-            <div className={styles.form}>
+            {/* <div className={styles.form}>
                 <label htmlFor="categoryName">categoryName</label>
                 <select onChange={OnCHangeHandler} name="categoryName" id="">
                     {category}
                 </select>
-            </div> 
+            </div>  */}
 
             <div className={cx(styles.form , styles.submit)}>
                 <input onClick={callToAction} type="submit" value="create"/>
             </div>
             {/* bulk upload */}
-            <input type="file" name="files" onChange={e => handleChange(e)} />
-		    <input onClick={submitHandler} type="submit" />
+            {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+		    <input onClick={submitHandler} type="submit" /> */}
         </div>
 
     )
