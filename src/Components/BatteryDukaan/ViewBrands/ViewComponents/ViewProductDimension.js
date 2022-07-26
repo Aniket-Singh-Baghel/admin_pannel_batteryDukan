@@ -66,21 +66,34 @@ function ViewProductDimension(props) {
               {details.widthValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-                {" "}
-                <a href={details.layoutIcon} target="_blank">
-                  {details.layoutIcon
-                    ? details.layoutIcon.substring(0, 80)
-                    : details.layoutIcon}
-                </a>
-              </td>
-              {/* {details.DimensionName} */}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.layoutUnit}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.layoutValue}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.acidIndicatorUnit}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.acidIndicatorValue}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.currentCapacityUnit}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.currentCapacityValue}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.warrantyUnit}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.warrantyValue}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.warrantyDesc}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.weightUnit}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.weightValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               <svg
@@ -136,6 +149,8 @@ function ViewProductDimension(props) {
                 <th>Warranty Capacity Unit</th>
                 <th>Warranty Capacity Value</th>
                 <th>Warranty Capacity Desc</th>
+                <th>Weight Unit</th>
+                <th>Weight Value</th>
                 <th>Action</th>
                 <th>Delete</th>
               </tr>
