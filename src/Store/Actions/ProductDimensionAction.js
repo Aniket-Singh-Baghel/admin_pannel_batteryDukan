@@ -22,7 +22,7 @@ export const GetProductDimension = () => (dispatch) => {
   axios
     .get("/getModelDimension")
     .then((success) => {
-      console.log("object,hibibo");
+      console.log("object,hibibo", success);
       return dispatch({
         type: SHOW_PRODUCT_DIMENSION,
         payload: success.data,

@@ -1,52 +1,52 @@
 import {
-  CREATE_PRODUCT_PRICING,
-  SHOW_PRODUCT_PRICING,
-  DELETE_PRODUCT_PRICING,
+  CREATE_PRODUCT_MEDIA,
+  SHOW_PRODUCT_MEDIA,
+  DELETE_PRODUCT_MEDIA,
 } from "../ActionType";
 
 import axios from "../../Axios/AxiosConfig";
 
-export const CreateProductPricing = (data) => (dispatch) => {
+export const CreateProductMedia = (data) => (dispatch) => {
   axios
-    .post("/createProductPricing", data)
+    .post("/createProductMedia", data)
     .then((success) => {
       console.log("success", success);
       return dispatch({
-        type: CREATE_PRODUCT_PRICING,
+        type: CREATE_PRODUCT_MEDIA,
         payload: success.data,
       });
     })
     .catch((err) => console.log(err));
 };
 
-export const GetProductPricing = () => (dispatch) => {
+export const GetProductMedia = () => (dispatch) => {
   axios
-    .get("/getProductPricing")
+    .get("/getProductMedia")
     .then((success) => {
       console.log("object,hibibo", success);
       return dispatch({
-        type: SHOW_PRODUCT_PRICING,
+        type: SHOW_PRODUCT_MEDIA,
         payload: success.data,
       });
     })
     .catch((err) => console.error(err));
 };
 
-export const EditProductPricing = (id, data) => (dispatch) => {
+export const EditProductMedia = (id, data) => (dispatch) => {
   axios
-    .put(`/update/productPricing/${id}`, data)
+    .put(`/update/productMedia/${id}`, data)
     .then((success) => {
       console.log(success);
-      return dispatch(GetProductPricing());
+      return dispatch(GetProductMedia());
     })
     .catch((err) => console.error(err));
 };
 
-export const DeleteProductPricing = (id) => (dispatch) => {
+export const DeleteProductMedia = (id) => (dispatch) => {
   axios
-    .delete(`delete/productPricing/${id}`)
+    .delete(`delete/productMedia/${id}`)
     .then((success) => {
-      return dispatch(GetProductPricing());
+      return dispatch(GetProductMedia());
     })
     .catch((err) => console.error(err));
 };

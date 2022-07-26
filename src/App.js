@@ -19,6 +19,7 @@ import AddSubCategory from "./Components/BatteryDukaan/Brand/BrandComponents/Add
 
 import AddProductType from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductType";
 import AddProductPricing from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductPricing";
+import AddProductMedia from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductMedia";
 import AddProductDimension from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductDimensions";
 
 // view imports starts here
@@ -35,6 +36,7 @@ import ViewSecondaryName from "./Components/BatteryDukaan/ViewBrands/ViewCompone
 
 import ViewProductDimension from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductDimension";
 import ViewProductType from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductType";
+import ViewProductMedia from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductMedia";
 import ViewProductPricing from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductPricing";
 
 import ViewAllDetails from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDetails";
@@ -84,6 +86,7 @@ class App extends Component {
             <Route path="/ViewBatteryModel" component={ViewBatteryModel} />
             <Route path="/ViewProductType" component={ViewProductType} />
             <Route path="/ViewProductPricing" component={ViewProductPricing} />
+            <Route path="/ViewBatteryMedia" component={ViewProductMedia} />
             <Route
               path="/ViewProductDimension"
               component={ViewProductDimension}
@@ -108,6 +111,7 @@ class App extends Component {
 
             <Route path="/productType" component={AddProductType} />
             <Route path="/productPricing" component={AddProductPricing} />
+            <Route path="/productMedia" component={AddProductMedia} />
             <Route path="/productDimension" component={AddProductDimension} />
             <Route path="/" component={AddBatteryModel} />
           </Switch>

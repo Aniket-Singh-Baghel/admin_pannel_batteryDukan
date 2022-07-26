@@ -10,4 +10,5 @@ export * from "./GroupAction";
 export * from "./SecondryNameAction";
 export * from "./ProductTypeAction";
 export * from "./ProductPricingAction";
+export * from "./ProductMediaAction";
 export * from "./ProductDimensionAction";

@@ -21,8 +21,8 @@ function ViewProductDimension(props) {
   };
 
   let ProductDimensionTable;
-  console.log(props.ProductDimension);
-  if (props.ProductDimension) {
+  console.log(props.ProductDimension.data);
+  if (props.ProductDimension.data) {
     console.log(state);
     ProductDimensionTable = props.ProductDimension.data.map(
       (details, index) => {
@@ -34,70 +34,53 @@ function ViewProductDimension(props) {
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
                 {" "}
-                <a href={details.LengthIcon} target="_blank">
-                  {details.LengthIcon
-                    ? details.LengthIcon.substring(0, 80)
-                    : details.LengthIcon}
+                <a href={details.lengthIcon} target="_blank">
+                  {details.lengthIcon
+                    ? details.lengthIcon.substring(0, 80)
+                    : details.lengthIcon}
                 </a>
               </td>
               {/* {details.DimensionName} */}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.LengthUnit}
+              {details.lengthUnit}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.LengthValue}
+              {details.lengthValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
                 {" "}
-                <a href={details.WidthIcon} target="_blank">
-                  {details.WidthIcon
-                    ? details.WidthIcon.substring(0, 80)
-                    : details.WidthIcon}
+                <a href={details.widthIcon} target="_blank">
+                  {details.widthIcon
+                    ? details.widthIcon.substring(0, 80)
+                    : details.widthIcon}
                 </a>
               </td>
               {/* {details.DimensionName} */}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.WidthUnit}
+              {details.widthUnit}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.WidthValue}
+              {details.widthValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
                 {" "}
-                <a href={details.dpIcon} target="_blank">
-                  {details.dpIcon
-                    ? details.dpIcon.substring(0, 80)
-                    : details.dpIcon}
+                <a href={details.layoutIcon} target="_blank">
+                  {details.layoutIcon
+                    ? details.layoutIcon.substring(0, 80)
+                    : details.layoutIcon}
                 </a>
               </td>
               {/* {details.DimensionName} */}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.dpUnit}
+              {details.layoutUnit}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.dpValue}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-                {" "}
-                <a href={details.LayoutIcon} target="_blank">
-                  {details.LayoutIcon
-                    ? details.LayoutIcon.substring(0, 80)
-                    : details.LayoutIcon}
-                </a>
-              </td>
-              {/* {details.DimensionName} */}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.LayoutUnit}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.LayoutValue}
+              {details.layoutValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               <svg
@@ -137,15 +120,15 @@ function ViewProductDimension(props) {
             <thead>
               <tr>
                 <th>S.No.</th>
-                <th>Length Unit</th>
-                <th>Length Value</th>
-                <th>Width Unit</th>
-                <th>Width Value</th>
+                <th>length Unit</th>
+                <th>length Value</th>
+                <th>width Unit</th>
+                <th>width Value</th>
                 <th>Height Unit</th>
                 <th>Height Value</th>
                 <th>Weight Unit</th>
                 <th>Weight Value</th>
-                <th>Layout Value</th>
+                <th>layout Value</th>
                 <th>Acid Indicator Unit</th>
                 <th>Acid Indicator Value</th>
                 <th>Current Capacity Unit</th>
