@@ -268,6 +268,93 @@ function Panel(props, history) {
                     <a href="javascript:void(0)" className="nav-link">
                       <i className="nav-icon fas fa-circle" />
                       <p>
+                        Product Dimension
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/productDimension")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>Create Product Dimension</p>
+                        </a>
+                      </li>
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/ViewProductDimension")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>View Product Dimension Details</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="nav-item">
+                    <a href="javascript:void(0)" className="nav-link">
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Product Pricing
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/productPricing")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>Create Product Pricing</p>
+                        </a>
+                      </li>
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/ViewProductPricing")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>View Product Pricing Details</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="nav-item">
+                    <a href="javascript:void(0)" className="nav-link">
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Product Type
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/productType")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>Create Product Type</p>
+                        </a>
+                      </li>
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/ViewProductType")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>View Product Type Details</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="nav-item">
+                    <a href="javascript:void(0)" className="nav-link">
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
                         Scheme
                         <i className="right fas fa-angle-left" />
                       </p>
