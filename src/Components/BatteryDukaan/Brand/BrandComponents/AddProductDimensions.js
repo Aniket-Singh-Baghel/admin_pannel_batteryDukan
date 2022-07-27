@@ -18,14 +18,13 @@ function AddProductDimension(props) {
     widthValue: "",
     heightUnit: "",
     heightValue: "",
-    layoutUnit: "",
+    weightUnit: "",
+    weightValue: "",
     layoutValue: "",
     acidIndicatorUnit: "",
     acidIndicatorValue: "",
     currentCapacityUnit: "",
     currentCapacityValue: "",
-    weightUnit: "",
-    weightValue: "",
     warrantyUnit: "",
     warrantyValue: "",
     warrantyDesc: "",
@@ -60,14 +59,13 @@ function AddProductDimension(props) {
         widthValue: "",
         heightUnit: "",
         heightValue: "",
-        layoutUnit: "",
+        weightUnit: "",
+        weightValue: "",
         layoutValue: "",
         acidIndicatorUnit: "",
         acidIndicatorValue: "",
         currentCapacityUnit: "",
         currentCapacityValue: "",
-        weightUnit: "",
-        weightValue: "",
         warrantyUnit: "",
         warrantyValue: "",
         warrantyDesc: "",
@@ -177,14 +175,31 @@ function AddProductDimension(props) {
             type="number"
           />
         </div>
-
+        <div className={styles.form}>
+          <label htmlFor="weightUnit">weight Unit</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["weightUnit"]}
+            name="weightUnit"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="weightValue">weight Value</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["weightValue"]}
+            name="weightValue"
+            type="number"
+          />
+        </div>
         <div className={styles.form}>
           <label htmlFor="layoutValue">layout Value</label>
           <input
             onChange={OnCHangeHandler}
             value={state["layoutValue"]}
             name="layoutValue"
-            type="text"
+            type="number"
           />
         </div>
 
@@ -222,25 +237,6 @@ function AddProductDimension(props) {
             onChange={OnCHangeHandler}
             value={state["currentCapacityValue"]}
             name="currentCapacityValue"
-            type="number"
-          />
-        </div>
-
-        <div className={styles.form}>
-          <label htmlFor="weightUnit">weight Unit</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["weightUnit"]}
-            name="weightUnit"
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="weightValue">weight Value</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["weightValue"]}
-            name="weightValue"
             type="number"
           />
         </div>

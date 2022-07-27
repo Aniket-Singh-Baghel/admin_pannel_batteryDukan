@@ -15,14 +15,14 @@ $color: #fff;
     font-size: $fsize;
   }
 
-  .parentDiv > h5 {
+  .parentDiv>h5 {
     background-color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     padding: 10px;
   }
 
-  .parentDiv > h5 i {
+  .parentDiv>h5 i {
     margin-right: 10px;
   }
 
@@ -51,7 +51,7 @@ $color: #fff;
     }
 
     section:hover,
-    input:checked ~ section {
+    input:checked~section {
       opacity: 1;
       background: #000;
       border-left: 4px solid rgb(70, 163, 200);
@@ -68,7 +68,7 @@ $color: #fff;
       opacity: 0;
     }
 
-    input:checked ~ .opener {
+    input:checked~.opener {
       width: 100%;
       height: fit-content;
       border-radius: 0%;
@@ -86,7 +86,7 @@ $color: #fff;
       color: $color;
     }
 
-    .click:checked ~ .opener2 {
+    .click:checked~.opener2 {
       width: 100%;
       height: fit-content;
       border-radius: 0%;
@@ -107,6 +107,7 @@ $color: #fff;
     }
   }
 }
+
 @media (max-width: 450px) {
   .aside {
     width: 28vw;
@@ -121,13 +122,14 @@ $color: #fff;
       font-size: 13px;
     }
 
-    .parentDiv > h5 {
-   font-size: 1rem;
-  }
-  label>section{
-    width: 100%;
-    font-size: 1.7vmax;
-  }
+    .parentDiv>h5 {
+      font-size: 1rem;
+    }
+
+    label>section {
+      width: 100%;
+      font-size: 1.7vmax;
+    }
 
   }
 }

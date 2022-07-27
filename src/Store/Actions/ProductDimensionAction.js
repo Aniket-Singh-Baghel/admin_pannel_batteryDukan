@@ -15,7 +15,7 @@ export const CreateProductDimension = (data) => (dispatch) => {
         payload: success.data,
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err.response.data));
 };
 
 export const GetProductDimension = () => (dispatch) => {

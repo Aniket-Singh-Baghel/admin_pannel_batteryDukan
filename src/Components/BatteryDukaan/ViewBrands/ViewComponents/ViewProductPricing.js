@@ -22,7 +22,7 @@ function ViewProductPricing(props) {
 
   let ProductPricingTable;
   console.log(props.ProductPricing);
-  if (props.ProductPricing) {
+  if (props.ProductPricing.data) {
     console.log(state);
     ProductPricingTable = props.ProductPricing.data.map((details, index) => {
       return (
@@ -31,7 +31,7 @@ function ViewProductPricing(props) {
             {index + 1}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            <td>
               {" "}
               <a href={details.mrpIcon} target="_blank">
                 {details.mrpIcon
@@ -48,7 +48,7 @@ function ViewProductPricing(props) {
             {details.mrpValue}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            <td>
               {" "}
               <a href={details.mopIcon} target="_blank">
                 {details.mopIcon
@@ -65,7 +65,7 @@ function ViewProductPricing(props) {
             {details.mopValue}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            <td>
               {" "}
               <a href={details.dpIcon} target="_blank">
                 {details.dpIcon
@@ -82,7 +82,7 @@ function ViewProductPricing(props) {
             {details.dpValue}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            <td>
               {" "}
               <a href={details.nlcIcon} target="_blank">
                 {details.nlcIcon

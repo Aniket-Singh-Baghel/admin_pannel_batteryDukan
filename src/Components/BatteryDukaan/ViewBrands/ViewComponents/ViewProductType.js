@@ -19,7 +19,7 @@ function ViewProductType(props) {
 
   let ProductTypeTable;
   console.log(props);
-  if (props.ProductType) {
+  if (props.ProductType.data) {
     console.log(state);
     ProductTypeTable = props.ProductType.data.map((details, index) => {
       return (
@@ -41,9 +41,7 @@ function ViewProductType(props) {
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {details.typeDesc}
           </td>
-          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.brandIcon}
-          </td>
+
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {details.typePosition}
           </td>
@@ -85,8 +83,8 @@ function ViewProductType(props) {
               <tr>
                 <th>S.No.</th>
                 <th>Type Name</th>
-                <th>Type Desc</th>
                 <th>Type Icon</th>
+                <th>Type Desc</th>
                 <th>Type Position</th>
                 <th>Action</th>
                 <th>Delete</th>

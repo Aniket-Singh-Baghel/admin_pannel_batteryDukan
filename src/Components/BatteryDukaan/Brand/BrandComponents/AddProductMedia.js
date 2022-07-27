@@ -41,7 +41,7 @@ function AddMedia(props) {
 
   const callToAction = () => {
     const _id = props.match.params.id;
-    if (props.match.url === "/") {
+    if (props.match.url === "/productMedia") {
       props.CreateProductMedia(state);
       setstate({
         ProductImages: "",
@@ -104,20 +104,20 @@ function AddMedia(props) {
     <div className={styles.main}>
       <span>Add Product Media</span>
       <div className={styles.form}>
-        <label htmlFor="productMedia">model Icon</label>
+        <label htmlFor="ProductImages">Product Images</label>
         <input
           onChange={OnCHangeHandler}
-          value={state.modelIcon}
-          name="productMedia"
+          value={state.ProductImages}
+          name="ProductImages"
           type="text"
         />
       </div>
       <div className={styles.form}>
-        <label htmlFor="productMedia">model Icon</label>
+        <label htmlFor="ProductVideos">Product Videos</label>
         <input
           onChange={OnCHangeHandler}
-          value={state.modelIcon}
-          name="productMedia"
+          value={state.ProductVideos}
+          name="ProductVideos"
           type="text"
         />
       </div>

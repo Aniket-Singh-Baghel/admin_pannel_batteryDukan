@@ -86,7 +86,7 @@ class App extends Component {
             <Route path="/ViewBatteryModel" component={ViewBatteryModel} />
             <Route path="/ViewProductType" component={ViewProductType} />
             <Route path="/ViewProductPricing" component={ViewProductPricing} />
-            <Route path="/ViewBatteryMedia" component={ViewProductMedia} />
+            <Route path="/ViewProductMedia" component={ViewProductMedia} />
             <Route
               path="/ViewProductDimension"
               component={ViewProductDimension}

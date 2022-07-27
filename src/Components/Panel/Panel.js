@@ -11,7 +11,7 @@ function Panel(props, history) {
     <>
       <aside
         className="main-sidebar sidebar-dark-primary elevation-4"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "200vh" }}
       >
         <a
           href="javascript:void(0)"
@@ -347,6 +347,35 @@ function Panel(props, history) {
                         <a href="javascript:void(0)" className="nav-link">
                           <i className="far fa-circle nav-icon" />
                           <p>View Product Type Details</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="nav-item">
+                    <a href="javascript:void(0)" className="nav-link">
+                      <i className="nav-icon fas fa-circle" />
+                      <p>
+                        Product Media
+                        <i className="right fas fa-angle-left" />
+                      </p>
+                    </a>
+                    <ul className="nav nav-treeview">
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/productMedia")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>Create Product Media</p>
+                        </a>
+                      </li>
+                      <li
+                        className="nav-item"
+                        onClick={(e) => stopShow(e, "/ViewProductMedia")}
+                      >
+                        <a href="javascript:void(0)" className="nav-link">
+                          <i className="far fa-circle nav-icon" />
+                          <p>View Product Media Details</p>
                         </a>
                       </li>
                     </ul>

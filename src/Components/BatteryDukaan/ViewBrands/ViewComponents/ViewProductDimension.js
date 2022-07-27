@@ -32,38 +32,28 @@ function ViewProductDimension(props) {
               {index + 1}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-                {" "}
-                <a href={details.lengthIcon} target="_blank">
-                  {details.lengthIcon
-                    ? details.lengthIcon.substring(0, 80)
-                    : details.lengthIcon}
-                </a>
-              </td>
-              {/* {details.DimensionName} */}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.lengthUnit}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.lengthValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-                {" "}
-                <a href={details.widthIcon} target="_blank">
-                  {details.widthIcon
-                    ? details.widthIcon.substring(0, 80)
-                    : details.widthIcon}
-                </a>
-              </td>
-              {/* {details.DimensionName} */}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.widthUnit}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.widthValue}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.heightUnit}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.heightValue}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.weightUnit}
+            </td>
+            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+              {details.weightValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.layoutValue}
@@ -88,12 +78,6 @@ function ViewProductDimension(props) {
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               {details.warrantyDesc}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.weightUnit}
-            </td>
-            <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-              {details.weightValue}
             </td>
             <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
               <svg
@@ -149,8 +133,6 @@ function ViewProductDimension(props) {
                 <th>Warranty Capacity Unit</th>
                 <th>Warranty Capacity Value</th>
                 <th>Warranty Capacity Desc</th>
-                <th>Weight Unit</th>
-                <th>Weight Value</th>
                 <th>Action</th>
                 <th>Delete</th>
               </tr>
@@ -279,10 +261,6 @@ function ViewProductDimension(props) {
 }
 
 const MapStateToProps = (state) => ({
-  hello: console.log(
-    "state.CreateProductDimension:: ",
-    state.CreateProductDimension
-  ),
   ProductDimension: state.CreateProductDimension,
 });
 
