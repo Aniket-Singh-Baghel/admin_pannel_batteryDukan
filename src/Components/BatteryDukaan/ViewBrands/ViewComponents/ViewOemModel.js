@@ -20,6 +20,7 @@ function ViewOemModel(props) {
   console.log(props);
   if (props.OemModel.data) {
     oemModelTable = props.OemModel.data.map((details, index) => {
+      console.log(details.oemBrand.OEMBrand);
       return (
         <tr key={index}>
           <td scope="row">{index + 1}</td>
@@ -39,7 +40,10 @@ function ViewOemModel(props) {
             {details.OEMModelPosition}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.OEMBrandName}
+            {details.oemBrand.OEMBrand}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.OEMModelDesc}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
@@ -96,6 +100,7 @@ function ViewOemModel(props) {
                 <th>Oem-Model-Images</th>
                 <th>Oem-Model-position</th>
                 <th>OEM-Brand Name</th>
+                <th>OEM-Model Desc</th>
                 <th>Action</th>
                 <th>Delete</th>
               </tr>

@@ -15,6 +15,7 @@ function AddOemModel(props) {
   const [state, setstate] = useState({
     OEMModelName: "",
     FuelType: "",
+    OEMModelDesc: "",
     OEMModelImage: "",
     OEMModelPosition: "",
     OEMBrandId: "",
@@ -47,6 +48,7 @@ function AddOemModel(props) {
       setstate({
         OEMModelName: "",
         FuelType: "",
+        OEMModelDesc: "",
         OEMModelImage: "",
         OEMModelPosition: "",
         OEMBrandId: "",
@@ -62,7 +64,7 @@ function AddOemModel(props) {
   if (props.OemBrand.data) {
     oemBrand = props.OemBrand.data.map((data, i) => {
       return (
-        <option key={i} value={data.OEMBrand}>
+        <option key={i} value={data.id}>
           {data.OEMBrand}
         </option>
       );
@@ -155,6 +157,16 @@ function AddOemModel(props) {
           value={state["OEMModelPosition"]}
           onChange={OnCHangeHandler}
           type="number"
+        />
+      </div>
+
+      <div className={styles.form}>
+        <label htmlFor="OEMModelDesc">Oem-Model-Desc</label>
+        <input
+          name="OEMModelDesc"
+          value={state["OEMModelDesc"]}
+          onChange={OnCHangeHandler}
+          type="text"
         />
       </div>
 

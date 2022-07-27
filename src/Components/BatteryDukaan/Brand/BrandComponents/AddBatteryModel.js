@@ -111,7 +111,7 @@ function AddModel(props) {
   if (props.BatteryBrand.data) {
     BatteryBrand = props.BatteryBrand.data.map((data) => {
       return (
-        <option key={data.id} value={data.brandName}>
+        <option key={data.id} value={data.id}>
           {data.brandName}
         </option>
       );

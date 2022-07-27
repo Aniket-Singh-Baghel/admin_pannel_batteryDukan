@@ -99,7 +99,7 @@ class App extends Component {
 
             {/* Add files here */}
             <Route path="/category" component={AddCategory} />
-            <Route path="/subcategory" component={AddSubCategory} />
+            <Route path="/SubCategory" component={AddSubCategory} />
             <Route path="/group" component={AddGroup} />
             <Route path="/scheme" component={AddScheme} />
             <Route path="/segment" component={AddSegment} />

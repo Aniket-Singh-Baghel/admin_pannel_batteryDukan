@@ -1,45 +1,53 @@
-import { CREATE_SUBCATEGORY, SHOW_SUBCATEGORY, DELETE_SUBCATEGORY } from '../ActionType'
-import axios from '../../Axios/AxiosConfig'
+import {
+  CREATE_SUBCATEGORY,
+  SHOW_SUBCATEGORY,
+  DELETE_SUBCATEGORY,
+} from "../ActionType";
+import axios from "../../Axios/AxiosConfig";
 
-export const CreateSubCategory = (data) => dispatch => {
-    axios
-      .post("/createSubCategory", data)
-      .then((success) => {
-        alert(success.data.message + " " + success.status);
-        return dispatch({
-          type: CREATE_SUBCATEGORY,
-          payload: success.data,
-        });
-      })
-      .catch((err) => console.log(err)
-        // alert(err.response.data.message + " " + err.response.status)
-      );
-}
-
-export const GetSubcategory = () => dispatch => {
-    axios.get("/getSubCategory")
-    .then(success => {
-        return dispatch({
-            type: SHOW_SUBCATEGORY,
-            payload: success.data,
-          })
+export const CreateSubCategory = (data) => (dispatch) => {
+  axios
+    .post("/createSubCategory", data)
+    .then((success) => {
+      alert(success.data.message + " " + success.status);
+      return dispatch({
+        type: CREATE_SUBCATEGORY,
+        payload: success.data,
+      });
     })
-    .catch(err => console.error(err))
-}
+    .catch(
+      (err) => console.log(err.response.message)
+      // alert(err.response.data.message + " " + err.response.status)
+    );
+};
 
-export const EditSubCategory = (id, data) => dispatch => {
-    axios.put(`/subCategory/update/${id}`, data)
-    .then(success =>{
-        console.log(success)
-        return dispatch(GetSubcategory()); 
+export const GetSubcategory = () => (dispatch) => {
+  axios
+    .get("/getSubCategory")
+    .then((success) => {
+      return dispatch({
+        type: SHOW_SUBCATEGORY,
+        payload: success.data,
+      });
     })
-    .catch(err => console.error(err))
-}
+    .catch((err) => console.error(err));
+};
 
-export const DeleteSubCategory = (id) => dispatch => {
-    axios.delete(`/subCategory/delete/${id}`)
-    .then(success => {
-        return dispatch(GetSubcategory());
+export const EditSubCategory = (id, data) => (dispatch) => {
+  axios
+    .put(`/subCategory/update/${id}`, data)
+    .then((success) => {
+      console.log(success);
+      return dispatch(GetSubcategory());
     })
-    .catch(err => console.error(err))
-}
+    .catch((err) => console.error(err));
+};
+
+export const DeleteSubCategory = (id) => (dispatch) => {
+  axios
+    .delete(`/subCategory/delete/${id}`)
+    .then((success) => {
+      return dispatch(GetSubcategory());
+    })
+    .catch((err) => console.error(err));
+};
