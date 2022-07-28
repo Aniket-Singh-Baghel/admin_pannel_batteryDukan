@@ -14,10 +14,9 @@ import axios from "../../../../Axios/AxiosConfig";
 function AddSegment(props) {
   const [state, setstate] = useState({
     segmentName: "",
-    segmentDesc: "",
     segmentIcon: "",
     segmentPosition: "",
-    "segment brandName": "",
+    segmentBrandId: "",
   });
 
   const OnCHangeHandler = (e) => {
@@ -45,10 +44,9 @@ function AddSegment(props) {
       props.CreateSegment(state);
       setstate({
         segmentName: "",
-        segmentDesc: "",
         segmentIcon: "",
         segmentPosition: "",
-        "segment brandName": "",
+        segmentBrandId: "",
       });
     } else {
       props.EditSegment(_id, state);
@@ -57,65 +55,17 @@ function AddSegment(props) {
   };
 
   let BatteryBrand;
-  console.log("hbb", props);
+  console.log("props for BatteryBrand :: ", props);
   if (props.BatteryBrand.data) {
     BatteryBrand = props.BatteryBrand.data.map((data) => {
       return (
-        <option key={data.id} value={data.brandName}>
+        <option key={data.id} value={data.id}>
           {data.brandName}
         </option>
       );
     });
   }
 
-  //bulk upload ---
-  //for bulk upload  --------------
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          segmentName: body["segmentName"],
-          segmentDesc: body["segmentDesc"],
-          segmentIcon: body["segmentIcon"],
-          segmentPosition: body["segmentPosition"],
-          "segment brandName": body["segment brandName"],
-        });
-      });
-    };
-  };
-
-  function removeDuplicates(originalArray, prop) {
-    var newArray = [];
-    var lookupObject = {};
-
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
-    }
-
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-
-  const submitHandler = () => {
-    let files = removeDuplicates(arr, "segmentName");
-    console.log(files);
-    axios
-      .post("/bulkInsertionSegment", {
-        JSONData: files,
-      })
-      .then((suc) => console.log(suc))
-      .catch((err) => console.log(err));
-  };
-
-  console.log(state);
   return (
     <div className={styles.main}>
       <span>Add Segment</span>
@@ -131,15 +81,6 @@ function AddSegment(props) {
       </div>
 
       <div className={styles.form}>
-        <label htmlFor="segmentDesc">segment Desc</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["segmentDesc"]}
-          name="segmentDesc"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
         <label htmlFor="segmentIcon">segment Icon(url)</label>
         <input
           onChange={OnCHangeHandler}
@@ -148,6 +89,7 @@ function AddSegment(props) {
           type="text"
         />
       </div>
+
       <div className={styles.form}>
         <label htmlFor="segmentPosition">segment Position</label>
         <input
@@ -157,9 +99,10 @@ function AddSegment(props) {
           type="number"
         />
       </div>
+
       <div className={styles.form}>
-        <label htmlFor="modelBrand">model Brand</label>
-        <select onChange={OnCHangeHandler} name="modelBrand" id="">
+        <label htmlFor="segmentBrandId">model Brand</label>
+        <select onChange={OnCHangeHandler} name="segmentBrandId" id="">
           {BatteryBrand}
         </select>
       </div>

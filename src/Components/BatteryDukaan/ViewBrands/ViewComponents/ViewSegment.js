@@ -6,29 +6,26 @@ import { connect } from "react-redux";
 import axios from "../../../../Axios/AxiosConfig";
 
 function ViewSegment(props) {
-	const [state, setstate] = useState();
+  const [state, setstate] = useState();
 
-	useEffect(() => {
-		props.GetSegment();
-	}, []);
+  useEffect(() => {
+    props.GetSegment();
+  }, []);
 
-	const onDeleteAction = id => {
-		props.DeleteSegment(id);
-	};
+  const onDeleteAction = (id) => {
+    props.DeleteSegment(id);
+  };
 
-	let SegmentTable;
-	console.log(props);
-	if (props.Segment.data) {
-		console.log(props.Segment.data.data);
-		SegmentTable = props.Segment.data.map((details, index) => {
-			return (
+  let SegmentTable;
+  console.log(props);
+  if (props.Segment.data) {
+    console.log(props.Segment.data.data);
+    SegmentTable = props.Segment.data.map((details, index) => {
+      return (
         <tr key={index}>
           <td>{index + 1}</td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {details.segmentName}
-          </td>
-          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.segmentDesc}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {" "}
@@ -66,9 +63,9 @@ function ViewSegment(props) {
           </td>
         </tr>
       );
-		});
-	}
-	return (
+    });
+  }
+  return (
     <div className="content-wrapper" style={{ backgroundColor: "white" }}>
       <div className={styles.main}>
         <div style={{ overflowX: "auto" }}>
@@ -77,7 +74,6 @@ function ViewSegment(props) {
               <tr>
                 <th>S.No</th>
                 <th>segment Name</th>
-                <th>segment Desc</th>
                 <th>segment Icon(url)</th>
                 <th>segment Position</th>
                 <th>segment brandName</th>
@@ -208,13 +204,13 @@ function ViewSegment(props) {
   );
 }
 
-const MapStateToProps = state => ({
-	Segment: state.CreateSegment,
+const MapStateToProps = (state) => ({
+  Segment: state.CreateSegment,
 });
 
 const mapDispatchToProps = {
-	GetSegment: GetSegment,
-	DeleteSegment: DeleteSegment,
+  GetSegment: GetSegment,
+  DeleteSegment: DeleteSegment,
 };
 
 export default connect(MapStateToProps, mapDispatchToProps)(ViewSegment);
