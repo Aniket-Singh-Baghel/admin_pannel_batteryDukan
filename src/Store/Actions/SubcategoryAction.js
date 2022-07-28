@@ -9,14 +9,14 @@ export const CreateSubCategory = (data) => (dispatch) => {
   axios
     .post("/createSubCategory", data)
     .then((success) => {
-      alert(success.data.message + " " + success.status);
+      console.log("success ::", success);
       return dispatch({
         type: CREATE_SUBCATEGORY,
         payload: success.data,
       });
     })
     .catch(
-      (err) => console.log(err.response.message)
+      (err) => console.log(err.response)
       // alert(err.response.data.message + " " + err.response.status)
     );
 };

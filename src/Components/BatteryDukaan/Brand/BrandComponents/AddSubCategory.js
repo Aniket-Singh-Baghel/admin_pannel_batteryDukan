@@ -17,7 +17,6 @@ function AddSubCategory(props) {
     subcategoryDesc: "",
     subcategoryIcon: "",
     "subcategory Position": "",
-    categoryName: "",
   });
 
   useEffect(() => {
@@ -50,7 +49,6 @@ function AddSubCategory(props) {
         subcategoryDesc: "",
         subcategoryIcon: "",
         "subcategory Position": "",
-        categoryName: "",
       });
     } else {
       props.EditSubCategory(_id, state);

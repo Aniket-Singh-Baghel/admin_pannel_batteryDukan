@@ -49,7 +49,7 @@ function ViewBatteryBrand(props) {
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
               onClick={() =>
-                props.history.push(`/EditBatteryBrand/${details.id}`)
+                props.history.push(`/batteryBrand/delete/${details.id}`)
               }
               viewBox="0 0 24 24"
               width="24"

@@ -34,7 +34,7 @@ export const EditBatteryBrand = (id, data) => (dispatch) => {
       console.log(success);
       return dispatch(GetBatteryBrand());
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err.response.message));
 };
 
 export const DeleteBatteryBrand = (id) => (dispatch) => {
@@ -43,5 +43,5 @@ export const DeleteBatteryBrand = (id) => (dispatch) => {
     .then((success) => {
       return dispatch(GetBatteryBrand());
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err.response.message));
 };

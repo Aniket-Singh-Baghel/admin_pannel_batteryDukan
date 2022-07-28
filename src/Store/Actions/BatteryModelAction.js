@@ -7,7 +7,7 @@ import axios from "../../Axios/AxiosConfig";
 
 export const CreateBatteryModel = (data) => (dispatch) => {
   axios
-    .post("/createbatteryDetails", data)
+    .post("/createProductModel", data)
     .then((success) => {
       console.log(success.data.message + " " + success.status);
       return dispatch({
@@ -22,7 +22,7 @@ export const CreateBatteryModel = (data) => (dispatch) => {
 
 export const GetBatteryModel = () => (dispatch) => {
   axios
-    .get("/getBatteryDetails")
+    .get("/getProductModel")
     .then((success) => {
       console.log("show", success);
       return dispatch({
@@ -35,7 +35,7 @@ export const GetBatteryModel = () => (dispatch) => {
 
 export const EditBatteryModel = (id, data) => (dispatch) => {
   axios
-    .put(`/batteryModel/update/${id}`, data)
+    .put(`/productModel/update/${id}`, data)
     .then((success) => {
       console.log(success);
       return dispatch(GetBatteryModel());
@@ -45,7 +45,7 @@ export const EditBatteryModel = (id, data) => (dispatch) => {
 
 export const DeleteBatteryModel = (id) => (dispatch) => {
   axios
-    .delete(`/batteryModel/delete/${id}`)
+    .delete(`/productModel/delete/${id}`)
     .then((success) => {
       return dispatch(GetBatteryModel());
     })

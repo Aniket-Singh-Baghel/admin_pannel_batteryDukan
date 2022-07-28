@@ -12,6 +12,7 @@ import {
   GetScheme,
   EditBatteryModel,
   GetBatteryModel,
+  GetGroup,
 } from "../../../../Store/Actions";
 import { connect } from "react-redux";
 
@@ -19,28 +20,11 @@ function AddModel(props) {
   console.log(props);
   const [state, setstate] = useState({
     modelName: "",
-    modelBrand: "",
-    // modelDesc: "",
-    modelIcon: "",
-    modelPosition: "",
-    // "OEM-Model Name": "",
-    // subcategoryName: "",
-    // segmentName: "",
-    // schemeName: "",
-    // "modelGroupIds (comma separated)": "",
-    // "length (value)": "",
-    // "width (value)": "",
-    // "height (value)": "",
-    // "layout (value)": "",
-    // "acidIndicator (value)": "",
-    // "currentCapaCity (value)": "",
-    // "mrp (value)": "",
-    // "mop (value)": "",
-    // "dp (value)": "",
-    // "nlc (value)": "",
-    // "warranty (value)": "",
-    // "warranty (description)": "",
-    // "Weight (value)": "",
+    modelType: "",
+    modelDesc: "",
+    modelUrl: "",
+    brandId: "",
+    groupId: "",
   });
 
   useEffect(() => {
@@ -50,6 +34,7 @@ function AddModel(props) {
     props.GetSegment();
     props.GetSecondaryName();
     props.GetScheme();
+    props.GetGroup();
   }, []);
 
   const OnCHangeHandler = (e) => {
@@ -76,29 +61,11 @@ function AddModel(props) {
       props.CreateBatteryModel(state);
       setstate({
         modelName: "",
-        modelBrand: "",
+        modelType: "",
         modelDesc: "",
-        modelIcon: "",
-        modelPosition: "",
-        // secondaryName: "",
-        // "OEM-Model-Name": "",
-        // subcategoryName: "",
-        // segmentName: "",
-        // schemeName: "",
-        // "modelGroupIds (comma separated)": "",
-        // "length (value)": "",
-        // "width (value)": "",
-        // "height (value)": "",
-        // "layout (value)": "",
-        // "acidIndicator (value)": "",
-        // "currentCapaCity (value)": "",
-        // "mrp (value)": "",
-        // "mop (value)": "",
-        // "dp (value)": "",
-        // "nlc (value)": "",
-        // "warranty (value)": "",
-        // "warranty (description)": "",
-        // "Weight (value)": "",
+        modelUrl: "",
+        brandId: "",
+        groupId: "",
       });
     } else {
       props.EditBatteryModel(_id, state);
@@ -118,124 +85,20 @@ function AddModel(props) {
     });
   }
 
-  let OemModel;
-  if (props.OemModel.data) {
-    OemModel = props.OemModel.data.map((data) => {
+  let BatteryGroup;
+  console.log("objectprops", props);
+  if (props.BatteryGroup.data) {
+    BatteryGroup = props.BatteryGroup.data.map((data) => {
       return (
-        <option key={data.id} value={data.OEMModelName}>
-          {data.OEMModelName}
+        <option key={data.id} value={data.id}>
+          {data.groupName}
         </option>
       );
-    });
-  }
-
-  let segment;
-  if (props.Segment.data) {
-    segment = props.Segment.data.map((data) => {
-      return (
-        <option key={data.id} value={data.segmentName}>
-          {data.segmentName}
-        </option>
-      );
-    });
-  }
-
-  let SubCategory;
-  console.log(props);
-  if (props.SubCategory.data) {
-    SubCategory = props.SubCategory.data.map((data) => {
-      return (
-        <option key={data.id} value={data.subcategoryName}>
-          {data.subcategoryName}
-        </option>
-      );
-    });
-  }
-
-  let SecondaryName;
-  if (props.SecondaryName.data) {
-    SecondaryName = props.SecondaryName.data.map((data) => {
-      return (
-        <option key={data.id} value={data.secondaryName}>
-          {data.secondaryName}
-        </option>
-      );
-    });
-  }
-
-  let Scheme;
-  if (props.Scheme.data) {
-    Scheme = props.Scheme.data.map((data) => {
-      return <option value={data.id}>{data.id}</option>;
     });
   }
 
   //bulk upload ---
-  //for bulk upload  --------------
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          modelName: body["modelName"],
-          modelBrand: body["modelBrand"],
-          // modelDesc: body["modelDesc"],
-          modelIcon: body["ProductImg"],
-          modelPosition: body["modelPosition"],
-          // secondaryName: body["secondaryName"],
-          // "OEM-Model Name": body["OEM-Model Name"],
-          // subcategoryName: body["subcategoryName"],
-          // segmentName: body["segmentName"],
-          // schemeName: body["schemeName"],
-          // "modelGroupIds (comma separated)":
-          //   body["modelGroupIds (comma separated)"],
-          // "length (value)": body["length (value)"],
-          // "width (value)": body["width (value)"],
-          // "height (value)": body["height (value)"],
-          // "layout (value)": body["layout (value)"],
-          // "acidIndicator (value)": body["acidIndicator (value)"],
-          // "currentCapaCity (value)": body["currentCapaCity (value)"],
-          // "mrp (value)": body["mrp (value)"],
-          // "mop (value)": body["mop (value)"],
-          // "dp (value)": body["dp (value)"],
-          // "nlc (value)": body["nlc (value)"],
-          // "warranty (value)": body["warranty (value)"],
-          // "warranty (description)": body["warranty (description)"],
-          // "Weight (value)": body["Weight (value)"],
-        });
-      });
-    };
-  };
-
-  function removeDuplicates(originalArray, prop) {
-    var newArray = [];
-    var lookupObject = {};
-
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
-    }
-
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-
-  const submitHandler = () => {
-    let files = removeDuplicates(arr, "modelName");
-    console.log(files);
-    axios
-      .post("/bulkInsertBatteryModel", {
-        JSONData: files,
-      })
-      .then((suc) => console.log(suc))
-      .catch((err) => console.log(err));
-  };
+  //for bulk upload  -------------
 
   return (
     <div className={styles.main}>
@@ -252,28 +115,43 @@ function AddModel(props) {
       </div>
 
       <div className={styles.form}>
-        <label htmlFor="modelPosition">model Position</label>
+        <label htmlFor="modelType">model Type</label>
         <input
           onChange={OnCHangeHandler}
-          value={state.modelPosition}
-          name="modelPosition"
+          value={state.modelType}
+          name="modelType"
           type="text"
         />
       </div>
       <div className={styles.form}>
-        <label htmlFor="modelIcon">model Icon</label>
+        <label htmlFor="modelDesc">model Desc</label>
         <input
           onChange={OnCHangeHandler}
-          value={state.modelIcon}
-          name="modelIcon"
+          value={state.modelDesc}
+          name="modelDesc"
+          type="text"
+        />
+      </div>
+      <div className={styles.form}>
+        <label htmlFor="modelUrl">model Icon</label>
+        <input
+          onChange={OnCHangeHandler}
+          value={state.modelUrl}
+          name="modelUrl"
           type="text"
         />
       </div>
 
       <div className={styles.form}>
-        <label htmlFor="modelBrand">model Brand</label>
-        <select onChange={OnCHangeHandler} name="modelBrand" id="">
+        <label htmlFor="brandId">model Brand</label>
+        <select onChange={OnCHangeHandler} name="brandId" id="">
           {BatteryBrand}
+        </select>
+      </div>
+      <div className={styles.form}>
+        <label htmlFor="groupId">model Group</label>
+        <select onChange={OnCHangeHandler} name="groupId" id="">
+          {BatteryGroup}
         </select>
       </div>
 
@@ -296,6 +174,7 @@ function AddModel(props) {
 const mapStateToProps = (state) => ({
   BatteryModel: state.CreateBatteryModel,
   BatteryBrand: state.CreateBatteryBrand,
+  BatteryGroup: state.CreateGroupReducer,
   OemModel: state.CreateOemModel,
   SubCategory: state.CreateSubCategory,
   Segment: state.CreateSegment,
@@ -309,6 +188,7 @@ const mapDispatchToProps = {
   GetOemModel,
   GetSubcategory,
   GetSegment,
+  GetGroup,
   GetSecondaryName,
   GetScheme,
   EditBatteryModel,
