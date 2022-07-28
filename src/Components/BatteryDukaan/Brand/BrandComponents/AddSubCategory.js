@@ -16,7 +16,7 @@ function AddSubCategory(props) {
     subcategoryName: "",
     subcategoryDesc: "",
     subcategoryIcon: "",
-    "subcategory Position": "",
+    subcategoryPosition: "",
   });
 
   useEffect(() => {
@@ -48,73 +48,15 @@ function AddSubCategory(props) {
         subcategoryName: "",
         subcategoryDesc: "",
         subcategoryIcon: "",
-        "subcategory Position": "",
+        subcategoryPosition: "",
       });
     } else {
       props.EditSubCategory(_id, state);
       props.history.push("/ViewSubCategory");
     }
   };
-
-  let category;
-  console.log("props", props);
-  if (props.SubCategory.data) {
-    category = props.SubCategory.data.map((data, i) => {
-      return (
-        <option key={i} value={data.categoryName}>
-          {data.categoryName}
-        </option>
-      );
-    });
-  }
-
   //bulk upload ---
   //for bulk upload  --------------
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          subcategoryName: body["subcategoryName"],
-          subcategoryDesc: body["subcategoryDesc"],
-          subcategoryIcon: body["subcategoryIcon"],
-          "subcategory Position": body["subcategory Position"],
-        });
-      });
-    };
-  };
-
-  function removeDuplicates(originalArray, prop) {
-    var newArray = [];
-    var lookupObject = {};
-
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
-    }
-
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-
-  const submitHandler = () => {
-    let files = removeDuplicates(arr, "subcategoryName");
-    console.log(files);
-    axios
-      .post("/bulkInsertionSubCategory", {
-        JSONData: files,
-      })
-      .then((suc) => console.log(suc))
-      .catch((err) => console.log(err));
-  };
-
-  console.log(state);
 
   return (
     <div className={styles.main}>
@@ -149,11 +91,11 @@ function AddSubCategory(props) {
         />
       </div>
       <div className={styles.form}>
-        <label htmlFor="subcategory Position">subcategory Position</label>
+        <label htmlFor="subcategoryPosition">subcategory Position</label>
         <input
           onChange={OnCHangeHandler}
-          value={state["subcategory Position"]}
-          name="subcategory Position"
+          value={state["subcategoryPosition"]}
+          name="subcategoryPosition"
           type="number"
         />
       </div>

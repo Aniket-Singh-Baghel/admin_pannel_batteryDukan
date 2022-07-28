@@ -14,7 +14,7 @@ function AddMedia(props) {
   console.log(props);
   const [state, setstate] = useState({
     ProductImages: "",
-    ProductVideos: "",
+    productVideos: "",
   });
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function AddMedia(props) {
       props.CreateProductMedia(state);
       setstate({
         ProductImages: "",
-        ProductVideos: "",
+        productVideos: "",
       });
     } else {
       props.EditProductMedia(_id, state);
@@ -113,11 +113,11 @@ function AddMedia(props) {
         />
       </div>
       <div className={styles.form}>
-        <label htmlFor="ProductVideos">Product Videos</label>
+        <label htmlFor="productVideos">Product Videos</label>
         <input
           onChange={OnCHangeHandler}
-          value={state.ProductVideos}
-          name="ProductVideos"
+          value={state.productVideos}
+          name="productVideos"
           type="text"
         />
       </div>

@@ -43,9 +43,6 @@ function ViewOemModel(props) {
             {details.oemBrand.OEMBrand}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.OEMModelDesc}
-          </td>
-          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
               onClick={() => props.history.push(`/EditOemModel/${details.id}`)}
               viewBox="0 0 24 24"
@@ -100,7 +97,6 @@ function ViewOemModel(props) {
                 <th>Oem-Model-Images</th>
                 <th>Oem-Model-position</th>
                 <th>OEM-Brand Name</th>
-                <th>OEM-Model Desc</th>
                 <th>Action</th>
                 <th>Delete</th>
               </tr>

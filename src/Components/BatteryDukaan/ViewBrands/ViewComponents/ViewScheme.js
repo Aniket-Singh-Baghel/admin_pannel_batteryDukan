@@ -17,6 +17,7 @@ function ViewScheme(props) {
   };
 
   let SchemeTable;
+  console.log(props);
   if (props.Scheme.data) {
     SchemeTable = props.Scheme.data.map((details, index) => {
       return (
@@ -38,7 +39,7 @@ function ViewScheme(props) {
             </a>
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
-            {details.schemeGroupId}
+            {details.group.groupName}
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg

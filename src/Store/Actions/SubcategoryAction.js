@@ -25,6 +25,7 @@ export const GetSubcategory = () => (dispatch) => {
   axios
     .get("/getSubCategory")
     .then((success) => {
+      console.log("subCategory", success);
       return dispatch({
         type: SHOW_SUBCATEGORY,
         payload: success.data,

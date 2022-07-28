@@ -26,15 +26,25 @@ function ViewCategory(props) {
       return (
         <tr key={index}>
           <td scope="row">{index + 1}</td>
-          <td style={{ border: "1px solid rgb(206, 206, 206)" }} >{details.categoryName}</td>
-          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>{details.categoryDesc}</td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.categoryName}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.categoryDesc}
+          </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {" "}
             <a href={details.categoryIcon} target="_blank">
               {details.categoryIcon}
             </a>
           </td>
-          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>{details.categoryPosition}</td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.categoryPosition}
+          </td>
+          <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
+            {details.subcategory.subCategoryName}
+          </td>
+
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
               onClick={() => props.history.push(`/EditCategory/${details.id}`)}
@@ -101,6 +111,7 @@ function ViewCategory(props) {
                   <th>Category Desc</th>
                   <th>category Icon (url)</th>
                   <th>Category Position</th>
+                  <th>SubCategory Name</th>
                   <th>Action</th>
                   <th>Delete</th>
                 </tr>

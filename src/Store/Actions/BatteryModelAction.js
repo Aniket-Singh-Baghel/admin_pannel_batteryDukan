@@ -30,7 +30,7 @@ export const GetBatteryModel = () => (dispatch) => {
         payload: success.data,
       });
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err.response));
 };
 
 export const EditBatteryModel = (id, data) => (dispatch) => {

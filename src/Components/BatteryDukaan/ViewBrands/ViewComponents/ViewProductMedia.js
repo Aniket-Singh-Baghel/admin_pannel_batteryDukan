@@ -36,10 +36,10 @@ function ViewProductMedia(props) {
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             {" "}
-            <a href={details.ProductVideos} target="_blank">
-              {details.ProductVideos
-                ? details.ProductVideos.substring(0, 80)
-                : details.ProductVideos}
+            <a href={details.productVideos} target="_blank">
+              {details.productVideos
+                ? details.productVideos.substring(0, 80)
+                : details.productVideos}
             </a>
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>

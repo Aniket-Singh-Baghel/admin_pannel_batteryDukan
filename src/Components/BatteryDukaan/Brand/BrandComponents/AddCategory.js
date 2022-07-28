@@ -55,12 +55,12 @@ function AddCategory(props) {
   };
 
   let subCategory;
-  console.log("objectprops", props);
+  console.log("objectprops", props.SubCategory);
   if (props.SubCategory.data) {
     subCategory = props.SubCategory.data.map((data) => {
       return (
         <option key={data.id} value={data.id}>
-          {data.SubCategory}
+          {data.subcategoryName}
         </option>
       );
     });
