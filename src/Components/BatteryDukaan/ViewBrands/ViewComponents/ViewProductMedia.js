@@ -87,7 +87,7 @@ function ViewProductMedia(props) {
             </thead>
             <tbody>{productMediaTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -201,7 +201,7 @@ function ViewProductMedia(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

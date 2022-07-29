@@ -6,6 +6,7 @@ import {
   CreateBatteryBrand,
   EditBatteryBrand,
   GetBatteryBrand,
+  DeleteBatteryBrand,
 } from "../../../../Store/Actions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -35,6 +36,7 @@ function AddBrand(props) {
     props.CreateBatteryBrand();
     const _id = props.match.params.id;
     if (props.match.path === "/EditBatteryBrand/:id") {
+      console.log("edit check from battery brand :: ", props.BatteryBrand.data);
       props.GetBatteryBrand();
       const BatteryBrand = props.BatteryBrand.data.map((data) => {
         if (data.id == _id) {
@@ -185,6 +187,7 @@ const mapDispatchToProps = {
   CreateBatteryBrand,
   EditBatteryBrand,
   GetBatteryBrand,
+  DeleteBatteryBrand,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddBrand);

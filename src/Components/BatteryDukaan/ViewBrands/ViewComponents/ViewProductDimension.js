@@ -139,7 +139,7 @@ function ViewProductDimension(props) {
             </thead>
             <tbody>{ProductDimensionTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -253,7 +253,7 @@ function ViewProductDimension(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

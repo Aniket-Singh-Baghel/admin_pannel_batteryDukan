@@ -20,7 +20,7 @@ function AlertBox(props) {
 
   let brandsTable;
   console.log("props from conditional Statement:: ", props.BatteryBrand);
-  if (props.BatteryBrand && props.BatteryBrand.length > 0) {
+  if (props.BatteryBrand.data && props.BatteryBrand.length > 0) {
     console.log(state);
     brandsTable = props.BatteryBrand.map((details, index) => {
       return (
@@ -37,7 +37,7 @@ function AlertBox(props) {
             ></button>
           </div>
           <div className="modal-body">
-            <p>{details.message}</p>
+            <p>{details.brandName}</p>
           </div>
           <div className="modal-footer">
             <button
@@ -131,9 +131,6 @@ function AlertBox(props) {
 
   return (
     <div className="modal" tabindex="-1">
-      <div>
-        <p>madarchod</p>
-      </div>
       <div className="modal-dialog">{brandsTable}</div>
     </div>
   );

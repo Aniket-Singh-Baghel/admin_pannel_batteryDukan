@@ -40,7 +40,9 @@ function ViewSubCategory(props) {
           </td>
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
-              onClick={() => props.history.push(`/EditCategory/${details.id}`)}
+              onClick={() =>
+                props.history.push(`/EditSubCategory/${details.id}`)
+              }
               viewBox="0 0 24 24"
               width="24"
               height="24"
@@ -82,7 +84,7 @@ function ViewSubCategory(props) {
             </thead>
             <tbody>{SubCategoryTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -196,7 +198,7 @@ function ViewSubCategory(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

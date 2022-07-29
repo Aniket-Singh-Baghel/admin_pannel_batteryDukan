@@ -80,7 +80,7 @@ function ViewOemBrand(props) {
             </thead>
             <tbody>{oemBrandTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -194,7 +194,7 @@ function ViewOemBrand(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

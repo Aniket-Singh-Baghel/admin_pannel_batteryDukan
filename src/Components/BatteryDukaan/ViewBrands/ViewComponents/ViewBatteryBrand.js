@@ -10,6 +10,7 @@ function ViewBatteryBrand(props) {
 
   useEffect(() => {
     props.GetBatteryBrand();
+    props.DeleteBatteryBrand();
   }, []);
 
   const onDeleteAction = (id) => {
@@ -48,7 +49,7 @@ function ViewBatteryBrand(props) {
           <td style={{ border: "1px solid rgb(206, 206, 206)" }}>
             <svg
               onClick={() =>
-                props.history.push(`/batteryBrand/delete/${details.id}`)
+                props.history.push(`/EditBatteryBrand/${details.id}`)
               }
               viewBox="0 0 24 24"
               width="24"
@@ -93,7 +94,7 @@ function ViewBatteryBrand(props) {
             </thead>
             <tbody>{brandsTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -207,7 +208,7 @@ function ViewBatteryBrand(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

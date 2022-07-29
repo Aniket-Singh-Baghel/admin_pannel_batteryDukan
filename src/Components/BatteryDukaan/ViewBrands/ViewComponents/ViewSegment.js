@@ -19,7 +19,6 @@ function ViewSegment(props) {
   let SegmentTable;
   console.log(props);
   if (props.Segment.data && props.Segment.data.length > 0) {
-    console.log(props.Segment.data.data);
     SegmentTable = props.Segment.data.map((details, index) => {
       return (
         <tr key={index}>
@@ -83,7 +82,7 @@ function ViewSegment(props) {
             </thead>
             <tbody>{SegmentTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -197,7 +196,7 @@ function ViewSegment(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

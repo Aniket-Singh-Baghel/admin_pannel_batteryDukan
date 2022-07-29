@@ -153,7 +153,7 @@ function ViewProductPricing(props) {
             </thead>
             <tbody>{ProductPricingTable}</tbody>
           </table>
-          <div className="row mt-3">
+          {/* <div className="row mt-3">
             <div className="col-sm-12 col-md-5">
               <div
                 className="dataTables_info"
@@ -267,7 +267,7 @@ function ViewProductPricing(props) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

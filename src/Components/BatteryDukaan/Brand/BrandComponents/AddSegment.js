@@ -68,54 +68,57 @@ function AddSegment(props) {
 
   return (
     <div className="content-wrapper" style={{ backgroundColor: "white" }}>
-    <div className={styles.main}>
-      <span>Add Segment</span>
+      <div className={styles.main}>
+        <span>Add Segment</span>
 
-      <div className={styles.form}>
-        <label htmlFor="segmentName">segment Name</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["segmentName"]}
-          name="segmentName"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="segmentName">segment Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["segmentName"]}
+            name="segmentName"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="segmentIcon">segment Icon(url)</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["segmentIcon"]}
-          name="segmentIcon"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="segmentIcon">segment Icon(url)</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["segmentIcon"]}
+            name="segmentIcon"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="segmentPosition">segment Position</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["segmentPosition"]}
-          name="segmentPosition"
-          type="number"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="segmentPosition">segment Position</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["segmentPosition"]}
+            name="segmentPosition"
+            type="number"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="segmentBrandId">model Brand</label>
-        <select onChange={OnCHangeHandler} name="segmentBrandId" id="">
-          {BatteryBrand}
-        </select>
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="segmentBrandId">model Brand</label>
+          <select onChange={OnCHangeHandler} name="segmentBrandId" id="">
+            <option value="" selected hidden>
+              Select Model Brand
+            </option>
+            {BatteryBrand}
+          </select>
+        </div>
 
-      <div className={cx(styles.form, styles.submit)}>
-        <input onClick={callToAction} type="submit" value="create" />
-      </div>
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
 
-      {/* bulk upload */}
-      {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+        {/* bulk upload */}
+        {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" /> */}
-    </div>
+      </div>
     </div>
   );
 }
