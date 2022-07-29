@@ -112,6 +112,9 @@ function AddCategory(props) {
           <div className={styles.form}>
             <label htmlFor="subCategoryId">SubCategory</label>
             <select onChange={OnCHangeHandler} name="subCategoryId" id="">
+              <option value="" selected hidden>
+                Select SubCategory
+              </option>
               {subCategory}
             </select>
           </div>

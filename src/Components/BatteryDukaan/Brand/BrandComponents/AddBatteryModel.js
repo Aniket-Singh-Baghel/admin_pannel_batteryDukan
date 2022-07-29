@@ -152,6 +152,9 @@ function AddModel(props) {
         <div className={styles.form}>
           <label htmlFor="groupId">model Group</label>
           <select onChange={OnCHangeHandler} name="groupId" id="">
+            <option value="" selected hidden>
+              Select Battery Brand
+            </option>
             {BatteryGroup}
           </select>
         </div>

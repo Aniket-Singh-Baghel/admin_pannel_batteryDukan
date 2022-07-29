@@ -112,6 +112,7 @@ function AddScheme(props) {
         <div className={styles.form}>
           <label htmlFor="schemeGroupId">Scheme Group Name</label>
           <select onChange={OnCHangeHandler} name="schemeGroupId" id="">
+            <option value="" selected hidden>Select Group Name</option>
             {SchemeGroup}
           </select>
         </div>

@@ -115,6 +115,7 @@ function AddOemModel(props) {
       <div className={styles.form}>
         <label htmlFor="OEMBrandId">OEM Brand Name</label>
         <select onChange={OnCHangeHandler} name="OEMBrandId" id="">
+          <option value="" selected hidden>Select OEM Brand</option>
           {oemBrand}
         </select>
       </div>

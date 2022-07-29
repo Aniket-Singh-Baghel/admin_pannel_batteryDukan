@@ -141,6 +141,9 @@ function AddGroup(props) {
             Group Based <br /> On
           </label>
           <select onChange={OnCHangeHandler} name="groupBasedOn" id="">
+            <option value="" selected hidden>
+              Select Group Based On
+            </option>
             <option value="Country">Country</option>
             <option value="State">State</option>
             <option value="Religion">Religion</option>
