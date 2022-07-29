@@ -32,6 +32,7 @@ function AddBrand(props) {
   };
 
   useEffect(() => {
+    props.CreateBatteryBrand();
     const _id = props.match.params.id;
     if (props.match.path === "/EditBatteryBrand/:id") {
       props.GetBatteryBrand();
@@ -45,7 +46,7 @@ function AddBrand(props) {
     }
   }, []);
 
-  const callToAction = () => {
+  const callToAction = async () => {
     const _id = props.match.params.id;
     if (props.match.url === "/brand") {
       props.CreateBatteryBrand(state);
@@ -56,6 +57,8 @@ function AddBrand(props) {
         brandIcon: "",
         brandDesc: "",
       });
+      // alert(props.BatteryBrand.message);
+      // console.log(await props.BatteryBrand.message);
       setalertbox({
         isLoading: true,
       });
@@ -65,12 +68,49 @@ function AddBrand(props) {
     }
   };
 
+  let alertTable;
+  console.log("props from conditional Statement:: ", props.BatteryBrand);
+  if (props.BatteryBrand && props.BatteryBrand.length > 0) {
+    console.log(state);
+    alertTable = props.BatteryBrand.map((details, index) => {
+      return (
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title">
+              <i class="ri-check-line"></i>
+            </h5>
+            <button
+              type="button"
+              className="btn-close"
+              data-mdb-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="modal-body">
+            <p>{details.message}</p>
+          </div>
+          <div className="modal-footer">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              data-mdb-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" className="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </div>
+      );
+    });
+  }
+
   return (
     <div className="content-wrapper" style={{ backgroundColor: "white" }}>
       <div className={styles.main}>
         {/* two */}
         <span>Add Brand</span>
-
         <div className={styles.form}>
           <label htmlFor="brandName">brand Name</label>
           <input
@@ -116,15 +156,22 @@ function AddBrand(props) {
             type="number"
           />
         </div>
-
         <div onClick={callToAction} className={cx(styles.form, styles.submit)}>
           <input type="submit" value="create" />
         </div>
-
         {/* bulk upload */}
         {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" /> */}
-        {alertbox.isLoading && <AlertBox />}
+        {/* {alertbox.isLoading ? (
+          <div className="modal" tabindex="-1">
+            <div className="modal-dialog">{alertTable}</div>
+          </div>
+        ) : (
+          <div className="modal" tabindex="-1">
+            <div className="modal-dialog">something went wrong</div>
+          </div>
+        )} */}
+        {alertbox.isLoading ? <AlertBox /> : null}
       </div>
     </div>
   );

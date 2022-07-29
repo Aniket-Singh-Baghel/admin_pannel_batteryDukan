@@ -37,8 +37,7 @@ function AlertBox(props) {
             ></button>
           </div>
           <div className="modal-body">
-            <p>{details.err}</p>
-            <p>{details.data.message}</p>
+            <p>{details.message}</p>
           </div>
           <div className="modal-footer">
             <button
@@ -132,6 +131,9 @@ function AlertBox(props) {
 
   return (
     <div className="modal" tabindex="-1">
+      <div>
+        <p>madarchod</p>
+      </div>
       <div className="modal-dialog">{brandsTable}</div>
     </div>
   );
