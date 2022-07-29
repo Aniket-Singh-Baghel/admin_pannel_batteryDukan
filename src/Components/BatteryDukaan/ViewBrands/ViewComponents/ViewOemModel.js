@@ -18,7 +18,7 @@ function ViewOemModel(props) {
 
   let oemModelTable;
   console.log(props);
-  if (props.OemModel.data) {
+  if (props.OemModel.data && props.OemModel.data.length > 0) {
     oemModelTable = props.OemModel.data.map((details, index) => {
       console.log(details.oemBrand.OEMBrand);
       return (

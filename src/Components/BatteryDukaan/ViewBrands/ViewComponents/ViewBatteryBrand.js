@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../ViewScss/ViewGlobal.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "../../../../Axios/AxiosConfig";
 import { DeleteBatteryBrand, GetBatteryBrand } from "../../../../Store/Actions";
 import { connect } from "react-redux";
 
@@ -18,7 +17,7 @@ function ViewBatteryBrand(props) {
   };
 
   let brandsTable;
-  if (props.BatteryBrand.data) {
+  if (props.BatteryBrand.data && props.BatteryBrand.data.length > 0) {
     console.log(state);
     brandsTable = props.BatteryBrand.data.map((details, index) => {
       return (

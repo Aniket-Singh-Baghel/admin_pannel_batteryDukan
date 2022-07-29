@@ -69,54 +69,8 @@ function AddOemModel(props) {
     });
   }
 
-  //bulk upload ---
-  //for bulk upload  --------------
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          OEMModelName: body["OEMModelName"],
-          FuelType: body["FuelType"],
-          OEMModelImage: body["OEMModelImage"],
-          OEMModelPosition: body["OEMModelPosition"],
-          OEMBrandId: body["OEMBrandId"],
-        });
-      });
-    };
-  };
-
-  function removeDuplicates(originalArray, prop) {
-    var newArray = [];
-    var lookupObject = {};
-
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
-    }
-
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-
-  const submitHandler = () => {
-    let files = removeDuplicates(arr, "OEMModelName");
-    console.log(files);
-    axios
-      .post("/bulkInsertOemModel", {
-        JSONData: files,
-      })
-      .then((suc) => console.log(suc))
-      .catch((err) => console.log(err));
-  };
-
   return (
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
     <div className={styles.main}>
       <span>Add OEM Model</span>
 
@@ -172,6 +126,7 @@ function AddOemModel(props) {
       {/* bulk upload */}
       {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" /> */}
+    </div>
     </div>
   );
 }

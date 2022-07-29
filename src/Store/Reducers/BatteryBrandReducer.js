@@ -1,4 +1,8 @@
-import { CREATE_BATTERY_BRAND, DELETE_BATTERY_BRAND, SHOW_BATTERY_BRAND } from "../ActionType";
+import {
+  CREATE_BATTERY_BRAND,
+  DELETE_BATTERY_BRAND,
+  SHOW_BATTERY_BRAND,
+} from "../ActionType";
 
 const initalState = {
   data: null,
@@ -23,7 +27,7 @@ export const BatteryBrandReducer = (state = initalState, { type, payload }) => {
       let copyData = [...state.data];
       return {
         ...state,
-        data: copyData.splice((item, index) => index !== payload),
+        data: copyData.filter((item, index) => index !== payload),
       };
 
     default:

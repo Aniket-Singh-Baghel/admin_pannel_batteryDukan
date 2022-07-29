@@ -68,59 +68,61 @@ function AddScheme(props) {
   };
 
   return (
-    <div className={styles.main}>
-      <span>Add Scheme</span>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+      <div className={styles.main}>
+        <span>Add Scheme</span>
 
-      <div className={styles.form}>
-        <label htmlFor="schemeName">scheme Name</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["schemeName"]}
-          name="schemeName"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="schemeName">scheme Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["schemeName"]}
+            name="schemeName"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="schemeType">scheme Type</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["schemeType"]}
-          name="schemeType"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="schemeDesc">scheme description</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["schemeDesc"]}
-          name="schemeDesc"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="schemeUrl">scheme url</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["schemeUrl"]}
-          name="schemeUrl"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="schemeGroupId">Scheme Group Name</label>
-        <select onChange={OnCHangeHandler} name="schemeGroupId" id="">
-          {SchemeGroup}
-        </select>
-      </div>
-      <div className={cx(styles.form, styles.submit)}>
-        <input onClick={callToAction} type="submit" value="create" />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="schemeType">scheme Type</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["schemeType"]}
+            name="schemeType"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="schemeDesc">scheme description</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["schemeDesc"]}
+            name="schemeDesc"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="schemeUrl">scheme url</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["schemeUrl"]}
+            name="schemeUrl"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="schemeGroupId">Scheme Group Name</label>
+          <select onChange={OnCHangeHandler} name="schemeGroupId" id="">
+            {SchemeGroup}
+          </select>
+        </div>
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
 
-      {/* bulk upload */}
-      {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+        {/* bulk upload */}
+        {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" /> */}
+      </div>
     </div>
   );
 }

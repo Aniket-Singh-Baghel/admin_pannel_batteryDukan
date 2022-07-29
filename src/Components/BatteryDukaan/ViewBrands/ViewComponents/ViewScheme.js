@@ -18,7 +18,7 @@ function ViewScheme(props) {
 
   let SchemeTable;
   console.log(props);
-  if (props.Scheme.data) {
+  if (props.Scheme.data && props.Scheme.data.length > 0) {
     SchemeTable = props.Scheme.data.map((details, index) => {
       return (
         <tr key={index}>

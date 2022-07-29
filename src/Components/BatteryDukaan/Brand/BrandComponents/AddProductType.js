@@ -52,87 +52,56 @@ function AddProductType(props) {
     }
   };
 
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          typeName: body["typeName"],
-          typeDesc: body["typeDesc"],
-          typeIcon: body["typeIcon"],
-          typePosition: body["typePosition"],
-        });
-      });
-    };
-  };
-
-  function removeDuplicates(originalArray, prop) {
-    var newArray = [];
-    var lookupObject = {};
-
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
-    }
-
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-
   return (
     <>
-      <div className={styles.main}>
-        <span>Add Product Type</span>
+      <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+        <div className={styles.main}>
+          <span>Add Product Type</span>
 
-        <div className={styles.form}>
-          <label htmlFor="typeName">Type Name</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["typeName"]}
-            name="typeName"
-            type="text"
-          />
-        </div>
+          <div className={styles.form}>
+            <label htmlFor="typeName">Type Name</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["typeName"]}
+              name="typeName"
+              type="text"
+            />
+          </div>
 
-        <div className={styles.form}>
-          <label htmlFor="typeDesc">Type Desc</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["typeDesc"]}
-            name="typeDesc"
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="typeIcon">Type Icon (url)</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["typeIcon"]}
-            name="typeIcon"
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="typePosition">Type Position</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["typePosition"]}
-            name="typePosition"
-            type="number"
-          />
-        </div>
-        <div className={cx(styles.form, styles.submit)}>
-          <input onClick={callToAction} type="submit" value="create" />
-        </div>
-        {/* bulk upload */}
-        {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+          <div className={styles.form}>
+            <label htmlFor="typeDesc">Type Desc</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["typeDesc"]}
+              name="typeDesc"
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="typeIcon">Type Icon (url)</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["typeIcon"]}
+              name="typeIcon"
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="typePosition">Type Position</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["typePosition"]}
+              name="typePosition"
+              type="number"
+            />
+          </div>
+          <div className={cx(styles.form, styles.submit)}>
+            <input onClick={callToAction} type="submit" value="create" />
+          </div>
+          {/* bulk upload */}
+          {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 		      	<input onClick={submitHandler} type="submit" /> */}
+        </div>
       </div>
     </>
   );

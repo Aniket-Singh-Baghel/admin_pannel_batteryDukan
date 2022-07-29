@@ -67,6 +67,7 @@ function AddSegment(props) {
   }
 
   return (
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
     <div className={styles.main}>
       <span>Add Segment</span>
 
@@ -114,6 +115,7 @@ function AddSegment(props) {
       {/* bulk upload */}
       {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" /> */}
+    </div>
     </div>
   );
 }

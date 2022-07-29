@@ -104,51 +104,53 @@ function AddGroup(props) {
       .catch((err) => console.log(err));
   };
   return (
-    <div className={styles.main}>
-      <span>Add Group</span>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+      <div className={styles.main}>
+        <span>Add Group</span>
 
-      <div className={styles.form}>
-        <label htmlFor="groupName">Group Name</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state.groupName}
-          name="groupName"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="groupName">Group Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.groupName}
+            name="groupName"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="groupIcon">Group Icon (Url)</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["groupIcon"]}
-          name="groupIcon"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="groupDesc">Group Description</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["groupDesc"]}
-          name="groupDesc"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="groupBasedOn">
-          Group Based <br /> On
-        </label>
-        <select onChange={OnCHangeHandler} name="groupBasedOn" id="">
-          <option value="Country">Country</option>
-          <option value="State">State</option>
-          <option value="Religion">Religion</option>
-          <option value="Custom">Custom</option>
-        </select>
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="groupIcon">Group Icon (Url)</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["groupIcon"]}
+            name="groupIcon"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="groupDesc">Group Description</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["groupDesc"]}
+            name="groupDesc"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="groupBasedOn">
+            Group Based <br /> On
+          </label>
+          <select onChange={OnCHangeHandler} name="groupBasedOn" id="">
+            <option value="Country">Country</option>
+            <option value="State">State</option>
+            <option value="Religion">Religion</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
 
-      <div className={cx(styles.form, styles.submit)}>
-        <input onClick={callToAction} type="submit" value="create" />
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
       </div>
     </div>
   );

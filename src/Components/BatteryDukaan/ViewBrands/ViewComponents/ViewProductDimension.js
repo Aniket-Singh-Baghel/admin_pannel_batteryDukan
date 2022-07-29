@@ -22,7 +22,7 @@ function ViewProductDimension(props) {
 
   let ProductDimensionTable;
   console.log(props.ProductDimension.data);
-  if (props.ProductDimension.data) {
+  if (props.ProductDimension.data && props.ProductDimension.data.length > 0) {
     console.log(state);
     ProductDimensionTable = props.ProductDimension.data.map(
       (details, index) => {

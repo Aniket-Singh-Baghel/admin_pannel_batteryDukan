@@ -21,7 +21,7 @@ function ViewSecondaryName(props) {
   };
 
   let SecondaryName;
-  if (props.SecondaryName.data) {
+  if (props.SecondaryName.data && props.SecondaryName.data.length > 0) {
     SecondaryName = props.SecondaryName.data.map((details, index) => {
       return (
         <tr key={index}>
@@ -58,7 +58,7 @@ function ViewSecondaryName(props) {
   }
   return (
     <div className="content-wrapper" style={{ backgroundColor: "white" }}>
-      <div className={styles.main} >
+      <div className={styles.main}>
         {/* <table className="table table-bordered table-striped">
         <thead>
           <tr>

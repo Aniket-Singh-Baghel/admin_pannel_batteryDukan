@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import axios from "../../../../Axios/AxiosConfig";
 
 function ViewSubCategory(props) {
-  console.log(props.SubCategory.data);
   const [state, setstate] = useState(null);
 
   useEffect(() => {

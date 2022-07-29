@@ -96,46 +96,48 @@ function AddOEM(props) {
   };
 
   return (
-    <div className={styles.main}>
-      <span>Add OEM</span>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+      <div className={styles.main}>
+        <span>Add OEM</span>
 
-      <div className={styles.form}>
-        <label htmlFor="OEMBrand">OEM Brand</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["OEMBrand"]}
-          name="OEMBrand"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="OEMBrand">OEM Brand</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["OEMBrand"]}
+            name="OEMBrand"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="OEMBrandImage">OEM Brand Images (url)</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["OEMBrandImage"]}
-          name="OEMBrandImage"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="OEMBrandImage">OEM Brand Images (url)</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["OEMBrandImage"]}
+            name="OEMBrandImage"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="OEMB">oemb</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["OEMB"]}
-          name="OEMB"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="OEMB">oemb</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["OEMB"]}
+            name="OEMB"
+            type="text"
+          />
+        </div>
 
-      <div className={cx(styles.form, styles.submit)}>
-        <input onClick={callToAction} type="submit" value="create" />
-      </div>
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
 
-      {/* bulk upload
+        {/* bulk upload
 			<input type="file" name="files" onChange={e => handleChange(e)} />
 			<input onClick={submitHandler} type="submit" /> */}
+      </div>
     </div>
   );
 }

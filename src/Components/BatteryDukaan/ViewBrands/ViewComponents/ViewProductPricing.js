@@ -22,7 +22,7 @@ function ViewProductPricing(props) {
 
   let ProductPricingTable;
   console.log(props.ProductPricing);
-  if (props.ProductPricing.data) {
+  if (props.ProductPricing.data && props.ProductPricing.data.length > 0) {
     console.log(state);
     ProductPricingTable = props.ProductPricing.data.map((details, index) => {
       return (

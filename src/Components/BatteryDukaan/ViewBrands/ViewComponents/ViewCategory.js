@@ -21,7 +21,7 @@ function ViewCategory(props) {
   // console.log(state);
   let CategoryTable;
   console.log(props);
-  if (props.Category.data) {
+  if (props.Category.data && props.Category.data.length > 0) {
     CategoryTable = props.Category.data.map((details, index) => {
       return (
         <tr key={index}>

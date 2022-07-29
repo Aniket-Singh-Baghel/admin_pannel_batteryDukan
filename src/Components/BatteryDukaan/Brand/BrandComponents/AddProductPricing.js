@@ -43,6 +43,7 @@ function AddProductPricing(props) {
       setstate(...filtered);
     }
   }, []);
+
   const callToAction = () => {
     const _id = props.match.params.id;
     if (props.match.url === "/productPricing") {
@@ -68,46 +69,9 @@ function AddProductPricing(props) {
     }
   };
 
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          mrpIcon: body["mrpIcon"],
-          mrpUnit: body["mrpUnit"],
-          mrpValue: body["mrpValue"],
-          mrpIcon: body["mrpIcon"],
-          mrpUnit: body["mrpUnit"],
-          mrpValue: body["mrpValue"],
-          mrpIcon: body["mrpIcon"],
-          mrpUnit: body["mrpUnit"],
-          mrpValue: body["mrpValue"],
-        });
-      });
-    };
-  };
-
-  function removeDuplicates(originalArray, prop) {
-    var newArray = [];
-    var lookupObject = {};
-
-    for (var i in originalArray) {
-      lookupObject[originalArray[i][prop]] = originalArray[i];
-    }
-
-    for (i in lookupObject) {
-      newArray.push(lookupObject[i]);
-    }
-    return newArray;
-  }
-
   return (
     <>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
       <div className={styles.main}>
         <span>Add Product Pricing</span>
 
@@ -229,6 +193,7 @@ function AddProductPricing(props) {
         {/* bulk upload */}
         {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 		      	<input onClick={submitHandler} type="submit" /> */}
+      </div>
       </div>
     </>
   );

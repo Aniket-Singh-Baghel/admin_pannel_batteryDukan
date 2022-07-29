@@ -66,79 +66,63 @@ function AddCategory(props) {
     });
   }
 
-  const [files, setFiles] = useState(null);
-  let arr = [];
-  const handleChange = (e) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result:= ", e);
-
-      JSON.parse(e.target.result).map((body) => {
-        arr.push({
-          categoryName: body["categoryName"],
-          categoryDesc: body["categoryDesc"],
-          categoryIcon: body["categoryIcon"],
-          categoryPosition: body["categoryPosition"],
-        });
-      });
-    };
-  };
   return (
     <>
-      <div className={styles.main}>
-        <span>Add Category</span>
+      <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+        <div className={styles.main}>
+          <span>Add Category</span>
 
-        <div className={styles.form}>
-          <label htmlFor="categoryName">category Name</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["categoryName"]}
-            name="categoryName"
-            type="text"
-          />
-        </div>
+          <div className={styles.form}>
+            <label htmlFor="categoryName">category Name</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["categoryName"]}
+              name="categoryName"
+              type="text"
+            />
+          </div>
 
-        <div className={styles.form}>
-          <label htmlFor="categoryDesc">category Desc</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["categoryDesc"]}
-            name="categoryDesc"
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="categoryIcon">category Icon (url)</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["categoryIcon"]}
-            name="categoryIcon"
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="categoryPosition">category Position</label>
-          <input
-            onChange={OnCHangeHandler}
-            value={state["categoryPosition"]}
-            name="categoryPosition"
-            type="number"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="subCategoryId">SubCategory</label>
-          <select onChange={OnCHangeHandler} name="subCategoryId" id="">
-            {subCategory}
-          </select>
-        </div>
+          <div className={styles.form}>
+            <label htmlFor="categoryDesc">category Desc</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["categoryDesc"]}
+              name="categoryDesc"
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="categoryIcon">category Icon (url)</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["categoryIcon"]}
+              name="categoryIcon"
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="categoryPosition">category Position</label>
+            <input
+              onChange={OnCHangeHandler}
+              value={state["categoryPosition"]}
+              name="categoryPosition"
+              type="number"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="subCategoryId">SubCategory</label>
+            <select onChange={OnCHangeHandler} name="subCategoryId" id="">
+              {subCategory}
+            </select>
+          </div>
 
-        <div className={cx(styles.form, styles.submit)}>
-          <input onClick={callToAction} type="submit" value="create" />
-        </div>
-        {/* bulk upload */}
-        {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+          <div className={cx(styles.form, styles.submit)}>
+            <input onClick={callToAction} type="submit" value="create" />
+          </div>
+          {/* bulk upload */}
+          {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 		      	<input onClick={submitHandler} type="submit" /> */}
+        </div>
       </div>
     </>
   );

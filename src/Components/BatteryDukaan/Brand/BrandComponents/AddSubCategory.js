@@ -55,64 +55,64 @@ function AddSubCategory(props) {
       props.history.push("/ViewSubCategory");
     }
   };
-  //bulk upload ---
-  //for bulk upload  --------------
 
   return (
-    <div className={styles.main}>
-      <span>Add SubCategory</span>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+      <div className={styles.main}>
+        <span>Add SubCategory</span>
 
-      <div className={styles.form}>
-        <label htmlFor="subcategoryName">subcategory Name</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["subcategoryName"]}
-          name="subcategoryName"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="subcategoryName">subcategory Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["subcategoryName"]}
+            name="subcategoryName"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="subcategoryDesc">subcategory Desc</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["subcategoryDesc"]}
-          name="subcategoryDesc"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="subcategoryIcon">subcategory Icon(url)</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["subcategoryIcon"]}
-          name="subcategoryIcon"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="subcategoryPosition">subcategory Position</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state["subcategoryPosition"]}
-          name="subcategoryPosition"
-          type="number"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="subcategoryDesc">subcategory Desc</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["subcategoryDesc"]}
+            name="subcategoryDesc"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="subcategoryIcon">subcategory Icon(url)</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["subcategoryIcon"]}
+            name="subcategoryIcon"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="subcategoryPosition">subcategory Position</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state["subcategoryPosition"]}
+            name="subcategoryPosition"
+            type="number"
+          />
+        </div>
 
-      {/* <div className={styles.form}>
+        {/* <div className={styles.form}>
         <label htmlFor="categoryName">categoryName</label>
         <select onChange={OnCHangeHandler} name="categoryName" id="">
           {category}
         </select>
       </div> */}
 
-      <div className={cx(styles.form, styles.submit)}>
-        <input onClick={callToAction} type="submit" value="create" />
-      </div>
-      {/* bulk upload */}
-      {/* <input type="file" name="files" onChange={e => handleChange(e)} />
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
+        {/* bulk upload */}
+        {/* <input type="file" name="files" onChange={e => handleChange(e)} />
 		    <input onClick={submitHandler} type="submit" /> */}
+      </div>
     </div>
   );
 }

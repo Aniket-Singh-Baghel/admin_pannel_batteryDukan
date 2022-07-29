@@ -43,7 +43,7 @@ import ViewAllDetails from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDet
 import ShowAll from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDetails";
 
 import "./App.scss";
-import check from "./Components/BatteryDukaan/justCheck/check";
+import AlertBox from "./Components/BatteryDukaan/AlertBox/AlertBox";
 
 class App extends Component {
   render() {
@@ -113,6 +113,7 @@ class App extends Component {
             <Route path="/productPricing" component={AddProductPricing} />
             <Route path="/productMedia" component={AddProductMedia} />
             <Route path="/productDimension" component={AddProductDimension} />
+            <Route path="/alertBox" component={AlertBox}></Route>
             <Route path="/" component={AddBatteryModel} />
           </Switch>
         </main>

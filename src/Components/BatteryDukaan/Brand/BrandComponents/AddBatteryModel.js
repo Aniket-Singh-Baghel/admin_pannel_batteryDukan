@@ -101,72 +101,74 @@ function AddModel(props) {
   //for bulk upload  -------------
 
   return (
-    <div className={styles.main}>
-      <span>Add Battery Model</span>
+    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+      <div className={styles.main}>
+        <span>Add Battery Model</span>
 
-      <div className={styles.form}>
-        <label htmlFor="modelName">model Name</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state.modelName}
-          name="modelName"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="modelName">model Name</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelName}
+            name="modelName"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="modelType">model Type</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state.modelType}
-          name="modelType"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="modelDesc">model Desc</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state.modelDesc}
-          name="modelDesc"
-          type="text"
-        />
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="modelUrl">model Icon</label>
-        <input
-          onChange={OnCHangeHandler}
-          value={state.modelUrl}
-          name="modelUrl"
-          type="text"
-        />
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="modelType">model Type</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelType}
+            name="modelType"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="modelDesc">model Desc</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelDesc}
+            name="modelDesc"
+            type="text"
+          />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="modelUrl">model Icon</label>
+          <input
+            onChange={OnCHangeHandler}
+            value={state.modelUrl}
+            name="modelUrl"
+            type="text"
+          />
+        </div>
 
-      <div className={styles.form}>
-        <label htmlFor="brandId">model Brand</label>
-        <select onChange={OnCHangeHandler} name="brandId" id="">
-          {BatteryBrand}
-        </select>
-      </div>
-      <div className={styles.form}>
-        <label htmlFor="groupId">model Group</label>
-        <select onChange={OnCHangeHandler} name="groupId" id="">
-          {BatteryGroup}
-        </select>
-      </div>
+        <div className={styles.form}>
+          <label htmlFor="brandId">model Brand</label>
+          <select onChange={OnCHangeHandler} name="brandId" id="">
+            {BatteryBrand}
+          </select>
+        </div>
+        <div className={styles.form}>
+          <label htmlFor="groupId">model Group</label>
+          <select onChange={OnCHangeHandler} name="groupId" id="">
+            {BatteryGroup}
+          </select>
+        </div>
 
-      <div className={cx(styles.form, styles.submit)}>
-        <input onClick={callToAction} type="submit" value="create" />
-      </div>
+        <div className={cx(styles.form, styles.submit)}>
+          <input onClick={callToAction} type="submit" value="create" />
+        </div>
 
-      {/* bulk upload */}
-      {/* <input type="file" name="files" onChange={(e) => handleChange(e)} />
+        {/* bulk upload */}
+        {/* <input type="file" name="files" onChange={(e) => handleChange(e)} />
       <input
         onClick={submitHandler}
         type="submit"
         className={styles.fileSubmit}
         style={{padding:".2vmax .7vmax",marginLeft:"-4vmax"}}
       /> */}
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ function ViewProductMedia(props) {
   };
 
   let productMediaTable;
-  if (props.ProductMedia.data) {
+  if (props.ProductMedia.data && props.ProductMedia.data.length > 0) {
     console.log(state);
     productMediaTable = props.ProductMedia.data.map((details, index) => {
       return (

@@ -19,7 +19,7 @@ function ViewProductType(props) {
 
   let ProductTypeTable;
   console.log(props);
-  if (props.ProductType.data) {
+  if (props.ProductType.data && props.ProductType.data.length > 0) {
     console.log(state);
     ProductTypeTable = props.ProductType.data.map((details, index) => {
       return (

@@ -18,7 +18,7 @@ function ViewBatteryModel(props) {
 
   let BatteryModelTable;
   console.log(props);
-  if (props.BatteryModel.data) {
+  if (props.BatteryModel.data && props.BatteryModel.data.length > 0) {
     BatteryModelTable = props.BatteryModel.data.map((details, index) => {
       return (
         <tr key={index}>

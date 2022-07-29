@@ -1,14 +1,15 @@
-.main{
-    padding: 10px 20vmax;
+.main {
+    padding: 10px 15vmax;
     width: 100%;
     text-transform: capitalize;
     background-color: rgb(255, 255, 255);
-    input::-webkit-inner-spin-button{
+
+    input::-webkit-inner-spin-button {
         display: none;
     }
 }
 
-.form{
+.form {
     margin-left: 60px;
     padding: 0px 5px;
     width: 80%;
@@ -18,21 +19,23 @@
     margin-top: 20px;
     background-color: #fff;
 
-    label{
+    label {
         font-size: .8rem;
         font-weight: 600;
     }
 
-    input , textarea , select{
+    input,
+    textarea,
+    select {
         border: 1px solid rgba(93, 93, 93, 0.363);
         width: 30vw;
         margin-left: 2vmax;
         padding: 5px 20px;
-    }    
+    }
 }
 
 
-.main .superClass{
+.main .superClass {
     margin-top: 10px;
     background-color: rgb(255, 255, 255);
     padding: 0px 20px;
@@ -42,7 +45,7 @@
     align-items: center;
     justify-content: space-between;
 
-    div{
+    div {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -50,26 +53,26 @@
         background-color: rgb(255, 255, 255);
     }
 
-    label{
+    label {
         margin-right: 10px;
         font-size: .8rem;
         font-weight: 600;
     }
 
-    input{
+    input {
         border: 1px solid rgba(93, 93, 93, 0.363);
         width: 60%;
         padding: 5px 20px;
     }
 
-    
+
 }
 
-.main .submit{
+.main .submit {
     display: flex;
     justify-content: center;
 
-    input[type="submit"]{
+    input[type="submit"] {
         margin-top: 2vmax;
         margin-left: 10vmax;
         vertical-align: middle;
@@ -79,51 +82,52 @@
         border-radius: 5px;
         color: #fff;
         background-color: #3b9e3b;
-        border:none;
+        border: none;
         outline: none;
         cursor: pointer;
         transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
     }
 
-    input[type="submit"]:hover{
+    input[type="submit"]:hover {
         background-color: #12ad12ad;
     }
 }
 
-@media(max-width:450px){
-    .main{
+@media(max-width:450px) {
+    .main {
         overflow: hidden;
         width: 100%;
-        margin-left: -15vmax ;
+        margin-left: -15vmax;
         text-transform: capitalize;
         background-color: rgb(255, 255, 255);
-    
+
         input::-webkit-inner-spin-button {
             display: none;
         }
     }
 
     .form {
-    margin-left: -.5vmax;
-    padding: 0px 1.5vmax;
-    width: 60vw;
-    margin-top: 1.5vmax;
+        margin-left: -.5vmax;
+        padding: 0px 1.5vmax;
+        width: 60vw;
+        margin-top: 1.5vmax;
 
-        .warrantyDesc{
+        .warrantyDesc {
             margin-left: -5vmax;
         }
-        input{
+
+        input {
             margin-left: 3vmax;
         }
     }
 
     .main .superClass {
-    margin-top: .8vmax;
-    background-color: rgb(255, 255, 255);
-    padding: 1.5vmax 1vmax;
-    margin-left: 4.5vmax;
-    flex-direction: column;
-    width: 20vw;
+        margin-top: .8vmax;
+        background-color: rgb(255, 255, 255);
+        padding: 1.5vmax 1vmax;
+        margin-left: 4.5vmax;
+        flex-direction: column;
+        width: 20vw;
 
         div {
             width: 35vw;
@@ -139,47 +143,56 @@
             padding: .5vmax 1vmax;
             margin: .7vmax 9.7vmax;
         }
-        .two>input{
+
+        .two>input {
             margin-left: 9.4vmax;
         }
-        .three>input{
+
+        .three>input {
             margin-left: 10.8vmax;
         }
-        .indicatorOne>input{
+
+        .indicatorOne>input {
             margin-left: 5vmax;
         }
-        .indicatorTwo>input{
+
+        .indicatorTwo>input {
             margin-left: 5.3vmax;
         }
-        .indicatorThree>input{
+
+        .indicatorThree>input {
             margin-left: 6.8vmax;
         }
-        .size>input{
+
+        .size>input {
             margin-left: 6.5vmax;
         }
-        .values>.two{
+
+        .values>.two {
             margin-left: 4vmax;
         }
-        .values>.three{
+
+        .values>.three {
             margin-left: 6vmax;
         }
     }
-.main .submitHandle {
-    input[type="submit"] {
-        padding: .8vmax 2vmax;
-        border-radius: .5vmax;
+
+    .main .submitHandle {
+        input[type="submit"] {
+            padding: .8vmax 2vmax;
+            border-radius: .5vmax;
+        }
+    }
+
+    .main input[type="file"] {
+        // width: 12vmax;
+        height: 5vmax;
+        font-size: 2vmax;
+        margin-top: 2vmax;
+    }
+
+    .main .fileSubmit {
+        padding: .5vmax 5vmax;
+        font-size: 6vmax;
     }
 }
-.main input[type="file"]{
-    // width: 12vmax;
-    height: 5vmax;
-    font-size: 2vmax;
-    margin-top: 2vmax;
-}
-.main .fileSubmit{
-   padding: .5vmax 5vmax;
-   font-size: 6vmax;
-}
-}
-
-

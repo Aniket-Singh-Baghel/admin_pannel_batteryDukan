@@ -18,7 +18,7 @@ function ViewSegment(props) {
 
   let SegmentTable;
   console.log(props);
-  if (props.Segment.data) {
+  if (props.Segment.data && props.Segment.data.length > 0) {
     console.log(props.Segment.data.data);
     SegmentTable = props.Segment.data.map((details, index) => {
       return (
