@@ -21,6 +21,7 @@ import AddProductType from "./Components/BatteryDukaan/Brand/BrandComponents/Add
 import AddProductPricing from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductPricing";
 import AddProductMedia from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductMedia";
 import AddProductDimension from "./Components/BatteryDukaan/Brand/BrandComponents/AddProductDimensions";
+import AddBatteryDetails from "./Components/BatteryDukaan/Brand/BrandComponents/AddBatteryDetails";
 
 // view imports starts here
 import ViewBatteryBrand from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewBatteryBrand";
@@ -38,9 +39,7 @@ import ViewProductDimension from "./Components/BatteryDukaan/ViewBrands/ViewComp
 import ViewProductType from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductType";
 import ViewProductMedia from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductMedia";
 import ViewProductPricing from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewProductPricing";
-
-import ViewAllDetails from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDetails";
-import ShowAll from "./Components/BatteryDukaan/ViewAllDetails/ViewAllDetails";
+import ViewBatteryDetails from "./Components/BatteryDukaan/ViewBrands/ViewComponents/ViewBatteryDetails";
 
 import "./App.scss";
 import AlertBox from "./Components/BatteryDukaan/AlertBox/AlertBox";
@@ -73,6 +72,10 @@ class App extends Component {
               path="/EditProductDimension/:id"
               component={AddProductDimension}
             />
+            <Route
+              path="/EditBatteryDetails/:id"
+              component={AddProductDimension}
+            />
             {/* <Route path="/EditSecondaryName/:id" component={AddSecondaryName} /> */}
 
             <Route path="/ViewBatteryBrand" component={ViewBatteryBrand} />
@@ -91,11 +94,11 @@ class App extends Component {
               path="/ViewProductDimension"
               component={ViewProductDimension}
             />
-
+            <Route
+              path="/ViewBatteryDetails"
+              component={ViewBatteryDetails}
+            ></Route>
             {/* <Route path="/ViewSecondaryName" component={ViewSecondaryName} /> */}
-
-            <Route path="/AllDetails" component={ViewAllDetails} />
-            <Route path="/showAll" component={ShowAll} />
 
             {/* Add files here */}
             <Route path="/category" component={AddCategory} />
@@ -113,6 +116,7 @@ class App extends Component {
             <Route path="/productPricing" component={AddProductPricing} />
             <Route path="/productMedia" component={AddProductMedia} />
             <Route path="/productDimension" component={AddProductDimension} />
+            <Route path="/batteryDetails" component={AddBatteryDetails}></Route>
             <Route path="/alertBox" component={AlertBox}></Route>
             <Route path="/" component={AddBatteryModel} />
           </Switch>

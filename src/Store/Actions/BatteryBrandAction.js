@@ -13,11 +13,11 @@ export const CreateBatteryBrand = (data) => (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log(
-        "err from Battery brand Action ::",
-        err.response.data.message,
-        err.response.status
-      );
+      // console.log(
+      //   "err from Battery brand Action ::",
+      //   err.response.data.message,
+      //   err.response.status
+      // );
       // alert(err.response.data.message + " " + err.response.status);
     });
 };

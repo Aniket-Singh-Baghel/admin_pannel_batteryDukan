@@ -468,9 +468,32 @@ function Panel(props, history) {
               </li>
               <li className="nav-item">
                 <a href="javascript:void(0)" className="nav-link">
-                  <i className="nav-icon fas fa-table" />
-                  <p>View All Details</p>
+                  <i className="nav-icon fas fa-circle" />
+                  <p>
+                    batteryDetails
+                    <i className="right fas fa-angle-left" />
+                  </p>
                 </a>
+                <ul className="nav nav-treeview">
+                  <li
+                    className="nav-item"
+                    onClick={(e) => stopShow(e, "/batteryDetails")}
+                  >
+                    <a href="javascript:void(0)" className="nav-link">
+                      <i className="far fa-circle nav-icon" />
+                      <p>Create battery Details</p>
+                    </a>
+                  </li>
+                  <li
+                    className="nav-item"
+                    onClick={(e) => stopShow(e, "/ViewBatteryDetails")}
+                  >
+                    <a href="javascript:void(0)" className="nav-link">
+                      <i className="far fa-circle nav-icon" />
+                      <p>View battery Details Details</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>

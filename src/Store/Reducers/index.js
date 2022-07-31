@@ -13,6 +13,7 @@ import { ProductDimensionReducer } from "./ProductDimensionReducer";
 import { ProductPricingReducer } from "./ProductPricingReducer";
 import { ProductTypeReducer } from "./ProductTypeReducer";
 import { ProductMediaReducer } from "./ProductMediaReducer";
+import { BatteryDetailReducer } from "./BatteryDetailReducer";
 
 const Reducer = combineReducers({
   CreateOemBrand: OemBrandReducer,
@@ -23,6 +24,7 @@ const Reducer = combineReducers({
   CreateSegment: SegmentReducer,
   CreateBatteryModel: BatteryModelReducer,
   CreateBatteryBrand: BatteryBrandReducer,
+  CreateBatteryDetail: BatteryDetailReducer,
   CreateGroupReducer: GroupReducer,
   CreateSecondaryName: SecondryNameReducer,
   CreateProductMedia: ProductMediaReducer,

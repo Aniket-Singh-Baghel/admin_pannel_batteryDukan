@@ -9,26 +9,36 @@
     }
 }
 
+.span {
+    // margin-left: 13vmax;
+    font-size: 1.3vmax;
+    font-weight: bold;
+    color: #767676;
+}
+
 .form {
     margin-left: 60px;
     padding: 0px 5px;
-    width: 80%;
+    width: 75%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
     background-color: #fff;
 
-    label {
-        font-size: .8rem;
+
+
+    labal {
+        font-size: .9rem;
         font-weight: 600;
+        color: #6c6c6c;
     }
 
     input,
     textarea,
     select {
         border: 1px solid rgba(93, 93, 93, 0.363);
-        width: 30vw;
+        width: 25vw;
         margin-left: 2vmax;
         padding: 5px 20px;
     }
@@ -90,6 +100,46 @@
 
     input[type="submit"]:hover {
         background-color: #12ad12ad;
+    }
+}
+
+.dimensionPricing {
+    // background-color: red;
+    margin-top: 3vmax;
+    border: 1px solid transparent;
+    display: flex;
+
+    .titleLabel {
+        margin-left: 13vmax;
+        font-size: 1.2vmax;
+        font-weight: bold;
+        color: #878787;
+    }
+
+    .dimensioniForm {
+        margin-left: 3vmax;
+        padding: 0px 5px;
+        width: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2vmax;
+        background-color: #fff;
+
+        labal {
+            font-size: .8rem;
+            font-weight: 600;
+        }
+
+        input,
+        textarea,
+        select {
+            border: 1px solid rgba(93, 93, 93, 0.363);
+            width: 15vw;
+            margin-left: 2vmax;
+            padding: 5px 20px;
+        }
+
     }
 }
 

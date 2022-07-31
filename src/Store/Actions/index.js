@@ -12,3 +12,4 @@ export * from "./ProductTypeAction";
 export * from "./ProductPricingAction";
 export * from "./ProductMediaAction";
 export * from "./ProductDimensionAction";
+export * from "./BatteryDetailAction";

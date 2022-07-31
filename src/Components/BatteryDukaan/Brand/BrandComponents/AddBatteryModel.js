@@ -15,8 +15,10 @@ import {
   GetGroup,
 } from "../../../../Store/Actions";
 import { connect } from "react-redux";
+import { useHistory } from "react-router";
 
 function AddModel(props) {
+  const history = useHistory();
   console.log(props);
   const [state, setstate] = useState({
     modelName: "",
@@ -69,7 +71,7 @@ function AddModel(props) {
       });
     } else {
       props.EditBatteryModel(_id, state);
-      props.history.push("/ViewBatteryModel");
+      history.push("/ViewBatteryModel");
     }
   };
 
