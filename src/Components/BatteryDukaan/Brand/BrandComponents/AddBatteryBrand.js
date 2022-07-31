@@ -48,6 +48,8 @@ function AddBrand(props) {
     }
   }, []);
 
+  const x = props.BatteryBrand.data;
+
   const callToAction = async () => {
     const _id = props.match.params.id;
     if (props.match.url === "/brand") {
@@ -59,112 +61,137 @@ function AddBrand(props) {
         brandIcon: "",
         brandDesc: "",
       });
-      // alert(props.BatteryBrand.message);
-      // console.log(await props.BatteryBrand.message);
-      setalertbox({
-        isLoading: true,
-      });
     } else {
       props.EditBatteryBrand(_id, state);
       history.push("/ViewBatteryBrand");
     }
+    setalertbox({
+      isLoading: true,
+    });
   };
 
   let alertTable;
-  console.log("props from conditional Statement:: ", props.BatteryBrand);
-  if (props.BatteryBrand && props.BatteryBrand.length > 0) {
-    console.log(state);
-    alertTable = props.BatteryBrand.map((details, index) => {
+
+  const popUp = () => {
+    let brandCreate;
+    console.log(props);
+    if (props.BatteryBrand.data === x) {
       return (
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">
-              <i class="ri-check-line"></i>
-            </h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-mdb-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div className="modal-body">
-            <p>{details.message}</p>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-mdb-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" className="btn btn-primary">
-              Save changes
-            </button>
+        <div className="container my-5">
+          <div
+            className="modal fade"
+            id="centralModalSm"
+            tabIndex={-1}
+            role="dialog"
+            aria-labelledby="myModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog modal-sm" role="document">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h4 className="modal-title w-100" id="myModalLabel">
+                    SuccessFul
+                  </h4>
+                  <button
+                    type="button"
+                    className="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  {props.BatteryBrand.message ==
+                  "Brand Data Created Successfully" ? (
+                    <p>{props.BatteryBrand.message}</p>
+                  ) : (
+                    <p> {props.err} </p>
+                  )}
+                  {/* <p>{props.BatteryBrand.message}</p> */}
+                  <br />
+                  {/* <p>{props.BatteryBrand.message}</p> */}
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-sm"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       );
-    });
-  }
+    }
+  };
 
   return (
-    <div className="content-wrapper" style={{ backgroundColor: "white" }}>
-      <div className={styles.main}>
-        {/* two */}
-        <span>Add Brand</span>
-        <div className={styles.form}>
-          <label htmlFor="brandName">brand Name</label>
-          <input
-            name="brandName"
-            value={state.brandName}
-            onChange={OnCHangeHandler}
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="brandLogo">brandLogo</label>
-          <input
-            name="brandLogo"
-            value={state["brandLogo"]}
-            onChange={OnCHangeHandler}
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="brandDesc">brand Desc</label>
-          <input
-            name="brandDesc"
-            value={state.brandDesc}
-            onChange={OnCHangeHandler}
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="brandIcon">brand Icon (url)</label>
-          <input
-            name="brandIcon"
-            value={state.brandIcon}
-            onChange={OnCHangeHandler}
-            type="text"
-          />
-        </div>
-        <div className={styles.form}>
-          <label htmlFor="brandPosition">brand Position</label>
-          <input
-            name="brandPosition"
-            value={state.brandPosition}
-            onChange={OnCHangeHandler}
-            type="number"
-          />
-        </div>
-        <div onClick={callToAction} className={cx(styles.form, styles.submit)}>
-          <input type="submit" value="create" />
-        </div>
-        {/* bulk upload */}
-        {/* <input type="file" name="files" onChange={e => handleChange(e)} />
-			<input onClick={submitHandler} type="submit" /> */}
-        {/* {alertbox.isLoading ? (
+    <>
+      <div className="content-wrapper" style={{ backgroundColor: "white" }}>
+        <div className={styles.main}>
+          {/* two */}
+          <span>Add Brand</span>
+          <div className={styles.form}>
+            <label htmlFor="brandName">brand Name</label>
+            <input
+              name="brandName"
+              value={state.brandName}
+              onChange={OnCHangeHandler}
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="brandLogo">brandLogo</label>
+            <input
+              name="brandLogo"
+              value={state["brandLogo"]}
+              onChange={OnCHangeHandler}
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="brandDesc">brand Desc</label>
+            <input
+              name="brandDesc"
+              value={state.brandDesc}
+              onChange={OnCHangeHandler}
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="brandIcon">brand Icon (url)</label>
+            <input
+              name="brandIcon"
+              value={state.brandIcon}
+              onChange={OnCHangeHandler}
+              type="text"
+            />
+          </div>
+          <div className={styles.form}>
+            <label htmlFor="brandPosition">brand Position</label>
+            <input
+              name="brandPosition"
+              value={state.brandPosition}
+              onChange={OnCHangeHandler}
+              type="number"
+            />
+          </div>
+          <div
+            onClick={callToAction}
+            className={cx(styles.form, styles.submit)}
+            type="button"
+            // className="btn btn-primary waves-effect waves-light"
+            data-toggle="modal"
+            data-target="#centralModalSm"
+          >
+            <input type="submit" value="create" />
+          </div>
+
+          {/* {alertbox.isLoading ? (
           <div className="modal" tabindex="-1">
             <div className="modal-dialog">{alertTable}</div>
           </div>
@@ -173,9 +200,11 @@ function AddBrand(props) {
             <div className="modal-dialog">something went wrong</div>
           </div>
         )} */}
-        {alertbox.isLoading ? <AlertBox /> : null}
-      </div>
-    </div>
+        </div>
+      </div>{" "}
+      <br />
+      {alertbox.isLoading ? popUp() : null}
+    </>
   );
 }
 

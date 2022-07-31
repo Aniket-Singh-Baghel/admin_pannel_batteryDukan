@@ -19,42 +19,43 @@ function AlertBox(props) {
   };
 
   let brandsTable;
-  console.log("props from conditional Statement:: ", props.BatteryBrand);
-  if (props.BatteryBrand.data && props.BatteryBrand.length > 0) {
-    console.log(state);
-    brandsTable = props.BatteryBrand.map((details, index) => {
-      return (
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">
-              <i class="ri-check-line"></i>
-            </h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-mdb-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div className="modal-body">
-            <p>{details.brandName}</p>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-mdb-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" className="btn btn-primary">
-              Save changes
-            </button>
-          </div>
-        </div>
-      );
-    });
-  }
+  console.log("props :: ", props);
+  // if (props.BatteryBrand.data) {
+  //   console.log("props from conditional Statement:: ", props.BatteryBrand);
+  //   brandsTable = props.BatteryBrand.map((details, index) => {
+  //     console.log("props from map Statement:: ", details.message);
+  //     return (
+  //       <div className="modal-content">
+  //         <div className="modal-header">
+  //           <h5 className="modal-title">
+  //             <i class="ri-check-line"></i>
+  //           </h5>
+  //           <button
+  //             type="button"
+  //             className="btn-close"
+  //             data-mdb-dismiss="modal"
+  //             aria-label="Close"
+  //           ></button>
+  //         </div>
+  //         <div className="modal-body">
+  //           <p>{details.brandName}</p>
+  //         </div>
+  //         <div className="modal-footer">
+  //           <button
+  //             type="button"
+  //             className="btn btn-secondary"
+  //             data-mdb-dismiss="modal"
+  //           >
+  //             Close
+  //           </button>
+  //           <button type="button" className="btn btn-primary">
+  //             Save changes
+  //           </button>
+  //         </div>
+  //       </div>
+  //     );
+  //   });
+  // }
 
   const multiple = () => {
     return (
@@ -130,14 +131,58 @@ function AlertBox(props) {
   //bulk upload code above
 
   return (
-    <div className="modal" tabindex="-1">
-      <div className="modal-dialog">{brandsTable}</div>
+    <div className="container my-5">
+      <section className="border border-light p-3 mb-4">
+        <button
+          type="button"
+          className="btn btn-primary waves-effect waves-light"
+          data-toggle="modal"
+          data-target="#centralModalSm"
+        >
+          Small Modal
+        </button>
+      </section>
+      <div
+        className="modal fade"
+        id="centralModalSm"
+        tabIndex={-1}
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-sm" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title w-100" id="myModalLabel">
+                Modal title
+              </h4>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div className="modal-body" />
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 const MapStateToProps = (state) => ({
-  hello: console.log("state.createBatteryBrand ::", state.CreateBatteryBrand),
   BatteryBrand: state.CreateBatteryBrand,
 });
 

@@ -9,10 +9,7 @@ function Panel(props, history) {
 
   return (
     <>
-      <aside
-        className="main-sidebar sidebar-dark-primary elevation-4"
-        style={{ minHeight: "200vh" }}
-      >
+      <aside className="main-sidebar sidebar-dark-primary elevation-4">
         <a
           href="javascript:void(0)"
           className="brand-link"
@@ -24,7 +21,7 @@ function Panel(props, history) {
             className="brand-image img-circle elevation-3"
             style={{ opacity: ".8" }}
           />
-          <span className="brand-text font-weight-light">AdminLTE 3</span>
+          <span className="brand-text font-weight-light">Admin Panel</span>
         </a>
         <div className="sidebar">
           <div className="user-panel mt-3 pb-3 mb-3 d-flex">

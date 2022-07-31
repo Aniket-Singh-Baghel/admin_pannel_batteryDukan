@@ -5,19 +5,21 @@ export const CreateBatteryBrand = (data) => (dispatch) => {
   axios
     .post("/batteryBrandCreate", data)
     .then((success) => {
+      // alert(success.data.message + " " + success.status);
       console.log("success from Battery brand Action", success);
       return dispatch({
         type: CREATE_BATTERY_BRAND,
         payload: success.data,
       });
     })
-    .catch((err) =>
+    .catch((err) => {
       console.log(
         "err from Battery brand Action ::",
         err.response.data.message,
         err.response.status
-      )
-    );
+      );
+      // alert(err.response.data.message + " " + err.response.status);
+    });
 };
 
 export const GetBatteryBrand = () => (dispatch) => {
